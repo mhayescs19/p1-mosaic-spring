@@ -26,15 +26,36 @@ public class MainController {
         return "ap-practice/andrew.html";
     }
 
+
+
+
+
+
+
+
     @GetMapping("/ap-practice/nakul") // root for Nakul page
     public String apPracticeNakul(){
         return "ap-practice/nakul.html";
     }
 
+
+
+
+
+
+
+
     @GetMapping("/ap-practice/sara") // root for Sara page
     public String apPracticeSara(){
         return "ap-practice/sara.html";
     }
+
+
+
+
+
+
+
 
     @GetMapping("/ap-practice/michael") // root for Michael page
     public String apPracticeMichael(){
