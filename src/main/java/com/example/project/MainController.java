@@ -23,7 +23,7 @@ public class MainController {
 
     @GetMapping("/ap-practice/andrew") // root for Andrew page
     public String apPracticeAndrew(){
-        return "ap-practice/andrew.html";
+        return "ap-practice/Andrew/andrew.html";
     }
 
 
