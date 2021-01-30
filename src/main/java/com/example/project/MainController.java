@@ -20,14 +20,12 @@ public class MainController {
 
     @GetMapping("/ap-practice")
     public String apPractice() {
-
-        return "ap-practice/menuAP";//.html";
+        return "ap-practice/menuAP.html";
     }
 
     @GetMapping("/ap-practice/andrew") // root for Andrew page
     public String apPracticeAndrew(){
-
-        return "ap-practice/andrew";//.html";
+        return "ap-practice/Andrew/andrew.html";
     }
 
 
@@ -39,8 +37,7 @@ public class MainController {
 
     @GetMapping("/ap-practice/nakul") // root for Nakul page
     public String apPracticeNakul(){
-
-        return "ap-practice/nakul";//.html";
+        return "ap-practice/nakul.html";
     }
 
 
@@ -52,7 +49,7 @@ public class MainController {
 
     @GetMapping("/ap-practice/sara") // root for Sara page
     public String apPracticeSara(){
-        return "ap-practice/sara";//"html";
+        return "ap-practice/sara.html";
     }
 
 
@@ -63,15 +60,7 @@ public class MainController {
 
 
     @GetMapping("/ap-practice/michael") // root for Michael page
-    public String apPracticeMichael(@RequestParam (name="length", required=false, defaultValue="4") String length, @RequestParam(name="prefix", required=false, defaultValue="A") String prefix, Model model){ // use multiple @RequestParam annotations if you have multiple variables in HTML (correct way to reference them?)
-
-        // UNIT 5 FRQ PART A
-        PasswordGenerator newPassword = new PasswordGenerator(Integer.parseInt(length), prefix);
-
-
-        model.addAttribute("passwords", newPassword.getPasswordList()); // s: goes to variable name in HTML
-        model.addAttribute("passwordGenerated", newPassword.pwGen());
-
-        return "ap-practice/michael"; // use path to HTML file without .html OR it does not recognize model attributes!
+    public String apPracticeMichael(){
+        return "ap-practice/michael.html";
     }
 }
