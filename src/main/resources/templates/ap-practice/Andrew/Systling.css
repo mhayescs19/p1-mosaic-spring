@@ -1,18 +1,24 @@
 h1{
 
-    color:green;
+    color:black;
+    font-family: "Times New Roman", bold, monospace;
+    font-size: 60px;
 }
 body{
-    background-color: #888888;
+    background-color: whitesmoke;
     font:normal 16px Arial, SansSerif;
     margin: 0;
     line-height: 1.6em;
 }
-.container{
-    width: 500px;
+.container1{
+    width: 60%;
+    margin: auto;
 }
 
 .box-1{
-    background-color: darkgrey;
-    color:#ffffff;
+    background-color:#DAD8D8;
+    color:black;
+    font-family: "Times New Roman","Malgun Gothic",monospace;
+    font-size: 18px;
+    white-space: pre-line;
 }
