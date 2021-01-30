@@ -11,6 +11,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.HashMap;
+import AndrewFrq1.StringStruct;
 
 @Controller
 public class MainController {
@@ -21,9 +22,17 @@ public class MainController {
     }
 
     @GetMapping("/ap-practice/andrew") // root for Andrew page
-    public String apPracticeAndrew(){
+    public String apPracticeAndrew(Model model){
+        model.addAttribute("StringStruct",new StringStruct());
         return "ap-practice/Andrew/andrew.html";
     }
+
+   @RequestMapping(value = "/frq1", method = RequestMethod.GET)
+   public String Display(StringStruct stringStruct)
+   {
+       return "ap-practice/Andrew/andrew.html";
+   }
+
 
 
     @GetMapping("/ap-practice/nakul") // root for Nakul page

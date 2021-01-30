@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>AndrewAPFrq</title>
-    <link rel="stylesheet" href="Systling.css">
+    <link rel="stylesheet" href="/css/Systling.css">
 </head>
 <body>
     <div class ="container1">
@@ -60,8 +60,16 @@
         </p>
     </div>
     </div>
-<h2>
-  <form action="#" th:action="@{/frq1}" th:object="${mystrings}"
-</h2>
+
+    <form action="#" th:action="@{/frq1}" th:object="${StringStruct}" method="GET">
+        field1:  <input type="text" name="field1" th:field="*{field1}"/><br/>
+        field2: <input type="text" name="field1" th:field="*{field2}"/><br/>
+        field3: <input type="text" name="field1" th:field="*{field3}"/><br/>
+        anInt1: <input type="text" name="field1" th:field="*{anInt1}"/><br/>
+        anInt2: <input type="text" name="field1" th:field="*{anInt2}"/><br/>
+        <button name="submit" type="submit" value="0">Submit</button>
+    </form>
+
+
 </body>
 </html>
