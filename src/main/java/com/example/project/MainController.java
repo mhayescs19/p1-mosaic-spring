@@ -35,7 +35,7 @@ public class MainController {
 
     @GetMapping("/ap-practice/nakul") // root for Nakul page
     public String apPracticeNakul(){
-        return "ap-practice/nakul.html";
+        return "ap-practice/Nakul/nakul.html";
     }
 
 
