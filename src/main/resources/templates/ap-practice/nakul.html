@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>NakulUnit#2APFRQ</title>
+    <link rel="stylesheet" href="NakulFRQStyle.css">
+    <style>
+        body {
+            background-color: powderblue;
+        }
+        h1 {
+            color: black;
+            font-family: verdana, cursive;
+            font-size: 300%;
+        }
+        p {
+            color: black;
+            font-family: courier, sans-serif;
+            font-size: 160%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1><strong>Unit #4 FRQ</strong></h1>
+    <div>
+        <form action="/ap-practice/nakul" method="get" id="consecutiveForm">
+            <label for="strField">String:</label>
+            <input type="text" id="strField" name="str"><br><br>
+            <button>Submit</button>
+            <p th:text="'Character Consecutive, ' + ${consecutiveChar}"></p>
+        </form>
+    </div>
+
+</body>
+
+</html>

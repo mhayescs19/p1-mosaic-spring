@@ -1,5 +1,6 @@
 package com.example.project;
 
+import com.example.project.ap.practice.Consecutive;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -36,8 +37,14 @@ public class MainController {
 
 
     @GetMapping("/ap-practice/nakul") // root for Nakul page
-    public String apPracticeNakul(){
-        return "ap-practice/Nakul/nakul.html";
+    public String apPracticeNakul(@RequestParam(name="str", required=false,  defaultValue="ccaaaaattt") String str, Model model){
+        Consecutive consecutive = new Consecutive();
+        consecutive.longestStreak(str);
+
+        model.addAttribute("consecutiveChar", consecutive.getCharacter());
+        model.addAttribute("consecutiveTotal", consecutive.getTotalConsecutive());
+
+        return "ap-practice/nakul";
     }
 
 
