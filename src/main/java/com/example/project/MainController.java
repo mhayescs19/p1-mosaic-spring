@@ -1,5 +1,6 @@
 package com.example.project;
 
+import AndrewFrq1.LightSequence;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,9 +31,16 @@ public class MainController {
     }
 
    @PostMapping("/frq1")
-   public String Display(@ModelAttribute("StringStruct") StringStruct stringStruct)
+   public String Display(@ModelAttribute("StringStruct") StringStruct stringStruct , Model model)
    {
         System.out.println(stringStruct);
+       LightSequence lightSequence = new LightSequence(stringStruct.getField1());
+       model.addAttribute("Sequenceone", lightSequence.seq);
+       lightSequence.remove(lightSequence.seq, stringStruct.getField3());
+       lightSequence.printStraightline(stringStruct.anInt1, stringStruct.anInt2);
+       model.addAttribute("InsertedSegment", lightSequence.insertSegment(stringStruct.field2, stringStruct.anInt1));
+       model.addAttribute("removeSegment", lightSequence.newSeq);
+       model.addAttribute("mathReturn", lightSequence.thing);
        return "ap-practice/Andrew/frq1.html";
    }
 
