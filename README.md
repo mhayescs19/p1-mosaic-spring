@@ -20,9 +20,13 @@
 ## 1/29  Weekly Project Contributions and Artifacts Log
 ### Week 7
 ### 1. [Set Up Spring Boot Barebones Via JetBrains Tutorial + Example Nav Bar Imported](https://github.com/mhayescs19/p1-mosaic-spring/issues/1)
-Created by Michael Hayes <br>
+A basic menu was implemented. The main challenges was implementing the CSS styling. Temporary inline CSS styling was used to get the menu to function. Created by Michael Hayes <br>
 **Contents** <br>
-* Basic JetBrains tutorial + Mr. M example code with MainController.java was used to create a homepage with an example menu with CSS styling.
-* A hyperlink list on a page that is liked via the menu also sends the user to 4 separate pages that host some FRQs
+* Basic JetBrains tutorial + Mr. M example code with MainController.java was used to create a homepage with an [example menu](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/fragments/header.html) with [CSS styling](https://github.com/mhayescs19/p1-mosaic-spring/blob/a0dd3df31cad9d3179b6f75ad2dfc7cf3c6841e9/src/main/resources/templates/fragments/headfile.html#L14 (temporary inline CSS styling imported in headfile to header - Direct use of a .css file seems better).
+* A [hyperlink list](https://github.com/mhayescs19/p1-mosaic-spring/blob/a0dd3df31cad9d3179b6f75ad2dfc7cf3c6841e9/src/main/resources/templates/ap-practice/menuAP.html#L54) on a page that is liked via the menu also sends the user to 4 separate pages that host some FRQs
 
 ### 2. [Michael Display Unit 5 AP FRQ](https://github.com/mhayescs19/p1-mosaic-spring/issues/4)
+The PasswordGenerator class is implemented onto an HTML page with the corresponding inputs for a prefix and length of randomized string of characters to generate a unique password. Additionally the all of the generated passwords are also displayed via a table below the "interactable" area of the page. No CSS styling has been implemented yet. Created by Michael Hayes <br>
+**Contents** <br>
+* Similar [@GetParam decorators used](https://github.com/mhayescs19/p1-mosaic-spring/blob/a0dd3df31cad9d3179b6f75ad2dfc7cf3c6841e9/src/main/java/com/example/project/MainController.java#L65) for two separate variables in apPracticeMichael method in MainController.java
+* Merged pali lab and table COVID19 api call HTML examples: used [two input fields in a single form](https://github.com/mhayescs19/p1-mosaic-spring/blob/a0dd3df31cad9d3179b6f75ad2dfc7cf3c6841e9/src/main/resources/templates/ap-practice/michael.html#L10) and [one table](https://github.com/mhayescs19/p1-mosaic-spring/blob/a0dd3df31cad9d3179b6f75ad2dfc7cf3c6841e9/src/main/resources/templates/ap-practice/michael.html#L19) (* see comments in michael.html as I shared my learning and remaining confusions about the HTML tags used)
