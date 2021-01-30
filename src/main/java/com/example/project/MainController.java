@@ -65,6 +65,7 @@ public class MainController {
     @GetMapping("/ap-practice/michael") // root for Michael page
     public String apPracticeMichael(@RequestParam (name="length", required=false, defaultValue="4") String length, @RequestParam(name="prefix", required=false, defaultValue="A") String prefix, Model model){ // use multiple @RequestParam annotations if you have multiple variables in HTML (correct way to reference them?)
 
+        // UNIT 5 FRQ PART A
         PasswordGenerator newPassword = new PasswordGenerator(Integer.parseInt(length), prefix);
 
 
