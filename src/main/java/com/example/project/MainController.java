@@ -29,10 +29,11 @@ public class MainController {
         return "ap-practice/Andrew/andrew.html";
     }
 
-   @RequestMapping(value = "/frq1", method = RequestMethod.GET)
-   public String Display(StringStruct stringStruct)
+   @PostMapping("/frq1")
+   public String Display(@ModelAttribute("StringStruct") StringStruct stringStruct)
    {
-       return "ap-practice/Andrew/andrew.html";
+        System.out.println(stringStruct);
+       return "ap-practice/Andrew/frq1.html";
    }
 
 

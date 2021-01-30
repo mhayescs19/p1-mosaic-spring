@@ -60,8 +60,7 @@
         </p>
     </div>
     </div>
-
-    <form action="#" th:action="@{/frq1}" th:object="${StringStruct}" method="GET">
+    <form action="#" th:action="@{/frq1}" th:object="${StringStruct}" method="POST">
         field1:  <input type="text" name="field1" th:field="*{field1}"/><br/>
         field2: <input type="text" name="field1" th:field="*{field2}"/><br/>
         field3: <input type="text" name="field1" th:field="*{field3}"/><br/>

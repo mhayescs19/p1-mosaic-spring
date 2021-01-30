@@ -35,6 +35,17 @@ public class StringStruct {
         return anInt1;
     }
 
+    @Override
+    public String toString() {
+        return "StringStruct{" +
+                "field1='" + field1 + '\'' +
+                ", field2='" + field2 + '\'' +
+                ", field3='" + field3 + '\'' +
+                ", anInt1=" + anInt1 +
+                ", anInt2=" + anInt2 +
+                '}';
+    }
+
     public void setAnInt1(int anInt1) {
         this.anInt1 = anInt1;
     }
