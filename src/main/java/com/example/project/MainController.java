@@ -13,6 +13,8 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.HashMap;
 
+import com.example.project.ap.practice.PasswordGenerator;
+
 @Controller
 public class MainController {
 
