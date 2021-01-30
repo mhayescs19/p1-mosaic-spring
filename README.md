@@ -19,3 +19,10 @@
 
 ## 1/29  Weekly Project Contributions and Artifacts Log
 ### Week 7
+### 1. [Set Up Spring Boot Barebones Via JetBrains Tutorial + Example Nav Bar Imported](https://github.com/mhayescs19/p1-mosaic-spring/issues/1)
+Created by Michael Hayes <br>
+**Contents** <br>
+* Basic JetBrains tutorial + Mr. M example code with MainController.java was used to create a homepage with an example menu with CSS styling.
+* A hyperlink list on a page that is liked via the menu also sends the user to 4 separate pages that host some FRQs
+
+### 2. [Michael Display Unit 5 AP FRQ](https://github.com/mhayescs19/p1-mosaic-spring/issues/4)
