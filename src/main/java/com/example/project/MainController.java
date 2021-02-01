@@ -1,7 +1,7 @@
 package com.example.project;
 
 import AndrewFrq1.LightSequence;
-import com.example.project.ap.practice.Invitation;
+//import com.example.project.ap.practice.Invitation;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +16,7 @@ import java.util.HashMap;
 import AndrewFrq1.StringStruct;
 
 import com.example.project.ap.practice.PasswordGenerator;
+import com.example.project.ap.practice.Consecutive;
 
 @Controller
 public class MainController {
@@ -48,8 +49,14 @@ public class MainController {
 
 
     @GetMapping("/ap-practice/nakul") // root for Nakul page
-    public String apPracticeNakul(){
-        return "ap-practice/nakul.html";
+    public String apPracticeNakul(@RequestParam(name="str", required=false,  defaultValue="ccaaaaattt") String str, Model model){
+        Consecutive consecutive = new Consecutive();
+        consecutive.longestStreak(str);
+
+        model.addAttribute("consecutiveChar", consecutive.getCharacter());
+        model.addAttribute("consecutiveTotal", consecutive.getTotalConsecutive());
+
+        return "ap-practice/nakul";
     }
 
 
@@ -63,10 +70,10 @@ public class MainController {
     public String apPracticeSara(@RequestParam (name = "rsvp", required = true, defaultValue = "true") String rsvp, @RequestParam(name = "selection", required = false, defaultValue = "1") String prefix, Model model){
 
         // Unit 3 FRQ, Question #1
-        Invitation invitation = new Invitation();
+        //Invitation invitation = new Invitation();
 
-        model.addAttribute("rsvp", invitation.getClass());
-        model.addAttribute("selection", invitation.getClass());
+        //model.addAttribute("rsvp", invitation.getClass());
+        //model.addAttribute("selection", invitation.getClass());
 
         return "ap-practice/sara.html";
     }
