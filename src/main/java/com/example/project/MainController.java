@@ -69,7 +69,7 @@ public class MainController {
     @GetMapping("/ap-practice/sara") // root for Sara page
     public String apPracticeSara(@RequestParam (name = "rsvp", required = true, defaultValue = "true") String rsvp, @RequestParam(name = "selection", required = false, defaultValue = "1") String prefix, Model model){
 
-        Unit 3 FRQ, Question #1
+        // Unit 3 FRQ, Question #1
         Invitation invitation = new Invitation();
 
         model.addAttribute("rsvp", invitation.getClass());
