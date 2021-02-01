@@ -1,7 +1,7 @@
 package com.example.project;
 
 import AndrewFrq1.LightSequence;
-//import com.example.project.ap.practice.Invitation;
+import com.example.project.ap.practice.Invitation;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
