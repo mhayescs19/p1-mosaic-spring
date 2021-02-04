@@ -59,8 +59,15 @@ public class MainController {
         return "ap-practice/nakul";
     }
 
+    @GetMapping("/labs") // root for menuLabs page
+    public String Labs(){
+        return "/labs/menuLabs";
+    }
 
-
+    @GetMapping("/labs/Pythagorean") // root for Pythagoras page
+    public String Pythagoras(){
+        return "/labs/Pythagorean";
+    }
 
 
 
