@@ -117,4 +117,10 @@ public class MainController {
 
         return "ap-practice/michael"; // use path to HTML file without .html OR it does not recognize model attributes!
     }
+
+    @GetMapping("/labs/hangman")
+    public String hangmanGame(@RequestParam (name="alphaSelection", required=false, defaultValue="4") String alphaSelection) {
+
+        return  "labs/hangman";
+    }
 }

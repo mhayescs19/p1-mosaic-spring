@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div th:replace="fragments/header :: header"></div>
+
+    <div>
+        <form action="#" method="GET" id="passwordForm">
+            <label for="passwordForm">Type a prefix to generate a password</label> <!-- for="passwordFor" might be the only necessary identifier Explanation of for in the label tag: https://www.w3schools.com/tags/tag_label.asp -->
+            <input name="prefix" id="passwordPrefixField" type="text"> <!-- Not sure how id="" is used -->
+            <label for="passwordForm">Select a length for a random set of numbers</label>
+            <input name="length" id="passwordNumField" type="num" min="1"> <!-- successfully rejects any string value and uses default length of 4 -->
+            <button>Generate</button>
+            <button name="alphaSelection" type="submit" value="A">A</button>
+            <button name="alphaSelection" type="submit" value="B">B</button>
+            <button name="alphaSelection" type="submit" value="C">C</button>
+            <button name="alphaSelection" type="submit" value="D">D</button>
+            <button name=alphaSelection" type="submit" value="E">E</button>
+            <button name="alphaSelection" type="submit" value="F">F</button>
+            <button name="alphaSelection" type="submit" value="G">G</button>
+            <button name="alphaSelection" type="submit" value="H">H</button>
+            <button name="alphaSelection" type="submit" value="I">I</button>
+            <button name=alphaSelection" type="submit" value="J">J</button>
+            <button name="alphaSelection" type="submit" value="K">K</button>
+            <button name="alphaSelection" type="submit" value="L">L</button>
+            <button name="alphaSelection" type="submit" value="M">M</button>
+            <button name="alphaSelection" type="submit" value="N">N</button>
+            <button name="alphaSelection" type="submit" value="O">O</button>
+            <button name="alphaSelection" type="submit" value="P">P</button>
+            <button name="alphaSelection" type="submit" value="Q">Q</button>
+            <button name="alphaSelection" type="submit" value="R">R</button>
+            <button name="alphaSelection" type="submit" value="S">S</button>
+            <button name="alphaSelection" type="submit" value="T">T</button>
+            <button name="alphaSelection" type="submit" value="U">U</button>
+            <button name="alphaSelection" type="submit" value="V">V</button>
+            <button name="alphaSelection" type="submit" value="W">W</button>
+            <button name="alphaSelection" type="submit" value="X">X</button>
+            <button name="alphaSelection" type="submit" value="Y">Y</button>
+            <button name="alphaSelection" type="submit" value="Z">Z</button>
+        </form>
+    </div>
+    <div class="phrase">
+        <p name="displayPhrase" th:text="displayPhrase"></p>
+    </div>
+</body>
+</html>

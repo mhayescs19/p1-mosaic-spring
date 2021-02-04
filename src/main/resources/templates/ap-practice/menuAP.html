@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/headfile.html :: head">
     <meta charset="UTF-8">
     <title>Title</title>
 
@@ -52,6 +52,7 @@
 
     </style>
 </head>
+    <div th:replace="fragments/header :: header"></div>
     <body>
         <li><a href="/ap-practice/andrew">Andrew</a> </li>
         <li><a href="/ap-practice/nakul">Nakul</a> </li>
