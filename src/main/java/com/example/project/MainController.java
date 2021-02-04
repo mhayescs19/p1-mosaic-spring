@@ -16,6 +16,7 @@ import java.util.HashMap;
 import AndrewFrq1.StringStruct;
 
 import com.example.project.ap.practice.PasswordGenerator;
+import com.example.project.ap.practice.Consecutive;
 
 @Controller
 public class MainController {
@@ -61,12 +62,25 @@ public class MainController {
 
 
     @GetMapping("/ap-practice/nakul") // root for Nakul page
-    public String apPracticeNakul(){
-        return "ap-practice/nakul.html";
+    public String apPracticeNakul(@RequestParam(name="str", required=false,  defaultValue="ccaaaaattt") String str, Model model){
+        Consecutive consecutive = new Consecutive();
+        consecutive.longestStreak(str);
+
+        model.addAttribute("consecutiveChar", consecutive.getCharacter());
+        model.addAttribute("consecutiveTotal", consecutive.getTotalConsecutive());
+
+        return "ap-practice/nakul";
     }
 
+    @GetMapping("/labs") // root for menuLabs page
+    public String Labs(){
+        return "/labs/menuLabs";
+    }
 
-
+    @GetMapping("/labs/Pythagorean") // root for Pythagoras page
+    public String Pythagoras(){
+        return "/labs/Pythagorean";
+    }
 
 
 
