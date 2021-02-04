@@ -29,6 +29,19 @@ public class MainController {
         model.addAttribute("StringStruct",new StringStruct());
         return "ap-practice/Andrew/andrew.html";
     }
+    @GetMapping("/frq1")
+    public String Display2(@ModelAttribute("StringStruct") StringStruct stringStruct , Model model)
+    {
+        System.out.println(stringStruct);
+        LightSequence lightSequence = new LightSequence(stringStruct.getField1());
+        model.addAttribute("Sequenceone", lightSequence.seq);
+        lightSequence.remove(lightSequence.seq, stringStruct.getField3());
+        lightSequence.printStraightline(stringStruct.anInt1, stringStruct.anInt2);
+        model.addAttribute("InsertedSegment", lightSequence.insertSegment(stringStruct.field2, stringStruct.anInt1));
+        model.addAttribute("removeSegment", lightSequence.newSeq);
+        model.addAttribute("mathReturn", lightSequence.thing);
+        return "ap-practice/Andrew/frq1.html";
+    }
 
    @PostMapping("/frq1")
    public String Display(@ModelAttribute("StringStruct") StringStruct stringStruct , Model model)
