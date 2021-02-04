@@ -1,6 +1,7 @@
 package com.example.project;
 
 import AndrewFrq1.LightSequence;
+import com.example.project.ap.practice.Invitation;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -72,7 +73,14 @@ public class MainController {
 
 
     @GetMapping("/ap-practice/sara") // root for Sara page
-    public String apPracticeSara(){
+    public String apPracticeSara(@RequestParam (name = "rsvp", required = true, defaultValue = "true") String rsvp, @RequestParam(name = "selection", required = false, defaultValue = "1") String prefix, Model model){
+
+        // Unit 3 FRQ, Question #1
+        Invitation invitation = new Invitation();
+
+        model.addAttribute("rsvp", invitation.getClass());
+        model.addAttribute("selection", invitation.getClass());
+
         return "ap-practice/sara.html";
     }
 
