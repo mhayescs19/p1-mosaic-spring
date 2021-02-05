@@ -116,12 +116,12 @@ public class MainController {
 
 
     @GetMapping("/labs/hangman")
-    public String hangmanGame(@RequestParam (name="alphaSelectionText", required=false, defaultValue="A") String alphaSelection, Model model) {
+    public String hangmanGame(@RequestParam (name="alphaSelection", required=false, defaultValue="A") String alphaSelection, Model model) {
 
 
-        control_java.checkLetter(Character.toLowerCase(alphaSelection.charAt(0)));
+        control_java.checkLetter(Character.toLowerCase(alphaSelection.charAt(0))); // gets char from button return, passed it in to the existing control
 
-        model.addAttribute("displayPhrase", control_java.getCurrentPhraseForDisplay());
+        model.addAttribute("displayPhrase", control_java.getCurrentPhraseForDisplay()); // updates current display phrase, is set in a simple <p> in html
 
         return "labs/hangman";
     }
