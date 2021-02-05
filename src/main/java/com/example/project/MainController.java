@@ -74,12 +74,12 @@ public class MainController {
 
     @GetMapping("/labs") // root for menuLabs page
     public String Labs(){
-        return "/labs/menuLabs";
+        return "labs/menuLabs";
     }
 
     @GetMapping("/labs/Pythagorean") // root for Pythagoras page
     public String Pythagoras(){
-        return "/labs/Pythagorean";
+        return "labs/Pythagorean";
     }
 
 
@@ -91,7 +91,7 @@ public class MainController {
 
         // Unit 3 FRQ, Question #1
         Invitation invitation = new Invitation();
-
+        // use invitation to get option1
         model.addAttribute("rsvp", invitation.getClass());
         model.addAttribute("selection", invitation.getClass());
 
