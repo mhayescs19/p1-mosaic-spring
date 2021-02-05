@@ -54,3 +54,9 @@ Created a backend that able to intercept an java object using @ModelAttribute to
 * [th:object](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/ap-practice/Andrew/andrew.html#L63) this takes in inputs and adds it to a java object.
 * [two subbmit opptions](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/ap-practice/Andrew/andrew.html#L69) this allows you subbmit with either a get mapping or a postmapping.
 * [DTO](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/java/AndrewFrq1/StringStruct.java) a java class with the sole job of storing data to transfer to another class.
+
+### 6. [Sara Display Unit 3 AP FRQ](https://github.com/mhayescs19/p1-mosaic-spring/issues/5) - [HTML PAGE](http://ec2-54-185-111-14.us-west-2.compute.amazonaws.com/ap-practice/sara)
+The Unit 3 AP FRQ #1 contained the directions for sending messages to an individual who is planning to attend a party. The code is meant to ask the user if they are attending the party by taking their answer in as a boolean, and if so, to enter what meal they would like to eat using integer values to represent specific items. The input is taken and the result is displayed (string/string concatenation) via an HTML page. Created by Sara Beniwal <br>
+**Contents** <br>
+* [@GetParam Spring Command](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/java/com/example/project/MainController.java#L90) and Thymeleaf Engine was used to receive information from [form](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/ap-practice/sara.html) with user information entered
+* [Thymeleaf Objects](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/ap-practice/sara.html#L3) used to assign and display data to HTML page
