@@ -1,4 +1,4 @@
-# p1-mosaic-spring
+# p1-mosaic-spring: [Spring Website](http://ec2-54-185-111-14.us-west-2.compute.amazonaws.com/)
 
 ## Project Contributors
 | Contributor | GitHub Link | Journal Link |
@@ -15,21 +15,55 @@
 <img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/runtime-main-java.png" height="auto" width="40%"> <img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/runtime-config.png" width="45%" height="auto">
 
 ## Project Idea
-
+Plan on making a synergy clone where teachers can view their students and give out grades and take roles. Would also have two differnt views one for students another for teachers. Will be using aws to host the website and associated databases. 
 ## ScrumBoard
 <a href="https://github.com/mhayescs19/p1-mosaic-spring/projects/1"><img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/board-entire-button.png" width="30%" height="auto"><a/> 
 
 ## 1/29  Weekly Project Contributions and Artifacts Log
 ### Week 7
 # [Tickets Video](https://drive.google.com/file/d/1hbOL0yeJWl4qi3kuO4QO8DL3UynJ-QnG/view?usp=sharing)
-### 1. [Set Up Spring Boot Barebones Via JetBrains Tutorial + Example Nav Bar Imported](https://github.com/mhayescs19/p1-mosaic-spring/issues/1)
+### 1. [Set Up Spring Boot Barebones Via JetBrains Tutorial + Example Nav Bar Imported](https://github.com/mhayescs19/p1-mosaic-spring/issues/1) - [HTML PAGE](http://ec2-54-185-111-14.us-west-2.compute.amazonaws.com/#)
 A basic menu was implemented. The main challenges was implementing the CSS styling. Temporary inline CSS styling was used to get the menu to function. Created by Michael Hayes <br>
 **Contents** <br>
 * Basic JetBrains tutorial + Mr. M example code with MainController.java was used to create a homepage with an [example menu](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/fragments/header.html) with [CSS styling](https://github.com/mhayescs19/p1-mosaic-spring/blob/a0dd3df31cad9d3179b6f75ad2dfc7cf3c6841e9/src/main/resources/templates/fragments/headfile.html#L14) (temporary inline CSS styling imported in headfile to header - Direct use of a .css file seems better).
 * A [hyperlink list](https://github.com/mhayescs19/p1-mosaic-spring/blob/a0dd3df31cad9d3179b6f75ad2dfc7cf3c6841e9/src/main/resources/templates/ap-practice/menuAP.html#L54) on a page that is liked via the menu also sends the user to 4 separate pages that host some FRQs
 
-### 2. [Michael Display Unit 5 AP FRQ](https://github.com/mhayescs19/p1-mosaic-spring/issues/4)
+### 2. [Michael Display Unit 5 AP FRQ](https://github.com/mhayescs19/p1-mosaic-spring/issues/4) - [HTML PAGE](http://ec2-54-185-111-14.us-west-2.compute.amazonaws.com/ap-practice/michael)
 The PasswordGenerator class is implemented onto an HTML page with the corresponding inputs for a prefix and length of randomized string of characters to generate a unique password. Additionally the all of the generated passwords are also displayed via a table below the "interactable" area of the page. No CSS styling has been implemented yet. Created by Michael Hayes <br>
 **Contents** <br>
 * Similar [@GetParam decorators used](https://github.com/mhayescs19/p1-mosaic-spring/blob/a0dd3df31cad9d3179b6f75ad2dfc7cf3c6841e9/src/main/java/com/example/project/MainController.java#L65) for two separate variables in apPracticeMichael method in MainController.java
 * Merged pali lab and table COVID19 api call HTML examples: used [two input fields in a single form](https://github.com/mhayescs19/p1-mosaic-spring/blob/a0dd3df31cad9d3179b6f75ad2dfc7cf3c6841e9/src/main/resources/templates/ap-practice/michael.html#L10) and [one table](https://github.com/mhayescs19/p1-mosaic-spring/blob/a0dd3df31cad9d3179b6f75ad2dfc7cf3c6841e9/src/main/resources/templates/ap-practice/michael.html#L19) (* see comments in michael.html as I shared my learning and remaining confusions about the HTML tags used)
+
+### 3. [Nakul Display Unit 4 AP FRQ](https://github.com/mhayescs19/p1-mosaic-spring/issues/2) - [HTML PAGE](http://ec2-54-185-111-14.us-west-2.compute.amazonaws.com/ap-practice/nakul)
+The Unit 4 AP FRQ contained the directions for writing a class called Consecutive. There was only one part and that was to make a program in this class that takes a string, evaluates the number of times a character appears consecutively for each character in the string, and returns the character that appears the most consecutively and how many times it appeared. The input is taken and the result is displayed via an HTML page and CSS Styling was applied to make the page unique. Created by Nakul Nandhakumar <br>
+**Contents** <br>
+* [@GetParam Spring Command](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/java/com/example/project/MainController.java#L65) and Thymeleaf Engine was used to receive information from [form](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/ap-practice/nakul.html#L20) with user information entered
+* [CSS Styling File](https://github.com/mhayescs19/p1-mosaic-spring/issues/2) with text formatting, colors, etc. added for HTML page's paragrpahs, headers, div blocks, etc.
+* [Thymeleaf Objects](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/ap-practice/nakul.html#L30) used to assign and display data to HTML page
+
+### 4. [Nakul Javascript Pythagorean Lab](https://github.com/mhayescs19/p1-mosaic-spring/issues/2) - [HTML PAGE](http://ec2-54-185-111-14.us-west-2.compute.amazonaws.com/labs/Pythagorean)
+Created a simple page that uses user input for the legs of a right triangle and uses the pythagorean theoream to calculate the hypotenuse of the right triangle. No CSS Styling for this page yet. Created by Nakul Nandhakumar <br>
+**Contents** <br>
+* [Pythagoras](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/labs/Pythagorean.html#L23) HTML file for Pythagoreas
+* [Embedded Javascript](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/labs/Pythagorean.html#L23) using script tag that takes user input from [form](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/labs/Pythagorean.html#L23) for "a" and "b" values of right-triangle.
+* [@GetMapping](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/java/com/example/project/MainController.java#L75) to create root for menuLab and Pythagoras root page and added [LABS](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/fragments/header.html#L11) tab in header file to have the tab appear on the navigation bar.
+
+### 5. [Andrew Frq1 web implementation](https://github.com/mhayescs19/p1-mosaic-spring/issues/3) - [WebPage](http://ec2-54-185-111-14.us-west-2.compute.amazonaws.com/ap-practice/andrew)
+Created a backend that able to intercept an java object using @ModelAttribute to capture the http request, with the given http request I then create the object needed to the frq1 prombelm. I then take the returns from the frq1 class and then use theymleaf to pass it back to the html page. I also used to differnt submit oppitons one one form.
+**Content**<br>
+* [th:object](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/ap-practice/Andrew/andrew.html#L63) this takes in inputs and adds it to a java object.
+* [two subbmit opptions](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/ap-practice/Andrew/andrew.html#L69) this allows you subbmit with either a get mapping or a postmapping.
+* [DTO](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/java/AndrewFrq1/StringStruct.java) a java class with the sole job of storing data to transfer to another class.
+
+### 6. [Sara Display Unit 3 AP FRQ](https://github.com/mhayescs19/p1-mosaic-spring/issues/5) - [HTML PAGE](http://ec2-54-185-111-14.us-west-2.compute.amazonaws.com/ap-practice/sara)
+The Unit 3 AP FRQ #1 contained the directions for sending messages to an individual who is planning to attend a party. The code is meant to ask the user if they are attending the party by taking their answer in as a boolean, and if so, to enter what meal they would like to eat using integer values to represent specific items. The input is taken and the result is displayed (string/string concatenation) via an HTML page. Created by Sara Beniwal <br>
+**Contents** <br>
+* [@GetParam Spring Command](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/java/com/example/project/MainController.java#L90) and Thymeleaf Engine was used to receive information from [form](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/ap-practice/sara.html) with user information entered
+* [Thymeleaf Objects](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/ap-practice/sara.html#L3) used to assign and display data to HTML page
+
+### 7. [Michael Implement Hangman Java Backend From Previous Project](https://github.com/mhayescs19/p1-mosaic-spring/issues/7)
+Attemped to port in the Model and Control code from a a trimester 1 swing based project. Two interfaces were attempted: First a restricted input text field to retrieve a character and second a-z buttons which the user can interact.
+**Contents**
+* Button presses return a value to the backend, control code manages letter check
+* Second piece in java control hosts the remaining guesses, uses getter to pull information
+* Control_java is a global scope in order to keep the phrase for multiple guesses
