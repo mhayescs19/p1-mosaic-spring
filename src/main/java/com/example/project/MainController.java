@@ -2,17 +2,11 @@ package com.example.project;
 
 import AndrewFrq1.LightSequence;
 import com.example.project.ap.practice.Invitation;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.example.project.mini.games.Hangman;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
-import java.util.HashMap;
 import AndrewFrq1.StringStruct;
 
 import com.example.project.ap.practice.PasswordGenerator;
@@ -20,6 +14,8 @@ import com.example.project.ap.practice.Consecutive;
 
 @Controller
 public class MainController {
+
+    Hangman control_java = new Hangman();
 
     @GetMapping("/ap-practice")
     public String apPractice() {
@@ -116,5 +112,18 @@ public class MainController {
         model.addAttribute("passwordGenerated", newPassword.pwGen());
 
         return "ap-practice/michael"; // use path to HTML file without .html OR it does not recognize model attributes!
+    }
+
+
+    @GetMapping("/labs/hangman")
+    public String hangmanGame(@RequestParam (name="alphaSelection", required=false, defaultValue="A") String alphaSelection, Model model) {
+
+
+        control_java.checkLetter(Character.toLowerCase(alphaSelection.charAt(0))); // gets char from button return, passed it in to the existing control
+
+        model.addAttribute("displayPhrase", control_java.getCurrentPhraseForDisplay()); // updates current display phrase, is set in a simple <p> in html
+        model.addAttribute("guessesRemaining", control_java.getRemainingGuesses()); // displays guesses remaining
+
+        return "labs/hangman";
     }
 }
