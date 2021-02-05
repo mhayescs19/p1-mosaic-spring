@@ -74,7 +74,7 @@ public class MainController {
 
     @GetMapping("/labs") // root for menuLabs page
     public String Labs(){
-        return "/labs/menuLabs";
+        return "labs/menuLabs";
     }
 
     @GetMapping("/labs/Pythagorean") // root for Pythagoras page
