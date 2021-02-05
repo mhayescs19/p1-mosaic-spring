@@ -79,7 +79,7 @@ public class MainController {
 
     @GetMapping("/labs/Pythagorean") // root for Pythagoras page
     public String Pythagoras(){
-        return "/labs/Pythagorean";
+        return "labs/Pythagorean";
     }
 
 
