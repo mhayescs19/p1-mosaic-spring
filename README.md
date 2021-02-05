@@ -8,6 +8,9 @@
 | Andrew Pegg | [@andrewcomputsci2019](https://github.com/andrewcomputsci2019) | [Pegg, Nandhakumar](https://docs.google.com/document/d/13jZuundZrvb5XTzzLQkuICyFDAwaFdN6_um2oTZFZNU/edit?usp=sharing)
 | Michael Hayes | [@mhayescs19](https://github.com/mhayescs19) | [Beniwal, Hayes](https://docs.google.com/document/d/1GPklRpwd5uyFdQljSgF4cZS6Uk6-eDf4EA25CQx3Ngc/edit?usp=sharing)
 
+## Website Domain Name
+[P1-Mosaic Spring Website](http://ec2-54-185-111-14.us-west-2.compute.amazonaws.com/)
+
 ## Runtime Guidance For Entire Project
 1. Clone the project repository.
 2. Open the src directory, open the Main directory, open the Java directory, open the com.example.project package and open the Main.java file.
