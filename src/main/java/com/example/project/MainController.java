@@ -2,17 +2,11 @@ package com.example.project;
 
 import AndrewFrq1.LightSequence;
 import com.example.project.ap.practice.Invitation;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.example.project.mini.games.Hangman;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
-import java.util.HashMap;
 import AndrewFrq1.StringStruct;
 
 import com.example.project.ap.practice.PasswordGenerator;
@@ -118,9 +112,16 @@ public class MainController {
         return "ap-practice/michael"; // use path to HTML file without .html OR it does not recognize model attributes!
     }
 
-    @GetMapping("/labs/hangman")
-    public String hangmanGame(@RequestParam (name="alphaSelection", required=false, defaultValue="4") String alphaSelection) {
 
-        return  "labs/hangman";
+    @GetMapping("/labs/hangman")
+    public String hangmanGame(@RequestParam (name="alphaSelectionText", required=false, defaultValue="A") String alphaSelection, Model model) {
+
+        Hangman control_java = new Hangman();
+
+        control_java.checkLetter(Character.toLowerCase(alphaSelection.charAt(0)));
+
+        model.addAttribute("displayPhrase", control_java.getCurrentPhraseForDisplay());
+
+        return "labs/hangman";
     }
 }
