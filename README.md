@@ -62,7 +62,7 @@ The Unit 3 AP FRQ #1 contained the directions for sending messages to an individ
 * [Thymeleaf Objects](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/ap-practice/sara.html#L3) used to assign and display data to HTML page
 
 ### 7 [Implement Hangman Java Backend From Previous Project](https://github.com/mhayescs19/p1-mosaic-spring/issues/7)
-Ported Hangman Model and Control code from a trimester 1 swing based project. Two interfaces were attempted: First a restricted input text field to retrieve a character and second a-z buttons which the user can interact. The latter button clicks were chosen for the final user interaction. Created by Michael Hayes
+Ported Hangman Model and Control code from a trimester 1 swing based project. Two interfaces were attempted: First a restricted input text field to retrieve a character and second a-z buttons which the user can interact. The latter button clicks were chosen for the final user interaction. Created by Michael Hayes <br>
 **Contents**
 * Button presses return a value to the backend, control code manages letter check
 * Java [control object](https://github.com/mhayescs19/p1-mosaic-spring/blob/2243945656fe4b91692345692625775b404a80cb/src/main/java/com/example/project/MainController.java#L124) manages checking the letter and displaying the phrase. This object also hosts many other attributes, including a connection to model which is used for phrase
