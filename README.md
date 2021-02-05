@@ -47,3 +47,10 @@ Created a simple page that uses user input for the legs of a right triangle and 
 * [Pythagoras](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/labs/Pythagorean.html#L23) HTML file for Pythagoreas
 * [Embedded Javascript](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/labs/Pythagorean.html#L23) using script tag that takes user input from [form](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/labs/Pythagorean.html#L23) for "a" and "b" values of right-triangle.
 * [@GetMapping](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/java/com/example/project/MainController.java#L75) to create root for menuLab and Pythagoras root page and added [LABS](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/fragments/header.html#L11) tab in header file to have the tab appear on the navigation bar.
+
+### 5. [Andrew Frq1 web implementation](https://github.com/mhayescs19/p1-mosaic-spring/issues/3) - [WebPage](http://ec2-54-185-111-14.us-west-2.compute.amazonaws.com/ap-practice/andrew)
+Created a backend that able to intercept an java object using @ModelAttribute to capture the http request, with the given http request I then create the object needed to the frq1 prombelm. I then take the returns from the frq1 class and then use theymleaf to pass it back to the html page. I also used to differnt submit oppitons one one form.
+**Content**<br>
+* [th:object](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/ap-practice/Andrew/andrew.html#L63) this takes in inputs and adds it to a java object.
+* [two subbmit opptions](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/ap-practice/Andrew/andrew.html#L69) this allows you subbmit with either a get mapping or a postmapping.
+* [DTO](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/java/AndrewFrq1/StringStruct.java) a java class with the sole job of storing data to transfer to another class.
