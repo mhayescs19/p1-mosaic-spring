@@ -83,7 +83,8 @@
         </form>
 </div>
 <div class="phrase">
-    <p name="displayPhrase" th:text="${displayPhrase}"></p>
+    <p name="displayPhrase" th:text="${displayPhrase}"></p> <!-- displayed phrase -->
+    <p name="remainingGuesses" th:text="${guessesRemaining}"></p> <!-- guesses remaining -->
 </div>
 <script>
     /*function disable() {

@@ -58,6 +58,7 @@ public class Hangman {
 
     public boolean getGameOver() { return this.gameOver; } // returns boolean either that the game is continuing or it is over
 
+    public int getRemainingGuesses() { return this.guessesRemaining; }
     //public void activateConsole() { this.console = new HangmanConsole(this); } // "connects" control to HangmanConsole through callbacks
 
     /**
