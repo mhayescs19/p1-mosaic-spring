@@ -21,7 +21,7 @@ Plan on making a synergy clone where teachers can view their students and give o
 
 ## 1/29  Weekly Project Contributions and Artifacts Log
 ### Week 7
-# [Tickets Video](https://drive.google.com/file/d/1hbOL0yeJWl4qi3kuO4QO8DL3UynJ-QnG/view?usp=sharing)
+//# [Tickets Video](https://drive.google.com/file/d/1hbOL0yeJWl4qi3kuO4QO8DL3UynJ-QnG/view?usp=sharing)
 ### 1. [Set Up Spring Boot Barebones Via JetBrains Tutorial + Example Nav Bar Imported](https://github.com/mhayescs19/p1-mosaic-spring/issues/1) - [HTML PAGE](http://ec2-54-185-111-14.us-west-2.compute.amazonaws.com/#)
 A basic menu was implemented. The main challenges was implementing the CSS styling. Temporary inline CSS styling was used to get the menu to function. Created by Michael Hayes <br>
 **Contents** <br>
