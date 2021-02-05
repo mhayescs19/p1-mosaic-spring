@@ -15,6 +15,8 @@ import com.example.project.ap.practice.Consecutive;
 @Controller
 public class MainController {
 
+    Hangman control_java = new Hangman();
+
     @GetMapping("/ap-practice")
     public String apPractice() {
         return "ap-practice/menuAP.html";
@@ -116,7 +118,6 @@ public class MainController {
     @GetMapping("/labs/hangman")
     public String hangmanGame(@RequestParam (name="alphaSelectionText", required=false, defaultValue="A") String alphaSelection, Model model) {
 
-        Hangman control_java = new Hangman();
 
         control_java.checkLetter(Character.toLowerCase(alphaSelection.charAt(0)));
 

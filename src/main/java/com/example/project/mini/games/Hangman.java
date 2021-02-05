@@ -48,7 +48,7 @@ public class Hangman {
         this.gameOver = false;
     }
 
-    public String getCurrentPhraseForDisplay() { return PrintyShortcuts.charToString(this.model.getPhraseWithBlanks()); }
+    public String getCurrentPhraseForDisplay() { return new String(this.model.getPhraseWithBlanks()); }
 
     public boolean getPhraseState() { return model.getPhraseUpdated(); } // returns display ready phrase updated based on previous guess
 

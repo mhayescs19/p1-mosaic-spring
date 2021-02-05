@@ -23,7 +23,7 @@ public class Phrase {
     }
 
     public void createPhrase(String phrase) { // pulls random phrase from master array into a char array
-        currentPhrase = phrase.toCharArray();
+        this.currentPhrase = phrase.toCharArray();
         PrintyShortcuts.println(PrintyShortcuts.charToString(currentPhrase));
     }
 
