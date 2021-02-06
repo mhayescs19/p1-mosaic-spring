@@ -19,9 +19,9 @@ Plan on making a synergy clone where teachers can view their students and give o
 ## ScrumBoard
 <a href="https://github.com/mhayescs19/p1-mosaic-spring/projects/1"><img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/board-entire-button.png" width="30%" height="auto"><a/> 
 
-## 1/29  Weekly Project Contributions and Artifacts Log
-### Week 7
-# [Tickets Video](https://drive.google.com/file/d/1hbOL0yeJWl4qi3kuO4QO8DL3UynJ-QnG/view?usp=sharing)
+## 2/05  Weekly Project Contributions and Artifacts Log
+### Week 8
+<!-- # [Tickets Video](https://drive.google.com/file/d/1hbOL0yeJWl4qi3kuO4QO8DL3UynJ-QnG/view?usp=sharing) -->
 ### 1. [Set Up Spring Boot Barebones Via JetBrains Tutorial + Example Nav Bar Imported](https://github.com/mhayescs19/p1-mosaic-spring/issues/1) - [HTML PAGE](http://ec2-54-185-111-14.us-west-2.compute.amazonaws.com/#)
 A basic menu was implemented. The main challenges was implementing the CSS styling. Temporary inline CSS styling was used to get the menu to function. Created by Michael Hayes <br>
 **Contents** <br>
@@ -61,9 +61,10 @@ The Unit 3 AP FRQ #1 contained the directions for sending messages to an individ
 * [@GetParam Spring Command](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/java/com/example/project/MainController.java#L90) and Thymeleaf Engine was used to receive information from [form](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/ap-practice/sara.html) with user information entered
 * [Thymeleaf Objects](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/ap-practice/sara.html#L3) used to assign and display data to HTML page
 
-### 7. [Michael Implement Hangman Java Backend From Previous Project](https://github.com/mhayescs19/p1-mosaic-spring/issues/7)
-Attemped to port in the Model and Control code from a a trimester 1 swing based project. Two interfaces were attempted: First a restricted input text field to retrieve a character and second a-z buttons which the user can interact.
+### 7. [Implement Hangman Java Backend From Previous Project](https://github.com/mhayescs19/p1-mosaic-spring/issues/7)
+Ported Hangman Model and Control code from a trimester 1 swing based project. Two interfaces were attempted: First a restricted input text field to retrieve a character and second a-z buttons which the user can interact. The latter button clicks were chosen for the final user interaction. Created by Michael Hayes <br>
 **Contents**
 * Button presses return a value to the backend, control code manages letter check
-* Second piece in java control hosts the remaining guesses, uses getter to pull information
-* Control_java is a global scope in order to keep the phrase for multiple guesses
+* Java [control object](https://github.com/mhayescs19/p1-mosaic-spring/blob/2243945656fe4b91692345692625775b404a80cb/src/main/java/com/example/project/MainController.java#L124) manages checking the letter and displaying the phrase. This object also hosts many other attributes, including a connection to model which is used for phrase
+* Control_java is a [global scope](https://github.com/mhayescs19/p1-mosaic-spring/blob/2243945656fe4b91692345692625775b404a80cb/src/main/java/com/example/project/MainController.java#L18) in order to keep the phrase for multiple guesses since the @GetMapping is a function and local scope applies
+* Investigating button returns led to a possible solution using JS but normal [HTML attributes](https://github.com/mhayescs19/p1-mosaic-spring/blob/2243945656fe4b91692345692625775b404a80cb/src/main/resources/templates/labs/hangman.html#L56) were used to return correct letter using value="" incapsulating it in a <form>
