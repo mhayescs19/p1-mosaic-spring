@@ -99,6 +99,13 @@ public class MainController {
     }
 
 
+    @GetMapping("/labs/Tip")
+    public String Tips()
+    {
+        return "labs/tipCalc";
+    }
+
+
 
 
 
