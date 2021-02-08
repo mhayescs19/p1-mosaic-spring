@@ -15,7 +15,7 @@
 <img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/runtime-main-java.png" height="auto" width="40%"> <img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/runtime-config.png" width="45%" height="auto">
 
 ## Project Idea
-Plan on making a synergy clone where teachers can view their students and give out grades and take roles. Would also have two differnt views one for students another for teachers. Will be using aws to host the website and associated databases. 
+Plan on making a synergy clone where teachers can view their students and give out grades and take roll call. Would also have two differnt views one for students another for teachers. Will be using aws to host the website and associated databases. 
 ## ScrumBoard
 <a href="https://github.com/mhayescs19/p1-mosaic-spring/projects/1"><img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/board-entire-button.png" width="30%" height="auto"><a/> 
 
