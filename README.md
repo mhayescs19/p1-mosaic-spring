@@ -29,6 +29,22 @@ We  plan on making a synergy clone where teachers can view their students and gi
 - Name, Principal, Address, Website <br> <br>
 **Calendar:**
 - Students can view upcoming assignments due on their calendar <br> <br>
+
+**Teacher View**
+- Log-in system (Teacher username, password)
+- Teacher modifies assignments and grades <br> <br>
+**Gradebook (Teacher):**
+- Create assignment categories with assignment weights
+- Create assignment name and Input assignment points
+- Backend code/JS to calculate percentage/letter grade and GPA
+- Delete function for mistake and error correction <br> <br>
+**Class Roster:**
+- See students in their class (entire roster) with name, grade, ID, and high school year
+- Table with: Date, Assignment, Score, Score Type, Points, Notes
+- Filter with search function for students and grades <br> <br>
+**Calendar:**
+- Assignments added by teacher shows up on calendar for student in class <br> <br>
+
   
 ## Runtime Guidance For Entire Project
 1. Clone the project repository.
