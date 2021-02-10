@@ -8,16 +8,33 @@
 | Andrew Pegg | [@andrewcomputsci2019](https://github.com/andrewcomputsci2019) | [Pegg, Nandhakumar](https://docs.google.com/document/d/13jZuundZrvb5XTzzLQkuICyFDAwaFdN6_um2oTZFZNU/edit?usp=sharing)
 | Michael Hayes | [@mhayescs19](https://github.com/mhayescs19) | [Beniwal, Hayes](https://docs.google.com/document/d/1GPklRpwd5uyFdQljSgF4cZS6Uk6-eDf4EA25CQx3Ngc/edit?usp=sharing)
 
+## ScrumBoard
+<a href="https://github.com/mhayescs19/p1-mosaic-spring/projects/1"><img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/board-entire-button.png" width="30%" height="auto"><a/> 
+
+## Project Idea
+We  plan on making a synergy clone where teachers can view their students and give out grades and take roll call. Would also have two differnt views one for students another for teachers. Will be using AWS to host the website and associated databases. 
+
+## Project Plan
+**Student View**
+- Log-in system (StudentID, password)
+- Side bar to access their own personal grades <br> <br>
+**Gradebook:**
+- Overview of all classes grades
+- Click each class to view the individual grade of the class
+- Table with: Date, Assignment, Score, Score Type, Points, Notes <br> <br>
+**Student Info:**
+- Name, grade, ID number, counselor name, GPA (specifically at a given instance)
+- Static schedule <br> <br>
+**School Information:**
+- Name, Principal, Address, Website <br> <br>
+**Calendar:**
+- Students can view upcoming assignments due on their calendar <br> <br>
+  
 ## Runtime Guidance For Entire Project
 1. Clone the project repository.
 2. Open the src directory, open the Main directory, open the Java directory, open the com.example.project package and open the Main.java file.
 3. Run from Main.java (inside of the "Main" package) OR set up configuration to Main.
 <img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/runtime-main-java.png" height="auto" width="40%"> <img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/runtime-config.png" width="45%" height="auto">
-
-## Project Idea
-Plan on making a synergy clone where teachers can view their students and give out grades and take roll call. Would also have two differnt views one for students another for teachers. Will be using aws to host the website and associated databases. 
-## ScrumBoard
-<a href="https://github.com/mhayescs19/p1-mosaic-spring/projects/1"><img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/board-entire-button.png" width="30%" height="auto"><a/> 
 
 ## 2/05  Weekly Project Contributions and Artifacts Log
 ### Week 8
