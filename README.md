@@ -13,9 +13,8 @@ Due to the AWS limit on maximum hours that the website can be run on its servers
 <a href="https://github.com/mhayescs19/p1-mosaic-spring/projects/1"><img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/board-entire-button.png" width="30%" height="auto"><a/> 
 
 ## Project Idea
-We  plan on making a synergy clone where teachers can view their students and give out grades and take roll call. Would also have two differnt views one for students another for teachers. Will be using AWS to host the website and associated databases. 
+We  plan on making a synergy clone where teachers can view their students and give out grades and take roll call. Would also have two differnt views one for students another for teachers. Will be using AWS to host the website and associated databases. <br><br>
 
-## Project Plan
 **Student View**
 - Log-in system (StudentID, password)
 - Side bar to access their own personal grades <br> <br>
@@ -46,6 +45,10 @@ We  plan on making a synergy clone where teachers can view their students and gi
 **Calendar:**
 - Assignments added by teacher shows up on calendar for student in class <br> <br>
 
+## Project Plan (Rough)
+**Week of 02/19:** Front End/CSS Styling/ Main Student-Teacher Vierw Page Setup
+**Week of 02/26:** BackEnd Java Code/Javascript and Connect to Database
+**Week of 03/05:** Debugg/Add Other Features if Time Allows
   
 ## Runtime Guidance For Entire Project
 1. Clone the project repository.
