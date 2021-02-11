@@ -46,9 +46,9 @@ We  plan on making a synergy clone where teachers can view their students and gi
 - Assignments added by teacher shows up on calendar for student in class <br> <br>
 
 ## Project Plan (Rough)
-**Week of 02/19:** Front End/CSS Styling/ Main Student-Teacher Vierw Page Setup
-**Week of 02/26:** BackEnd Java Code/Javascript and Connect to Database
-**Week of 03/05:** Debugg/Add Other Features if Time Allows
+**Week of 02/19:** Front End/CSS Styling/ Main Student-Teacher Vierw Page Setup <br> 
+**Week of 02/26:** BackEnd Java Code/Javascript and Connect to Database <br> 
+**Week of 03/05:** Debugg/Add Other Features if Time Allows <br>
   
 ## Runtime Guidance For Entire Project
 1. Clone the project repository.
