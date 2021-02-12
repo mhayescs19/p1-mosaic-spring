@@ -1,5 +1,5 @@
 # p1-mosaic-spring: [Spring Website](http://ec2-44-239-226-169.us-west-2.compute.amazonaws.com/)
-Due to the AWS limit on maximum hours that the website can be run on its servers for its free tier version, we have implemented a schedule that **shuts down the website every night from 6:00pm to 8:00am**. Sorry for your inconvenience and thank you for your patience.
+Due to the AWS limit on maximum hours that the website can be run on its servers for its free tier version, we have implemented a schedule that **shuts down the website every night from 8:00pm to 8:00am on days mon-thu, but on fri-sun the server shuts down from 10:00pm to 8:00am**. Sorry for your inconvenience and thank you for your patience.
 
 ## Project Contributors
 | Contributor | GitHub Link | Journal Link |
