@@ -133,4 +133,9 @@ public class MainController {
 
         return "labs/hangman";
     }
+
+    @GetMapping("/synergy") // root for synergy page
+    public String Synergy() {
+        return "synergy/loginView";
+    }
 }
