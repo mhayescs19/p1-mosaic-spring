@@ -5,12 +5,17 @@ import com.example.project.ap.practice.Invitation;
 import com.example.project.mini.games.Hangman;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import AndrewFrq1.StringStruct;
 
 import com.example.project.ap.practice.PasswordGenerator;
 import com.example.project.ap.practice.Consecutive;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import synergy.Synergy;
+
+import javax.validation.Valid;
 
 @Controller
 public class MainController {
@@ -132,5 +137,27 @@ public class MainController {
         model.addAttribute("guessesRemaining", control_java.getRemainingGuesses()); // displays guesses remaining
 
         return "labs/hangman";
+    }
+
+
+
+    @GetMapping("/synergy")
+    public String Synergy() {
+        return "synergy/loginView";
+    }
+
+    @GetMapping("/teacherView")
+    public String showForm(Synergy synergy) {
+        return "synergy/teacherView";
+    }
+
+    @PostMapping("/teacherView")
+    public String teacherView(@Valid Synergy synergy, BindingResult bindingResult, Model model) {
+        if (bindingResult.hasErrors()) {
+            return "synergy/teacherView";
+        }
+        model.addAttribute("student", synergy.getName()+synergy.getAge()+synergy.getGrade()
+        +synergy.getYear());
+        return "synergy/teacherView";
     }
 }
