@@ -12,7 +12,6 @@ import javax.validation.constraints.Size;
 @Setter
 @Getter
 public class Synergy {
-    public Synergy synergy;
 
     static public String nameKy = "Name";
     static public String yearKy = "Year";
