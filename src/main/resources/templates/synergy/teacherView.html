@@ -1,41 +1,133 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Teacher View</title>
+    <link rel="stylesheet" href="/css/student-info.css">
+    <style>
+        input[type=text], select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button[type=submit] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        .form {
+            position: relative;
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+            left: 200px;
+            top: 50px;
+            float: left;
+        }
+    </style>
 </head>
+
 <body>
+<div class="sideBarImport" th:replace="fragments/synergySideBar"></div>
+
+<div class="form">
 <form action="#" th:action="@{/teacherView}" th:object="${synergy}" method="post">
     <table>
         <tr>
-            <td colspan="2" class="divider"><hr /><h2>Student Info</h2></td>
-        </tr>
-        <tr>
-            <td>Name:</td>
-            <td><input type="text" th:field="*{name}" /></td>
+            <td><label for="name">Name:</label></td>
+            <td><input type="text" id="name" name="name" placeholder="Student name.." th:field="*{name}" /></td>
             <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</td>
         </tr>
+
         <tr>
-            <td>Age:</td>
-            <td><input type="text" th:field="*{age}" /></td>
+            <td><label for="age">Age:</label></td>
+            <td><input type="text" id="age" name="age" placeholder="Student age.." th:field="*{age}" /></td>
             <td th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Age Error</td>
         </tr>
+
         <tr>
-            <td>Year:</td>
-            <td><input type="text" th:field="*{year}" placeholder="Ex: Freshman" /></td>
+            <td><label for="year">Year:</label></td>
+            <td><input type="text" id="year" name="year" placeholder="Ex: Freshman" th:field="*{year}" /></td>
             <td th:if="${#fields.hasErrors('year')}" th:errors="*{year}">Year Error</td>
         </tr>
+
         <tr>
-            <td>Grade:</td>
-            <td><input type="text" th:field="*{grade}" placeholder="Ex: A+ or A" /></td>
+            <td><label for="grade">Grade:</label></td>
+            <td><input type="text" id="grade" name="grade" th:field="*{grade}" placeholder="Ex: A+ or A" /></td>
             <td th:if="${#fields.hasErrors('grade')}" th:errors="*{grade}">Grade Error</td>
         </tr>
 
         <tr>
-            <td><button type="submit">Submit</button></td>
+        <td><button type="submit">Submit</button></td>
         </tr>
+
     </table>
 </form>
-<p th:text="${student}"></p>
+</div>
+
+
+
+<div class="container">
+
+    <div class="studentInfo">
+        <h2>Student Info</h2>
+        <div class="table">
+            <div class="wrapper">
+                <div class="box">
+                    <div class="content">
+                        <h3>Student Name</h3>
+                        <p th:text="${studentname}"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wrapper">
+                <div class="box">
+                    <div class="content">
+                        <h3>Age</h3>
+                        <p th:text="${studentage}"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wrapper">
+                <div class="box">
+                    <div class="content">
+                        <h3>Year</h3>
+                        <p th:text="${studentyear}"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wrapper">
+                <div class="box">
+                    <div class="content">
+                        <h3>Grade</h3>
+                        <p th:text="${studentgrade}"></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
 </body>
 </html>
