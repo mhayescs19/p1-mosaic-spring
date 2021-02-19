@@ -156,8 +156,10 @@ public class MainController {
         if (bindingResult.hasErrors()) {
             return "synergy/teacherView";
         }
-        model.addAttribute("student", synergy.getName()+synergy.getAge()+synergy.getGrade()
-        +synergy.getYear());
+        model.addAttribute("studentname", synergy.getName());
+        model.addAttribute("studentage", synergy.getAge());
+        model.addAttribute("studentyear", synergy.getYear());
+        model.addAttribute("studentgrade", synergy.getGrade());
         return "synergy/teacherView";
     }
 
