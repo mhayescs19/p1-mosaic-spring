@@ -58,8 +58,16 @@ We  plan on making a synergy clone where teachers can view their students and gi
 
 ## 2/18  Weekly Project Contributions and Artifacts Log
 ### Week 10
-### 1.
-
+### 1. [Student Contact Info Front End](https://github.com/mhayescs19/p1-mosaic-spring/issues/11)
+Adaptation of a nav bar menu was combined with a custom table created using nested divs and CSS styling to create boxes for a table. Created by Michael Hayes <br>
+**Contents**
+* Div class [studentInfo](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/static/css/student-info.css#L23) used to shift the header and table in the main content area to the right in order to fit the vertical nav bar to the left
+* Nested divs used with the repeating div classes [wrapper](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/synergy/studentInfo.html#L20) and box in order to style each box the [same](https://github.com/mhayescs19/p1-mosaic-spring/blob/313d3439f6662f07ffb090a2e5b9e45bd257d1c7/src/main/resources/static/css/student-info.css#L41)
+* [float: left](https://github.com/mhayescs19/p1-mosaic-spring/blob/313d3439f6662f07ffb090a2e5b9e45bd257d1c7/src/main/resources/static/css/student-info.css#L43) aligns all of the boxes to the left and prevents a margin appearing in between each box (other styling like display: inline-block caused the whitespace and prevented the boxes from lookin like a table) <br>
+**Runtime Guidance**
+1. Click "Synergy" on main navigation bar
+2. Click "Student View"
+3. Select "Student Info" in second navigation bar to view table
 ### 2.
 
 ### 3.
