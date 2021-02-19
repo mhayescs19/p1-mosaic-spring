@@ -68,7 +68,8 @@ Adaptation of a nav bar menu was combined with a custom table created using nest
 1. Click "Synergy" on main navigation bar
 2. Click "Student View"
 3. Select "Student Info" in second navigation bar to view table
-### 2.
+### 2. [Teacher View Front End](https://github.com/mhayescs19/p1-mosaic-spring/issues/12) & [Teacher View CSS Styling](https://github.com/mhayescs19/p1-mosaic-spring/issues/14)
+Created form for teachers to enter student information and grade in their class for a class roster. Uses Michael's NavBar code and CSS Styling for background page styling and formatting for displaying students. Created by Nakul Nandhakumar. 
 
 ### 3.
 
