@@ -68,8 +68,17 @@ Adaptation of a nav bar menu was combined with a custom table created using nest
 1. Click "Synergy" on main navigation bar
 2. Click "Student View"
 3. Select "Student Info" in second navigation bar to view table
+
 ### 2. [Teacher View Front End](https://github.com/mhayescs19/p1-mosaic-spring/issues/12) & [Teacher View CSS Styling](https://github.com/mhayescs19/p1-mosaic-spring/issues/14)
-Created form for teachers to enter student information and grade in their class for a class roster. Uses Michael's NavBar code and CSS Styling for background page styling and formatting for displaying students. Created by Nakul Nandhakumar. 
+Created form for teachers to enter student information and grade in their class for a class roster. Uses Michael's NavBar code and CSS Styling for background page styling and formatting for displaying students. Created by Nakul Nandhakumar. <br>
+**Contents**
+* Created [Synergy Java Class File](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/synergy/teacherView.html#L53) with [Decorators](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/java/synergy/Synergy.java#L22-L36) from Mr. M's code for error checking and validation of attributes in form
+* [Form](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/synergy/teacherView.html#L49) using passed in [Thymleaf Objects](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/synergy/teacherView.html#L53) from Synergy Java Class File for validation, error message printing, and displaying entered form information
+* [CSS Styling for Form](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/synergy/teacherView.html#L7) using [div classes](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/synergy/teacherView.html#L33) and hover for the submit button <br>
+**Runtime Guidance**
+1. Click on Synergy on main navigation bar
+2. Click Teacher View
+3. Fill out form
 
 ### 3.
 
