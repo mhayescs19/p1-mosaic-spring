@@ -160,4 +160,9 @@ public class MainController {
         +synergy.getYear());
         return "synergy/teacherView";
     }
+
+    @GetMapping("/synergy/studentInfo")
+    public String studentInfo() {
+        return "labs/studentInfo";
+    }
 }
