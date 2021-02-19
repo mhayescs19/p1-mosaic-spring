@@ -161,8 +161,28 @@ public class MainController {
         return "synergy/teacherView";
     }
 
-    @GetMapping("/synergy/studentInfo")
+    @GetMapping("/synergy/student/home")
+    public String studentHome() {
+        return "synergy/studentHome";
+    }
+
+    @GetMapping("/synergy/student/calendar")
+    public String studentCalendar() {
+        return "synergy/studentCalendar";
+    }
+
+    @GetMapping("/synergy/student/gradeBook")
+    public String studentGradeBook() {
+        return "synergy/studentGradeBook";
+    }
+
+    @GetMapping("/synergy/student/info")
     public String studentInfo() {
         return "synergy/studentInfo";
+    }
+
+    @GetMapping("/synergy/student/schoolInformation")
+    public String schoolInformation() {
+        return "synergy/schoolInformation";
     }
 }
