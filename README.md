@@ -59,26 +59,28 @@ We  plan on making a synergy clone where teachers can view their students and gi
 ## 2/18  Weekly Project Contributions and Artifacts Log
 ### Week 10
 ### 1. [Student Contact Info Front End](https://github.com/mhayescs19/p1-mosaic-spring/issues/11)
-Adaptation of a nav bar menu was combined with a custom table created using nested divs and CSS styling to create boxes for a table. Created by Michael Hayes <br>
+Adaptation of a nav bar menu was combined with a custom table created using nested divs and CSS styling to create boxes for a table. Created by Michael Hayes <br> <br>
 **Contents**
 * Div class [studentInfo](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/static/css/student-info.css#L23) used to shift the header and table in the main content area to the right in order to fit the vertical nav bar to the left
 * Nested divs used with the repeating div classes [wrapper](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/synergy/studentInfo.html#L20) and box in order to style each box the [same](https://github.com/mhayescs19/p1-mosaic-spring/blob/313d3439f6662f07ffb090a2e5b9e45bd257d1c7/src/main/resources/static/css/student-info.css#L41)
-* [float: left](https://github.com/mhayescs19/p1-mosaic-spring/blob/313d3439f6662f07ffb090a2e5b9e45bd257d1c7/src/main/resources/static/css/student-info.css#L43) aligns all of the boxes to the left and prevents a margin appearing in between each box (other styling like display: inline-block caused the whitespace and prevented the boxes from lookin like a table) <br>
+* [float: left](https://github.com/mhayescs19/p1-mosaic-spring/blob/313d3439f6662f07ffb090a2e5b9e45bd257d1c7/src/main/resources/static/css/student-info.css#L43) aligns all of the boxes to the left and prevents a margin appearing in between each box (other styling like display: inline-block caused the whitespace and prevented the boxes from lookin like a table) <br> <br>
+
 **Runtime Guidance**
-1. Click "Synergy" on main navigation bar
-2. Click "Student View"
-3. Select "Student Info" in second navigation bar to view table
+- Click "Synergy" on main navigation bar
+- Click "Student View"
+- Select "Student Info" in second navigation bar to view table
 
 ### 2. [Teacher View Front End](https://github.com/mhayescs19/p1-mosaic-spring/issues/12) & [Teacher View CSS Styling](https://github.com/mhayescs19/p1-mosaic-spring/issues/14)
-Created form for teachers to enter student information and grade in their class for a class roster. Uses Michael's NavBar code and CSS Styling for background page styling and formatting for displaying students. Created by Nakul Nandhakumar. <br>
+Created form for teachers to enter student information and grade in their class for a class roster. Uses Michael's NavBar code and CSS Styling for background page styling and formatting for displaying students. Created by Nakul Nandhakumar. <br> <br>
 **Contents**
 * Created [Synergy Java Class File](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/synergy/teacherView.html#L53) with [Decorators](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/java/synergy/Synergy.java#L22-L36) from Mr. M's code for error checking and validation of attributes in form
 * [Form](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/synergy/teacherView.html#L49) using passed in [Thymleaf Objects](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/synergy/teacherView.html#L53) from Synergy Java Class File for validation, error message printing, and displaying entered form information
-* [CSS Styling for Form](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/synergy/teacherView.html#L7) using [div classes](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/synergy/teacherView.html#L33) and hover for the submit button <br>
+* [CSS Styling for Form](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/synergy/teacherView.html#L7) using [div classes](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/synergy/teacherView.html#L33) and hover for the submit button <br> <br>
+
 **Runtime Guidance**
-1. Click on Synergy on main navigation bar
-2. Click Teacher View
-3. Fill out form
+- Click on Synergy on main navigation bar
+- Click Teacher View
+- Fill out form
 
 ### 3.
 
