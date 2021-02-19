@@ -98,6 +98,16 @@
             <artifactId>lombok</artifactId>
             <version>1.18.18</version>
         </dependency>
+        <dependency>
+            <groupId>software.amazon.awssdk</groupId>
+            <artifactId>dynamodb</artifactId>
+            <version>2.15.36</version>
+        </dependency>
+        <dependency>
+            <groupId>software.amazon.awssdk</groupId>
+            <artifactId>dynamodb-enhanced</artifactId>
+            <version>2.12.0</version>
+        </dependency>
 
     </dependencies>
 
