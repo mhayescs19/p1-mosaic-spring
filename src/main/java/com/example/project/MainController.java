@@ -163,6 +163,6 @@ public class MainController {
 
     @GetMapping("/synergy/studentInfo")
     public String studentInfo() {
-        return "labs/studentInfo";
+        return "synergy/studentInfo";
     }
 }
