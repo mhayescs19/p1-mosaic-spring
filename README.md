@@ -56,6 +56,14 @@ We  plan on making a synergy clone where teachers can view their students and gi
 3. Run from Main.java (inside of the "Main" package) OR set up configuration to Main.
 <img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/runtime-main-java.png" height="auto" width="40%"> <img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/runtime-config.png" width="45%" height="auto">
 
+## 2/18  Weekly Project Contributions and Artifacts Log
+### Week 10
+### 1.
+
+### 2.
+
+### 3.
+
 ## 2/05  Weekly Project Contributions and Artifacts Log
 ### Week 8
 <!-- # [Tickets Video](https://drive.google.com/file/d/1hbOL0yeJWl4qi3kuO4QO8DL3UynJ-QnG/view?usp=sharing) -->
