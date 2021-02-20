@@ -80,7 +80,7 @@ Created form for teachers to enter student information and grade in their class 
 **Runtime Guidance**
 - Click on Synergy on main navigation bar
 - Click Teacher View
-- Fill out form
+- Fill in form spaces and click submit to enter Student Info
 
 ### 3. [DataBase BackEnd Work](https://github.com/mhayescs19/p1-mosaic-spring/tree/master/src/main/java/Tools/DynamoDb)
 This backend code will convert the return of dynmaodb to a javahashmap and convert a javahashmap into a hashmap accpetable by dynamodb<br>
