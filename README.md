@@ -78,8 +78,8 @@ Created form for teachers to enter student information and grade in their class 
 * [CSS Styling for Form](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/synergy/teacherView.html#L7) using [div classes](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/synergy/teacherView.html#L33) and hover for the submit button <br> <br>
 
 **Runtime Guidance**
-- Click on Synergy on main navigation bar
-- Click Teacher View
+- Click on "Synergy" on main navigation bar
+- Click the "Teacher View" link
 - Fill in form spaces and click submit to enter Student Info
 
 ### 3. [DataBase BackEnd Work](https://github.com/mhayescs19/p1-mosaic-spring/tree/master/src/main/java/Tools/DynamoDb)
