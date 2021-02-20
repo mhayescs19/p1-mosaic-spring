@@ -82,7 +82,12 @@ Created form for teachers to enter student information and grade in their class 
 - Click Teacher View
 - Fill out form
 
-### 3.
+### 3. [DataBase BackEnd Work](https://github.com/mhayescs19/p1-mosaic-spring/tree/master/src/main/java/Tools/DynamoDb)
+This backend code will convert the return of dynmaodb to a javahashmap and convert a javahashmap into a hashmap accpetable by dynamodb<br>
+seprate repo for code can be find here (https://github.com/andrewcomputsci2019/DynamoDbConverter)<br>
+Demo for code can be found here (https://github.com/andrewcomputsci2019/DemoForConverter)<br>
+No runtime for this as it is a service to be used by us during the project
+
 
 ## 2/05  Weekly Project Contributions and Artifacts Log
 ### Week 8
