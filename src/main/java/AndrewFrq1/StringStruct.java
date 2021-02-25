@@ -1,5 +1,9 @@
 package AndrewFrq1;
 
+/**
+ * dto for the LightSequence class
+ * @see LightSequence
+ */
 public class StringStruct {
     public String field1;
     public String field2;

@@ -8,7 +8,10 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-
+/**
+ * dto object that can be converted into something we can send off to the data base and use to map to.
+ * @see com.example.project.MainController#Synergy()
+ */
 @Setter
 @Getter
 public class Synergy {
