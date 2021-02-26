@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Red+Hat+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap');
+
+*
+{
+    font-size: 14px;
+}
+
+body {
+
+    min-height: 100vh;
+    background: #EAEAEA;
+}
+
+.sideBarImport {
+    float: left;
+}
+
+.container {
+    /*display: flex;*/
+
+}
+/* Adjusts entire page content to the left and down in order to be visible
+next to the navigation bar */
+.container .studentGradeBook {
+    font-size: 14px;
+    position: relative;
+    top: 90px;
+    left: 220px;
+    float: left;
+}
+/* Entire Main Large Grade Position Control */
+.container .studentGradeBook .contentView .totalGrade {
+    position: relative;
+    top: 30px;
+}
+/* Controls background color and roundness of grade box */
+.container .studentGradeBook .contentView .totalGrade .wrapper .box {
+    background: #6E7E85;
+    border-radius: 20px;
+    box-sizing: content-box;
+    width: 150px;
+
+}
+/* Controls sizing, alignment, and color of actual grade text */
+.container .studentGradeBook .contentView .totalGrade .wrapper .box .content h2 {
+    font-size: 325%;
+    color: white;
+    text-align: center;
+}
+/* Controls position of class title */
+.container .studentGradeBook .contentView .classTitle {
+    position: relative;
+    top: -80px;
+    left: 162px;
+}
+/* Background shadow on class title */
+.container .studentGradeBook .contentView .classTitle .wrapper .box {
+    background: #d6d6d6;
+    border-radius: 8px;
+    padding: 5px;
+}
+/* Adjust font size of class title */
+.container .studentGradeBook .contentView .classTitle .wrapper .box h3 {
+    font-size: 200%;
+}
+
+.container .studentGradeBook .contentView .assignments .wrapper .box h3 {
+    font-size: 125%
+}
+
+.container .studentGradeBook .contentView .assignments .wrapper .tableRow1 .wrapper {
+    position: relative;
+    /*left: 220px; */
+    top: 20px;
+    float: left;
+    /*padding: 0px;
+    margin: 0px;*/
+}
+
+.container .studentGradeBook .contentView .assignments .wrapper .tableRow1 .wrapper .box {
+    position: relative;
+    float: left;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    min-width: 150px;
+    height: 45px;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+
+    background: #fcfcfc;
+    border: 0.5px solid #414141;
+
+    transition: 0.5s;
+}
+
+.container .studentGradeBook .contentView .assignments .wrapper .tableRow1 .wrapper .box .content {
+    padding: 7px;
+}
+
+/* Custom size adjust for h3 in table cell */
+.container .studentGradeBook .contentView .assignments .wrapper .tableRow1 .wrapper .box .content h3 {
+    font-size: 97%;
+    font-weight: bold;
+}
+/* Custom size for p in table cell */
+.container .studentGradeBook .contentView .assignments .wrapper .tableRow1 .wrapper .box .content p {
+    font-size: 80%;
+}

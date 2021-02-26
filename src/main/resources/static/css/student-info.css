@@ -27,7 +27,7 @@ body {
     float: left;
 }
 
-.container .wrapper {
+.container .tableRow1 .wrapper {
     position: relative;
     /*left: 220px;*/
     top: 20px ;
@@ -38,7 +38,7 @@ body {
 
 
 
-.container .wrapper .box {
+.container .tableRow1 .wrapper .box {
     position: relative;
     float: left;
     flex-direction: row;
@@ -55,6 +55,41 @@ body {
 
     background: #fcfcfc;
     border: 0.5px solid #414141;
+
+    transition: 0.5s;
+    /*display: flex;*/
+}
+
+.container .tableRow2 .wrapper {
+    position: relative;
+    /*left: 220px;*/
+    top: 20px ;
+    float: left;
+    padding: 0px;
+    margin: 0px;
+}
+
+
+
+.container .tableRow2 .wrapper .box {
+    position: relative;
+    float: left;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    min-width: 150px;
+    height: 75px;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+
+    background: #fcfcfc;
+    border-bottom: 0.5px solid #414141;
+    border-left: 0.5px solid #414141;
+    border-right: 0.5px solid #414141;
 
     transition: 0.5s;
     /*display: flex;*/
