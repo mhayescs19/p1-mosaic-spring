@@ -37,6 +37,9 @@ next to the navigation bar */
 .container .studentGradeBook .contentView .totalGrade .wrapper .box {
     background: #6E7E85;
     border-radius: 20px;
+    box-sizing: content-box;
+    width: 150px;
+
 }
 /* Controls sizing, alignment, and color of actual grade text */
 .container .studentGradeBook .contentView .totalGrade .wrapper .box .content h2 {
@@ -59,4 +62,52 @@ next to the navigation bar */
 /* Adjust font size of class title */
 .container .studentGradeBook .contentView .classTitle .wrapper .box h3 {
     font-size: 200%;
+}
+
+.container .studentGradeBook .contentView .assignments .wrapper .box h3 {
+    font-size: 125%
+}
+
+.container .studentGradeBook .contentView .assignments .wrapper .tableRow1 .wrapper {
+    position: relative;
+    /*left: 220px; */
+    top: 20px;
+    float: left;
+    /*padding: 0px;
+    margin: 0px;*/
+}
+
+.container .studentGradeBook .contentView .assignments .wrapper .tableRow1 .wrapper .box {
+    position: relative;
+    float: left;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    min-width: 150px;
+    height: 45px;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+
+    background: #fcfcfc;
+    border: 0.5px solid #414141;
+
+    transition: 0.5s;
+}
+
+.container .studentGradeBook .contentView .assignments .wrapper .tableRow1 .wrapper .box .content {
+    padding: 7px;
+}
+
+/* Custom size adjust for h3 in table cell */
+.container .studentGradeBook .contentView .assignments .wrapper .tableRow1 .wrapper .box .content h3 {
+    font-size: 97%;
+    font-weight: bold;
+}
+/* Custom size for p in table cell */
+.container .studentGradeBook .contentView .assignments .wrapper .tableRow1 .wrapper .box .content p {
+    font-size: 80%;
 }
