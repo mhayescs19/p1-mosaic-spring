@@ -19,7 +19,8 @@ body {
     /*display: flex;*/
 
 }
-
+/* Adjusts entire page content to the left and down in order to be visible
+next to the navigation bar */
 .container .studentGradeBook {
     font-size: 14px;
     position: relative;
@@ -28,34 +29,34 @@ body {
     float: left;
 }
 /* Entire Main Large Grade Position Control */
-.container .studentGradeBook .totalGrade {
+.container .studentGradeBook .contentView .totalGrade {
     position: relative;
     top: 30px;
 }
 /* Controls background color and roundness of grade box */
-.container .studentGradeBook .totalGrade .wrapper .box {
+.container .studentGradeBook .contentView .totalGrade .wrapper .box {
     background: #6E7E85;
     border-radius: 20px;
 }
 /* Controls sizing, alignment, and color of actual grade text */
-.container .studentGradeBook .totalGrade .wrapper .box .content h2 {
+.container .studentGradeBook .contentView .totalGrade .wrapper .box .content h2 {
     font-size: 325%;
     color: white;
     text-align: center;
 }
 /* Controls position of class title */
-.container .studentGradeBook .classTitle {
+.container .studentGradeBook .contentView .classTitle {
     position: relative;
     top: -80px;
     left: 162px;
 }
-
-.container .studentGradeBook .classTitle .wrapper .box {
+/* Background shadow on class title */
+.container .studentGradeBook .contentView .classTitle .wrapper .box {
     background: #d6d6d6;
     border-radius: 8px;
     padding: 5px;
 }
-
-.container .studentGradeBook .classTitle .wrapper .box h3 {
+/* Adjust font size of class title */
+.container .studentGradeBook .contentView .classTitle .wrapper .box h3 {
     font-size: 200%;
 }
