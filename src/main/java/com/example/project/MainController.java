@@ -21,6 +21,7 @@ import software.amazon.awssdk.services.dynamodb.DynamoDbClient;
 import software.amazon.awssdk.services.dynamodb.model.AttributeValue;
 import software.amazon.awssdk.services.dynamodb.model.DynamoDbException;
 import software.amazon.awssdk.services.dynamodb.model.GetItemRequest;
+import software.amazon.awssdk.services.dynamodb.model.ResourceNotFoundException;
 import synergy.Synergy;
 
 import javax.validation.Valid;
@@ -203,34 +204,39 @@ public class MainController {
      * @param idNumber idNumber to look up in database
      * @return html page
      */
+    @GetMapping("/synergy/student/get")
     @PostMapping("/synergy/student/get")
-    public String getStudent(@RequestParam(name = "IdNumber",defaultValue = "0")String idNumber, Model model)  {
+    public String getStudent(@RequestParam(name = "IdNumber",defaultValue = "15")String idNumber, Model model) {
         DynamoDbClient dbClient = DynamoDbClient.create();
-        Map<String, AttributeValue> key = new HashMap<>(); key.put("IDNumber", AttributeValue.builder().s(idNumber).build());
-        GetItemRequest request= GetItemRequest.builder().tableName("Students").key(key).build();
-        Map<String, AttributeValue> returnedItems= new HashMap<>();
-        try{
-                returnedItems = dbClient.getItem(request).item();
-        }
-        catch (DynamoDbException e)
-        {
+        Map<String, AttributeValue> key = new HashMap<>();
+        key.put("IDNumber", AttributeValue.builder().s(idNumber).build());
+        GetItemRequest request = GetItemRequest.builder().tableName("Students").key(key).build();
+        Map<String, AttributeValue> returnedItems = new HashMap<>();
+        try {
+            returnedItems = dbClient.getItem(request).item();
+        } catch (DynamoDbException e) {
             System.err.println(e.getMessage());
-            model.addAttribute("error", "Error encounter, Our backend was not able to get the item that you ask for (" + idNumber+")");
+            model.addAttribute("error", "Error encounter, Our backend was not able to get the item that you ask for (" + idNumber + ")");
             return "synergy/Error"; // Destination for webReturn this wont change the end point just the html shown going to have the fields name the same for the js to read
         }
-        Map<String, Object> objectMap = new itemToHashMap().convertItemToMap(EnhancedAttributeValue.fromMap(returnedItems));
-        String json;
-        try {
-            json = new ObjectMapper().writeValueAsString(objectMap);
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-            model.addAttribute("error", "Json Failed to be created :(");
-            return "synergy/Error";
+        if (returnedItems.isEmpty()) {
+             model.addAttribute("error", "Error the item you asked for is either empty or does not exist");
+             return "synergy/Error";
+        } else {
+            Map<String, Object> objectMap = new itemToHashMap().convertItemToMap(EnhancedAttributeValue.fromMap(returnedItems));
+            String json;
+            try {
+                json = new ObjectMapper().writeValueAsString(objectMap);
+            } catch (JsonProcessingException e) {
+                e.printStackTrace();
+                model.addAttribute("error", "Error Json Failed to be created :(");
+                return "synergy/Error";
+            }
+            model.addAttribute("studentInfo", json); // adds the json to the model should allow us to get
+            return "synergy/studentReturn"; // place holder
+            //@todo write html pages for mapping
+            //@todo write the java script needed to do this as well, using jquery.
         }
-        model.addAttribute("StudentInfo",json); // adds the json to the model should allow us to get
-        return "synergy/studentHome"; // place holder
-        //@todo write html pages for mapping
-        //@todo write the java script needed to do this as well, using jquery.
     }
 
 }

@@ -43,6 +43,32 @@
 </head>
 
 <body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function (){
+        $("#GetStudent").click(function ()
+        {
+            let parameter = $("#StudentId").val();
+            $.get("synergy/student/get", {IdNumber:parameter} , function (data, status)
+            {
+              let parsedHtml = $($.parseHTML(data));
+              let jsonObject = $(parsedHtml).filter("#Return").text()
+              if(jsonObject.startsWith("Error"))
+              {
+                  alert("Something went wrong please verify that idNumber is correct");
+              }
+              else {
+                  let jsonOfStudent = JSON.parse(jsonObject)
+                  $("#StuGrade").text(jsonOfStudent.Grade);
+                  $("#StuAge").text(jsonOfStudent.Age);
+                  $("#StuYear").text(jsonOfStudent.Year);
+                  $("#StuName").text(jsonOfStudent.Name);
+              }
+            });
+        });
+    });
+</script>
+
 <div class="sideBarImport" th:replace="fragments/synergySideBar"></div>
 
 <div class="form">
@@ -78,6 +104,8 @@
 
     </table>
 </form>
+    <label for="StudentId">Id for student to be searched</label><input type="text" id="StudentId">
+    <button id="GetStudent">Get Student Info</button>
 </div>
 
 
@@ -91,7 +119,7 @@
                 <div class="box">
                     <div class="content">
                         <h3>Student Name</h3>
-                        <p th:text="${studentname}"></p>
+                        <p th:text="${studentname}" id="StuName"></p>
                     </div>
                 </div>
             </div>
@@ -100,7 +128,7 @@
                 <div class="box">
                     <div class="content">
                         <h3>Age</h3>
-                        <p th:text="${studentage}"></p>
+                        <p th:text="${studentage}" id="StuAge"></p>
                     </div>
                 </div>
             </div>
@@ -109,7 +137,7 @@
                 <div class="box">
                     <div class="content">
                         <h3>Year</h3>
-                        <p th:text="${studentyear}"></p>
+                        <p th:text="${studentyear}" id="StuYear"></p>
                     </div>
                 </div>
             </div>
@@ -118,7 +146,7 @@
                 <div class="box">
                     <div class="content">
                         <h3>Grade</h3>
-                        <p th:text="${studentgrade}"></p>
+                        <p th:text="${studentgrade}" id="StuGrade"></p>
                     </div>
                 </div>
             </div>
