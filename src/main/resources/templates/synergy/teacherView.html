@@ -66,11 +66,14 @@
         $("#testing").click(function ()
         {
            let token = $("meta[name='_csrf']").attr("content");
+            let atttr = {text:"simple text",NotText:12}
            $.ajaxSetup(
                {
-                  headers:{"X-CSRF-TOKEN":token}
+                  headers:{"X-CSRF-TOKEN":token},
+                   contentType: 'application/json; charset=utf-8'
                });
-            $.post("/test/text",{text:"simple text"}, function (data) {
+
+            $.post("/test/text",JSON.stringify(atttr), function (data) {
                 let htmlparesed = $(data).filter("li").html();
                 console.log(htmlparesed)
             })
