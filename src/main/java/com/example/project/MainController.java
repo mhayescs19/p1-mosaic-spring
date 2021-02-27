@@ -220,8 +220,6 @@ public class MainController {
             }
             model.addAttribute("studentInfo", json); // adds the json to the model should allow us to get
             return "synergy/studentReturn"; // place holder
-            //@todo write html pages for mapping
-            //@todo write the java script needed to do this as well, using jquery.
         }
     }
 
