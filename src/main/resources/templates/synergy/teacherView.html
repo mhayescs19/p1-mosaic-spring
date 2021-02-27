@@ -2,6 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta th:name="${_csrf.parameterName}" th:content="${_csrf.token}"/>
     <title>Teacher View</title>
     <link rel="stylesheet" href="/css/student-info.css">
     <style>
@@ -45,6 +46,25 @@
 <body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
+    $(document).ready(function ()
+    {
+        $("#testing").click(function ()
+        {
+           let token = $("meta[name='_csrf']").attr("content");
+           $.ajaxSetup(
+               {
+                  headers:{"X-CSRF-TOKEN":token}
+               });
+            $.post("/test/text",{text:"simple text"}, function (data) {
+                let htmlparesed = $(data).filter("li").html();
+                console.log(htmlparesed)
+            })
+        })
+    })
+
+</script>
+
+<script>
     $(document).ready(function (){
         $("#GetStudent").click(function ()
         {
@@ -56,6 +76,7 @@
               if(jsonObject.startsWith("Error"))
               {
                   alert("Something went wrong please verify that idNumber is correct");
+                  console.log(jsonObject);
               }
               else {
                   let jsonOfStudent = JSON.parse(jsonObject)
@@ -106,6 +127,7 @@
 </form>
     <label for="StudentId">Id for student to be searched</label><input type="text" id="StudentId">
     <button id="GetStudent">Get Student Info</button>
+    <button id="testing">TestPost</button>
 </div>
 
 

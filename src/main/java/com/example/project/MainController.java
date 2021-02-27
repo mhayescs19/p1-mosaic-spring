@@ -198,6 +198,13 @@ public class MainController {
     public String schoolInformation() {
         return "synergy/schoolInformation";
     }
+    @PostMapping("/test/text")
+    public String Testing(@RequestBody String string)
+    {
+        System.out.println(string);
+        return "synergy/loginView";
+    }
+
 
     /**
      * A way we can use back end to get information from the db and send it back to the user who requested it
@@ -211,7 +218,7 @@ public class MainController {
         Map<String, AttributeValue> key = new HashMap<>();
         key.put("IDNumber", AttributeValue.builder().s(idNumber).build());
         GetItemRequest request = GetItemRequest.builder().tableName("Students").key(key).build();
-        Map<String, AttributeValue> returnedItems = new HashMap<>();
+        Map<String, AttributeValue> returnedItems;
         try {
             returnedItems = dbClient.getItem(request).item();
         } catch (DynamoDbException e) {
