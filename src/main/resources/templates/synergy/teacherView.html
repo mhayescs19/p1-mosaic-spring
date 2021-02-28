@@ -71,11 +71,13 @@
                {
                   headers:{"X-CSRF-TOKEN":token},
                    contentType: 'application/json; charset=utf-8'
+                   //data can be set here as well
+                   //data:JSON.stringify(atttr)
                });
 
             $.post("/test/text",JSON.stringify(atttr), function (data) {
-                let htmlparesed = $(data).filter("li").html();
-                console.log(htmlparesed)
+                let htmlparesed = $(data).find("body").html(); //finds the first instance of a list tag
+                console.log(htmlparesed) // just for fun
             })
         })
     })
