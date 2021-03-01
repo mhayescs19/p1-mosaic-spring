@@ -199,10 +199,20 @@ public class MainController {
         return "synergy/schoolInformation";
     }
     @PostMapping("/test/text")
-    public String Testing(@RequestBody String string)
+    public String Testing(@RequestBody Map<String,Object> string)
     {
         System.out.println(string);
-        return "synergy/loginView";
+        if (string != null) {
+            for (Object obj: string.values()) {
+                if (obj == null) {
+                    continue;
+                }
+                else
+                    System.out.println(obj.toString());
+
+            }
+        }
+        return "synergy/loginView"; // just for fun
     }
 
 

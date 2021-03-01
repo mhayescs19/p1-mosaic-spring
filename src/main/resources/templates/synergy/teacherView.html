@@ -66,16 +66,21 @@
         $("#testing").click(function ()
         {
            let token = $("meta[name='_csrf']").attr("content");
+           let atttr = {Name:$('#name').val(),Age:parseInt($('#age').val()),Year:$('#year').val(),Grade:$('#grade').val()}
            $.ajaxSetup(
                {
-                  headers:{"X-CSRF-TOKEN":token}
+                  headers:{"X-CSRF-TOKEN":token},
+                   contentType: 'application/json; charset=utf-8'
+                   //data can be set here as well
+                   //data:JSON.stringify(atttr)
                });
-            $.post("/test/text",{text:"simple text"}, function (data) {
-                let htmlparesed = $(data).filter("li").html();
-                console.log(htmlparesed)
-            })
-        })
-    })
+
+            $.post("/test/text",JSON.stringify(atttr), function (data) {
+                let htmlparesed = $($.parseHTML(data));//finds the first instance of a list tag
+                console.log($(htmlparesed).filter("li")) // just for fun
+            });
+        });
+    });
 
 </script>
 
@@ -84,7 +89,14 @@
         $("#GetStudent").click(function ()
         {
             let parameter = $("#StudentId").val();
-            $.get("synergy/student/get", {IdNumber:parameter} , function (data, status)
+            let token = $("meta[name='_csrf']").attr("content");
+            $.ajaxSetup(
+                {
+                    headers:{"X-CSRF-TOKEN":token},
+                    //data can be set here as well
+                    //data:JSON.stringify(atttr)
+                });
+            $.post("synergy/student/get", {IdNumber:parameter} , function (data, status)
             {
               let parsedHtml = $($.parseHTML(data));
               let jsonObject = $(parsedHtml).filter("#Return").text();
@@ -94,6 +106,7 @@
                   console.log(jsonObject);
               }
               else {
+                  //JSON.parse(jsonObject)
                   let jsonOfStudent = JSON.parse(jsonObject)
                   $("#StuGrade").text(jsonOfStudent.Grade);
                   $("#StuAge").text(jsonOfStudent.Age);
@@ -159,7 +172,6 @@
 
     </table>
 
-    <button id="PutStudent">Submit</button>
     <br> <br> <br> <br> <br>
     <label for="StudentId">Enter Student ID:</label><input type="text" id="StudentId">
     <button id="GetStudent">Get Student Info</button>
