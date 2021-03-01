@@ -236,6 +236,7 @@ public class MainController {
      */
     @PostMapping("/synergy/student/get")
     public String getStudent(@RequestParam(name = "IdNumber", defaultValue = "") String idNumber, Model model) {
+        System.out.println(idNumber);
         DynamoDbClient dbClient = DynamoDbClient.create();
         Map<String, AttributeValue> key = new HashMap<>();
         key.put("IDNumber", AttributeValue.builder().s(idNumber).build());

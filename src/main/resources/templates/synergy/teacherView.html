@@ -66,7 +66,7 @@
         $("#PutStudent").click(function ()
         {
            let token = $("meta[name='_csrf']").attr("content");
-           let atttr = {Name:$('#name').val(),Age:parseInt($('#age').val()),Year:$('#year').val(),Grade:$('#grade').val(),IdNumber:$('#id')}
+           let atttr = {Name:$('#name').val(),Age:parseInt($('#age').val()),Year:$('#year').val(),Grade:$('#grade').val(),IdNumber:$('#id').val()}
            $.ajaxSetup(
                {
                   headers:{"X-CSRF-TOKEN":token},
@@ -89,10 +89,12 @@
         $("#GetStudent").click(function ()
         {
             let parameter = $("#StudentId").val();
+            console.log(parameter)
             let token = $("meta[name='_csrf']").attr("content");
             $.ajaxSetup(
                 {
                     headers:{"X-CSRF-TOKEN":token},
+                    contentType:'application/x-www-form-urlencoded; charset=UTF-8'
                     //data can be set here as well
                     //data:JSON.stringify(atttr)
                 });
