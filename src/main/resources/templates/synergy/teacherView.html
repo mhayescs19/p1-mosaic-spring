@@ -119,27 +119,7 @@
         });
     });
 </script>
-<script>
-    $(document).ready(function (){
-        $("#PutStudent").click(function ()
-        {
-            let nameParam = $("#name").val();
-            let ageParam = $("#age").val();
-            let gradeParam = $("#grade").val();
-            let yearParam = $("#year").val();
-            let idParam = $("#id").val();
-            $.get("synergy/student/put", {name:nameParam, age:ageParam, year:yearParam, grade:gradeParam, id:idParam}, function (data, status)
-            {
-                let parsedHtml = $($.parseHTML(data));
-                let jsonObject = $(parsedHtml).filter("#Return").text()
-                if(jsonObject.startsWith("Error"))
-                {
-                    alert("Something went wrong.");
-                }
-            });
-        });
-    });
-</script>
+
 
 <div class="sideBarImport" th:replace="fragments/synergySideBar"></div>
 

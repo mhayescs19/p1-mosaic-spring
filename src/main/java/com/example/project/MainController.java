@@ -222,7 +222,6 @@ public class MainController {
      * @param idNumber idNumber to look up in database
      * @return html page
      */
-    @GetMapping("/synergy/student/get")
     @PostMapping("/synergy/student/get")
     public String getStudent(@RequestParam(name = "IdNumber", defaultValue = "") String idNumber, Model model) {
         DynamoDbClient dbClient = DynamoDbClient.create();
