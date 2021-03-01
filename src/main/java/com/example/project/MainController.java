@@ -254,7 +254,7 @@ public class MainController {
         }
     }
 
-    @GetMapping("/synergy/student/put")
+
     @PostMapping("/synergy/student/put")
     public String putStudent(@RequestParam(name = "name", defaultValue = "") String name, @RequestParam(name = "age", defaultValue = "") String age, @RequestParam(name = "grade", defaultValue = "") String grade, @RequestParam(name = "year", defaultValue = "") String year, @RequestParam(name = "id", defaultValue = "") String id ,Model model) {
         DynamoDbClient dbClient = DynamoDbClient.create();
