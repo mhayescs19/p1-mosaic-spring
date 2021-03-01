@@ -22,9 +22,11 @@ import software.amazon.awssdk.services.dynamodb.model.AttributeValue;
 import software.amazon.awssdk.services.dynamodb.model.DynamoDbException;
 import software.amazon.awssdk.services.dynamodb.model.GetItemRequest;
 import software.amazon.awssdk.services.dynamodb.model.ResourceNotFoundException;
+import synergy.Assignment;
 import synergy.Synergy;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -185,7 +187,15 @@ public class MainController {
     }
 
     @GetMapping("/synergy/student/gradeBook")
-    public String studentGradeBook() {
+    public String studentGradeBook(Model model) {
+
+        // displays ArrayList via ThymeLeaf for:each in HTML
+        ArrayList<Assignment> assignments = new ArrayList<>();
+        for (int i = 0; i < 6; i++) {
+            assignments.add(new Assignment("2/2" + i + "/21", "HW " + i, ((double)i*15)/10, (((double)i*15)/10) * 2, "test data"));
+        }
+
+        model.addAttribute("assignments", assignments);
         return "synergy/studentGradeBook";
     }
 
