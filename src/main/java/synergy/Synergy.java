@@ -20,6 +20,7 @@ public class Synergy {
     static public String yearKy = "Year";
     static public String gradeKy = "Grade";
     static public String ageKy = "Age";
+    static public String IDKy = "IDNumber";
 
 
     @NotNull
@@ -37,6 +38,10 @@ public class Synergy {
     @NotNull
     @Size(min = 1, max = 2)
     private String grade;
+
+    @NotNull
+    @Min(1)
+    private String id;
 
     public Synergy() {
 
