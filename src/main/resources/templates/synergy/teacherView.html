@@ -63,7 +63,7 @@
 <script>
     $(document).ready(function ()
     {
-        $("#testing").click(function ()
+        $("#PutStudent").click(function ()
         {
            let token = $("meta[name='_csrf']").attr("content");
            let atttr = {Name:$('#name').val(),Age:parseInt($('#age').val()),Year:$('#year').val(),Grade:$('#grade').val()}
@@ -151,6 +151,8 @@
         </tr>
 
     </table>
+
+    <button id="PutStudent"> Put Student</button>
 
     <br> <br> <br> <br> <br>
     <label for="StudentId">Enter Student ID:</label><input type="text" id="StudentId">
