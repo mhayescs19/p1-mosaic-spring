@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Red+Hat+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap');
+
+*
+{
+    font-size: 14px;
+}
+
+body {
+
+    min-height: 100vh;
+    background: #EAEAEA;
+}
+
+.sideBarImport {
+    float: left;
+}
+
+.container {
+    /*display: flex;*/
+
+}
+/* Adjusts entire page content to the left and down in order to be visible
+next to the navigation bar */
+.container .studentHome {
+    font-size: 14px;
+    position: relative;
+    top: 90px;
+    left: 220px;
+    float: left;
+}
+
+
+.container .studentHome .contentView .classSchedule .wrapper .box h3 {
+    font-size: 125%
+}
+
+.container .studentHome .contentView .classSchedule .wrapper .tableRow1 .wrapper {
+    position: relative;
+    /*left: 220px; */
+    top: 20px;
+    float: left;
+    /*padding: 0px;
+    margin: 0px;*/
+}
+
+.container .studentHome .contentView .classSchedule .wrapper .tableRow1 .wrapper .box {
+    position: relative;
+    float: left;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    min-width: 45px;
+    min-height: 15px;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+
+    background: #fcfcfc;
+    border: 0.5px solid #414141;
+
+    transition: 0.5s;
+}
+
+.container .studentHome .contentView .classSchedule .wrapper .tableRow1 .wrapper .box .content {
+    padding: 7px;
+}
+
+/* Custom size adjust for h3 in table cell */
+.container .studentHome .contentView .classSchedule .wrapper .tableRow1 .wrapper .box .content h3 {
+    font-size: 97%;
+    font-weight: bold;
+}
+/* Custom size for p in table cell */
+.container .studentHome .contentView .classSchedule .wrapper .tableRow1 .wrapper .box .content p {
+    font-size: 95%;
+    text-align: center;
+}

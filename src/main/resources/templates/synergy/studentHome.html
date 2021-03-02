@@ -3,22 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <title>Student Home</title>
+    <link rel="stylesheet" href="/css/student-home.css">
 </head>
-<style>
-    .container .studentHome {
-        font-size: 14px;
-        position: relative;
-        top: 90px;
-        left: 220px;
-        float: left;
-    }
-</style>
 <body>
 <div class="sideBarImport" th:replace="fragments/synergySideBar"></div>
 
 <div class="container">
     <div class="studentHome">
-        <h1>Student Home</h1>
+        <h1>Student Grade Book</h1>
+        <div class="contentView">
+            <div class="classSchedule">
+                <div class="wrapper">
+                    <div class="box">
+                        <h3>Class Schedule</h3>
+                    </div>
+                    <!-- For Each loop of custom defined table row. Repeats the entire row div -->
+                    <tr th:each="assignment : ${assignments}">
+                        <div class="tableRow1">
+                            <div class="wrapper">
+                                <div class="box">
+                                    <div class="content">
+                                        <h3>Date</h3>
+                                        <p th:text="${assignment.date}"></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="wrapper">
+                                <div class="box">
+                                    <div class="content">
+                                        <h3>Assignment</h3>
+                                        <p th:text="${assignment.assignmentTitle}"></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="wrapper">
+                                <div class="box">
+                                    <div class="content">
+                                        <h3>Score</h3>
+                                        <p th:text="${assignment.score}"></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="wrapper">
+                                <div class="box">
+                                    <div class="content">
+                                        <h3>Points</h3>
+                                        <p th:text="${assignment.points}"></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="wrapper">
+                                <div class="box">
+                                    <div class="content">
+                                        <h3>Notes</h3>
+                                        <p th:text="${assignment.notes}"></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </tr>
+                    <div class="tableRow1">
+                        <div class="wrapper">
+                            <div class="box">
+                                <div class="content">
+                                    <p>01: AP CMPTR SCI A (2)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="wrapper">
+                            <div class="box">
+                                <div class="content">
+                                    <p>Mortensen</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="wrapper">
+                            <div class="box">
+                                <div class="content">
+                                    <p>8:00 - 9:00 AM</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 </body>
