@@ -285,4 +285,9 @@ public class MainController {
 
         return "synergy/studentReturn"; // place holder
     }
+
+     @GetMapping("/login")
+     public String login(){
+         return "synergy/login";
+     }
 }
