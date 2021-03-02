@@ -26,6 +26,8 @@ import software.amazon.awssdk.services.dynamodb.model.DynamoDbException;
 import software.amazon.awssdk.services.dynamodb.model.GetItemRequest;
 import software.amazon.awssdk.services.dynamodb.model.ResourceNotFoundException;
 import synergy.Assignment;
+import synergy.Class;
+import synergy.Schedule;
 import synergy.Synergy;
 
 import javax.validation.Valid;
@@ -167,7 +169,17 @@ public class MainController {
     }
 
     @GetMapping("/synergy/student/home")
-    public String studentHome() {
+    public String studentHome(Model model) {
+
+        //displays ArrayList via ThymeLeaf for:each in HTML
+        ArrayList<Class> schedule = new ArrayList<>();
+        schedule.add(new Class("AP CMTR SCI A (2)", "Mortensen"));
+        schedule.add(new Class("AP CHEM (2)", "Ozuna"));
+        schedule.add(new Class("AP SPANISH (2)", "DeAlba"));
+        schedule.add(new Class("EXPOS 2", "West"));
+        schedule.add(new Class("OFFROLL TRI2 P5", "Giame"));
+
+        model.addAttribute("schedule", schedule);
         return "synergy/studentHome";
     }
 
