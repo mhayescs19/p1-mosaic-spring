@@ -29,6 +29,14 @@ next to the navigation bar */
     float: left;
 }
 
+.container .studentHome .contentView .classSchedule {
+    position: relative;
+    top: 30px
+}
+
+.container .studentHome .contentView .classSchedule h3 {
+    padding-bottom: 4px;
+}
 
 .container .studentHome .contentView .classSchedule .wrapper .box h3 {
     font-size: 125%
@@ -51,7 +59,7 @@ next to the navigation bar */
     align-items: center;
     overflow: hidden;
 
-    min-width: 45px;
+    min-width: 160px;
     min-height: 15px;
     top: 0px;
     left: 0px;
