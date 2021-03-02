@@ -269,16 +269,11 @@ public class MainController {
 
 
     @PostMapping("/synergy/student/put")
-    public String putStudent(@RequestParam(name = "name", defaultValue = "") String name, @RequestParam(name = "age", defaultValue = "") String age, @RequestParam(name = "grade", defaultValue = "") String grade, @RequestParam(name = "year", defaultValue = "") String year, @RequestParam(name = "id", defaultValue = "") String id ,Model model) {
+    public String putStudent(@RequestBody Synergy synergy, Model model) {
+        System.out.println(synergy.toHashMap().toString());
         DynamoDbClient dbClient = DynamoDbClient.create();
-        Map<String, AttributeValue> student = new HashMap<>();
-        student.put("Name", AttributeValue.builder().s(name).build());
-        student.put("Age", AttributeValue.builder().s(age).build());
-        student.put("Year", AttributeValue.builder().s(year).build());
-        student.put("Grade", AttributeValue.builder().s(grade).build());
-        student.put("IDNumber", AttributeValue.builder().s(id).build());
-        student.put("Assignments", AttributeValue.builder().m(new HashMap<>()).build());
-        PutItemRequest request = PutItemRequest.builder().tableName("Students").item(student).conditionExpression("attribute_not_exists(IDNumber)").build();
+       HashMap<String,AttributeValue> attributeValueHashMap = new hashMapToItem().hashMapToValue(synergy.toHashMap());
+       PutItemRequest request = PutItemRequest.builder().tableName("Students").item(attributeValueHashMap).conditionExpression("attribute_not_exists(IDNumber)").build();
         try {
             dbClient.putItem(request);
         } catch (DynamoDbException e) {
