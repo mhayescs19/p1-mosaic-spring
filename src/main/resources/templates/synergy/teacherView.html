@@ -27,7 +27,22 @@
             cursor: pointer;
         }
 
+        button {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
         button[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        button:hover {
             background-color: #45a049;
         }
 
@@ -46,21 +61,32 @@
 <body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
+    let token = $("meta[name='_csrf']").attr("content");
+    $.ajaxSetup(
+        {
+            headers:{"X-CSRF-TOKEN":token},
+            //data can be set here as well
+            //data:JSON.stringify(atttr)
+        });
+</script>
+<script>
     $(document).ready(function ()
     {
-        $("#testing").click(function ()
+        $("#PutStudent").click(function ()
         {
            let token = $("meta[name='_csrf']").attr("content");
+           let atttr = {Name:$('#name').val(),Age:parseInt($('#age').val()),Year:$('#year').val(),Grade:$('#grade').val(),IdNumber:$('#id').val()}
            $.ajaxSetup(
                {
-                  headers:{"X-CSRF-TOKEN":token}
+                   contentType: 'application/json; charset=utf-8'
+                   //data can be set here as well
+                   //data:JSON.stringify(atttr)
                });
-            $.post("/test/text",{text:"simple text"}, function (data) {
-                let htmlparesed = $(data).filter("li").html();
-                console.log(htmlparesed)
-            })
-        })
-    })
+
+            $.post("/synergy/student/put",JSON.stringify(atttr), function () {
+            });
+        });
+    });
 
 </script>
 
@@ -69,65 +95,76 @@
         $("#GetStudent").click(function ()
         {
             let parameter = $("#StudentId").val();
-            $.get("synergy/student/get", {IdNumber:parameter} , function (data, status)
+            console.log(parameter)
+            let token = $("meta[name='_csrf']").attr("content");
+            $.ajaxSetup(
+                {
+                    contentType:'application/x-www-form-urlencoded; charset=UTF-8'
+                    //data can be set here as well
+                    //data:JSON.stringify(atttr)
+                });
+            $.post("synergy/student/get", {IdNumber:parameter} , function (data, status)
             {
               let parsedHtml = $($.parseHTML(data));
-              let jsonObject = $(parsedHtml).filter("#Return").text()
+              let jsonObject = $(parsedHtml).filter("#Return").text();
               if(jsonObject.startsWith("Error"))
               {
                   alert("Something went wrong please verify that idNumber is correct");
                   console.log(jsonObject);
               }
               else {
+                  //JSON.parse(jsonObject)
                   let jsonOfStudent = JSON.parse(jsonObject)
                   $("#StuGrade").text(jsonOfStudent.Grade);
                   $("#StuAge").text(jsonOfStudent.Age);
                   $("#StuYear").text(jsonOfStudent.Year);
                   $("#StuName").text(jsonOfStudent.Name);
+                  // $("#StuAssignments").text(JSON.stringify(jsonOfStudent.Assignments));
+                  // console.log(JSON.stringify(jsonOfStudent.Assignments));
               }
             });
         });
     });
 </script>
 
+
 <div class="sideBarImport" th:replace="fragments/synergySideBar"></div>
 
 <div class="form">
-<form action="#" th:action="@{/teacherView}" th:object="${synergy}" method="post">
     <table>
         <tr>
             <td><label for="name">Name:</label></td>
-            <td><input type="text" id="name" name="name" placeholder="Student name.." th:field="*{name}" /></td>
-            <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</td>
+            <td><input type="text" id="name" name="name" placeholder="Student name.."/></td>
         </tr>
 
         <tr>
             <td><label for="age">Age:</label></td>
-            <td><input type="text" id="age" name="age" placeholder="Student age.." th:field="*{age}" /></td>
-            <td th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Age Error</td>
+            <td><input type="text" id="age" name="age" placeholder="Student age.."/></td>
         </tr>
 
         <tr>
-            <td><label for="year">Year:</label></td>
-            <td><input type="text" id="year" name="year" placeholder="Ex: Freshman" th:field="*{year}" /></td>
-            <td th:if="${#fields.hasErrors('year')}" th:errors="*{year}">Year Error</td>
+            <td><label for="year">Graduation Year:</label></td>
+            <td><input type="text" id="year" name="year" placeholder="Ex: 2021" /></td>
         </tr>
 
         <tr>
             <td><label for="grade">Grade:</label></td>
-            <td><input type="text" id="grade" name="grade" th:field="*{grade}" placeholder="Ex: A+ or A" /></td>
-            <td th:if="${#fields.hasErrors('grade')}" th:errors="*{grade}">Grade Error</td>
+            <td><input type="text" id="grade" name="grade" placeholder="Ex: A+ or A" /></td>
         </tr>
 
         <tr>
-        <td><button type="submit">Submit</button></td>
+            <td><label for="id">ID Number:</label></td>
+            <td><input type="text" id="id" name="id" placeholder="ID Number" /></td>
         </tr>
 
     </table>
-</form>
-    <label for="StudentId">Id for student to be searched</label><input type="text" id="StudentId">
+
+    <button id="PutStudent"> Put Student</button>
+
+    <br> <br> <br> <br> <br>
+    <label for="StudentId">Enter Student ID:</label><input type="text" id="StudentId">
     <button id="GetStudent">Get Student Info</button>
-    <button id="testing">TestPost</button>
+
 </div>
 
 
@@ -169,6 +206,15 @@
                     <div class="content">
                         <h3>Grade</h3>
                         <p th:text="${studentgrade}" id="StuGrade"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wrapper">
+                <div class="box">
+                    <div class="content">
+                        <h3>Assignments</h3>
+                        <p id="StuAssignments"></p>
                     </div>
                 </div>
             </div>
