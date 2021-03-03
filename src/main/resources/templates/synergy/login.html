@@ -74,9 +74,11 @@
             <td><label for="password">Password:</label></td>
             <td><input type="password" id="password" name="password" placeholder="Password..."/></td>
         </tr>
-
+        <tr>
+          <td><label for="remember-me">Remember-me?</label><input type="checkbox" id="remember-me" name="remember-me" class="form-control"></td>
+        </tr>
     </table>
-
+        <input name="_csrf" type="hidden" th:value="${_csrf.token}">
     <button type="submit" id="submit" name="submit">Submit</button>
     </form>
 

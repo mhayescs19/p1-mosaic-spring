@@ -7,6 +7,7 @@ import com.example.project.ap.practice.Invitation;
 import com.example.project.mini.games.Hangman;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -152,11 +153,13 @@ public class MainController {
     }
 
     @GetMapping("/teacherView")
+    @PreAuthorize("hasAnyRole('ROLE_TEACHER')")
     public String showForm(Synergy synergy) {
         return "synergy/teacherView";
     }
 
     @PostMapping("/teacherView")
+    @PreAuthorize("hasAnyRole('ROLE_TEACHER')")
     public String teacherView(@Valid Synergy synergy, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
             return "synergy/teacherView";
