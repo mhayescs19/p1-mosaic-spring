@@ -21,13 +21,7 @@
             background-color: #E2E2E2;
         }
 
-        .container{
-            display: flex;
-            position: relative;
-            left: 0px;
-        }
-
-        .container .sidebar{
+        .sidebar{
             width: 200px;
             height: 100%;
             background: #C7CED1;
@@ -35,7 +29,7 @@
             position: fixed;
         }
 
-        .container .sidebar h2{
+        .sidebar h2{
             color: #1C0F13;
             text-decoration-style: solid;
             font-size: 150%;
@@ -43,32 +37,32 @@
             margin-bottom: 30px;
         }
 
-        .container .sidebar ul li{
+        .sidebar ul li{
             padding: 15px;
             border-bottom: 1px solid #bdb8d7;
             border-bottom: 1px solid rgba(0,0,0,0.05);
             border-top: 1px solid rgba(255,255,255,0.05);
         }
 
-        .container .sidebar ul li a{
+        .sidebar ul li a{
             color: #1C0F13;
             display: block;
         }
 
-        .container .sidebar ul li a .fas{
+        .sidebar ul li a .fas{
             width: 25px;
         }
 
-        .container .sidebar ul li:hover{
+        .sidebar ul li:hover{
             background-color: #BBBAC6;
         }
 
-        .container .sidebar ul li:hover a{
+        .sidebar ul li:hover a{
             color: #1C0F13;
         }
 
         /* Not in use but example kept for reference */
-        .container .sidebar .social_media{
+        .sidebar .social_media{
             position: absolute;
             bottom: 0;
             left: 50%;
@@ -77,7 +71,7 @@
         }
 
         /* Not in use but example kept for reference */
-        .container .sidebar .social_media a{
+        .sidebar .social_media a{
             display: block;
             width: 40px;
             background: #594f8d;
@@ -93,9 +87,8 @@
 </head>
 <body>
 
-<div class="container">
-    <div class="sidebar">
-        <h2>Synergy</h2>
+<div class="sidebar">
+    <h2>Synergy</h2>
         <ul>
             <li><a href="/synergy/student/home"><i class="fas fa-home"></i>Home</a></li>
             <li><a href="/synergy/student/calendar"><i class="far fa-calendar-alt"></i>   Calendar</a></li>
@@ -103,7 +96,6 @@
             <li><a href="/synergy/student/info"><i class="fas fa-user-shield"></i>Student Info</a></li>
             <li><a href="/synergy/student/schoolInformation"><i class="fas fa-school"></i>School Information</a></li>
         </ul>
-    </div>
 </div>
 
 </body>
