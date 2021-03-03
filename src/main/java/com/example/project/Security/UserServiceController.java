@@ -2,6 +2,7 @@ package com.example.project.Security;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class UserServiceController {
@@ -12,4 +13,8 @@ public class UserServiceController {
         return "synergy/login";
     }
 
+    @GetMapping("/logout")
+    public String logout() {
+        return "synergy/logout";
+    }
 }
