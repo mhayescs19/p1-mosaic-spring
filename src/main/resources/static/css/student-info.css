@@ -12,7 +12,11 @@ body {
 }
 
 .sideBarImport {
+    position: relative;
+
     float: left;
+    z-index: 2;
+
 }
 
 .container {
@@ -23,7 +27,7 @@ body {
 .container .studentInfo {
     position: relative;
     top: 90px;
-    left: 220px;
+    margin-left: 220px;
     float: left;
 }
 

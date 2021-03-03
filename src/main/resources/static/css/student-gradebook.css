@@ -12,12 +12,15 @@ body {
 }
 
 .sideBarImport {
+    position: relative;
+
     float: left;
+    z-index: 2;
+
 }
 
 .container {
     /*display: flex;*/
-
 }
 /* Adjusts entire page content to the left and down in order to be visible
 next to the navigation bar */
@@ -25,7 +28,7 @@ next to the navigation bar */
     font-size: 14px;
     position: relative;
     top: 90px;
-    left: 220px;
+    margin-left: 220px;
     float: left;
 }
 /* Entire Main Large Grade Position Control */
