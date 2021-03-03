@@ -47,7 +47,7 @@ body {
     overflow: hidden;
 
     min-width: 150px;
-    height: 75px;
+    min-height: 25px;
     top: 0px;
     left: 0px;
     right: 0px;
@@ -80,7 +80,7 @@ body {
     overflow: hidden;
 
     min-width: 150px;
-    height: 75px;
+    min-height: 25px;
     top: 0px;
     left: 0px;
     right: 0px;
@@ -96,14 +96,20 @@ body {
 }
 
 .container .wrapper .box h3 {
-    padding: 6px;
+    padding-top: 6px;
+    padding-right: 6px;
+    padding-bottom: 3px;
+    padding-left: 7px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-stretch: expanded;
 }
 
 .container .wrapper .box p {
-    padding: 6px;
+    padding-top: 0px;
+    padding-right: 6px;
+    padding-bottom: 3px;
+    padding-left: 7px;
     font-family: 'Red Hat Display', sans-serif;
     font-weight: 400;
     color: #414141;
