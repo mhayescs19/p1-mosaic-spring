@@ -35,7 +35,9 @@ public class DaoService implements UserDao{
         Map<String,Object> result;
         Map<String, AttributeValue> key = new HashMap<>();
         key.put("IDNumber", AttributeValue.builder().s(username).build());
-        GetItemRequest getItemRequest = GetItemRequest.builder().tableName("Students").key(key).projectionExpression("Password,Role").build();
+        Map<String,String> expressionNames = new HashMap<>();
+        expressionNames.put("#r","Role"); //: = val while #Name
+        GetItemRequest getItemRequest = GetItemRequest.builder().tableName("Students").key(key).projectionExpression("Password,#r").expressionAttributeNames(expressionNames).build();
         try{
             result = new itemToHashMap().convertItemToMap(EnhancedAttributeValue.fromMap(dynamoDbClient.getItem(getItemRequest).item()));
             if (result.isEmpty())
