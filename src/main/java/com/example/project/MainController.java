@@ -219,6 +219,71 @@ public class MainController {
         return "synergy/studentGradesHome";
     }
 
+    @GetMapping("/synergy/student/grades/period1")
+    public String studentGradesP1(Model model) {
+        // displays ArrayList via ThymeLeaf for:each in HTML
+        ArrayList<Assignment> assignments = new ArrayList<>();
+        for (int i = 0; i < 6; i++) {
+            assignments.add(new Assignment("2/2" + i + "/21", "HW " + i, ((double)i*15)/10, (((double)i*15)/10) * 2, "test data"));
+        }
+
+        model.addAttribute("assignments", assignments);
+
+        return "synergy/studentGradesPeriod1";
+    }
+
+    @GetMapping("/synergy/student/grades/period2")
+    public String studentGradesP2(Model model) {
+        // displays ArrayList via ThymeLeaf for:each in HTML
+        ArrayList<Assignment> assignments = new ArrayList<>();
+        for (int i = 0; i < 6; i++) {
+            assignments.add(new Assignment("2/2" + i + "/21", "HW " + i, ((double)i*15)/10, (((double)i*15)/10) * 2, "test data"));
+        }
+
+        model.addAttribute("assignments", assignments);
+
+        return "synergy/studentGradesPeriod2";
+    }
+
+    @GetMapping("/synergy/student/grades/period3")
+    public String studentGradesP3(Model model) {
+        // displays ArrayList via ThymeLeaf for:each in HTML
+        ArrayList<Assignment> assignments = new ArrayList<>();
+        for (int i = 0; i < 6; i++) {
+            assignments.add(new Assignment("2/2" + i + "/21", "HW " + i, ((double)i*15)/10, (((double)i*15)/10) * 2, "test data"));
+        }
+
+        model.addAttribute("assignments", assignments);
+
+        return "synergy/studentGradesPeriod3";
+    }
+
+    @GetMapping("/synergy/student/grades/period4")
+    public String studentGradesP4(Model model) {
+        // displays ArrayList via ThymeLeaf for:each in HTML
+        ArrayList<Assignment> assignments = new ArrayList<>();
+        for (int i = 0; i < 6; i++) {
+            assignments.add(new Assignment("2/2" + i + "/21", "HW " + i, ((double)i*15)/10, (((double)i*15)/10) * 2, "test data"));
+        }
+
+        model.addAttribute("assignments", assignments);
+
+        return "synergy/studentGradesPeriod4";
+    }
+
+    @GetMapping("/synergy/student/grades/period5")
+    public String studentGradesP5(Model model) {
+        // displays ArrayList via ThymeLeaf for:each in HTML
+        ArrayList<Assignment> assignments = new ArrayList<>();
+        for (int i = 0; i < 6; i++) {
+            assignments.add(new Assignment("2/2" + i + "/21", "HW " + i, ((double)i*15)/10, (((double)i*15)/10) * 2, "test data"));
+        }
+
+        model.addAttribute("assignments", assignments);
+
+        return "synergy/studentGradesPeriod5";
+    }
+
     @GetMapping("/synergy/student/info")
     public String studentInfo() {
         return "synergy/studentInfo";
@@ -228,6 +293,7 @@ public class MainController {
     public String schoolInformation() {
         return "synergy/schoolInformation";
     }
+
     @PostMapping("/test/text")
     public String Testing(@RequestBody Map<String,Object> string)
     {
