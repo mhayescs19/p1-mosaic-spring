@@ -73,6 +73,7 @@ public class UserComplexVaildator implements Validator {
         key.put("IDNumber", AttributeValue.builder().s(username).build());
         QueryRequest request = QueryRequest.builder().tableName("Students").build();
         //@todo add query
+        return true;
     }
 
 }
