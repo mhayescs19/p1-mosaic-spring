@@ -332,7 +332,7 @@ public class MainController {
         DynamoDbClient dbClient = DynamoDbClient.create();
         Map<String, AttributeValue> key = new HashMap<>();
         key.put("IDNumber", AttributeValue.builder().s(idNumber).build());
-        GetItemRequest request = GetItemRequest.builder().tableName("Students").key(key).build();
+        GetItemRequest request = GetItemRequest.builder().tableName("Students").key(key).projectionExpression("IDNumber,Name,Assignments,Grade,Year").build();
         Map<String, AttributeValue> returnedItems;
         try {
             returnedItems = dbClient.getItem(request).item();

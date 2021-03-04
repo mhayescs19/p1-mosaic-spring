@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create User</title>
+</head>
+<body>
+        <form th:action="@{/createUser}" method="post" th:object="${newUser}">
+            <input name="_csrf" type="hidden" th:value="${_csrf.token}">
+
+        </form>
+</body>
+</html>
