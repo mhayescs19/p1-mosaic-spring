@@ -70,7 +70,7 @@ Created a custom Spring Security Login in page which overrides default mapping. 
 - Click "Synergy" on main navigation bar
 - Login using Username: "1", Password: "test123" which gives Student access authorization
 - Click "Student View"
-- Select "Student Info" in second navigation bar to view table
+- Explore through the different pages using the nav bar on the left hand side of the page
 
 ## 2/18  Weekly Project Contributions and Artifacts Log
 ### Week 10
