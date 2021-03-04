@@ -73,6 +73,8 @@ next to the navigation bar */
 .container .studentGradeBook .contentView .classScheduleTiles .wrapper .box .contentClassTitle{
     background-color: #929ea5;
     border-radius: 5px;
+    height: 71px;
+
     padding: 3px;
 }
 /* Controls sizing, alignment, and color of period number text */
@@ -86,6 +88,7 @@ next to the navigation bar */
     font-size: 150%;
     color: #222222;
     text-align: center;
+
 }
 /* Text coloring & sizing of teacher name */
 .container .studentGradeBook .contentView .classScheduleTiles .wrapper .box .contentClassTitle h5 {
