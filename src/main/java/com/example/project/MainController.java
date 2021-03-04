@@ -146,6 +146,12 @@ public class MainController {
         return "labs/hangman";
     }
 
+    @GetMapping("/labs/webScraper")
+    public String webScraper() {
+
+        return "labs/webScraper";
+    }
+
 
     @GetMapping("/synergy")
     public String Synergy() {
