@@ -2,20 +2,10 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <title>Logout</title>
     <link rel="stylesheet" href="/css/student-info.css">
     <style>
         input[type=text], select {
-            width: 100%;
-            padding: 12px 20px;
-            margin: 8px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-
-        input[type=password], select {
             width: 100%;
             padding: 12px 20px;
             margin: 8px 0;
@@ -36,7 +26,22 @@
             cursor: pointer;
         }
 
+        button {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
         button[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        button:hover {
             background-color: #45a049;
         }
 
@@ -54,34 +59,10 @@
 <body>
 
 <div class="form">
-    <form name="form" th:action="@{/login}" method="post">
-
-    <div th:if="${param.error}" class="alert alert-error">
-        Invalid Username and Password.
-    </div>
-
-    <div th:if="${param.logout}" class="alert alert-success">
-        You have been logged out.
-    </div>
-
-    <table>
-        <tr>
-            <td><label for="username">Username:</label></td>
-            <td><input type="text" id="username" name="username" placeholder="Username..."/></td>
-        </tr>
-
-        <tr>
-            <td><label for="password">Password:</label></td>
-            <td><input type="password" id="password" name="password" placeholder="Password..."/></td>
-        </tr>
-        <tr>
-          <td><label for="remember-me">Remember-me?</label><input type="checkbox" id="remember-me" name="remember-me" class="form-control"></td>
-        </tr>
-    </table>
+    <form name="logout_form" th:action="@{/logout}" method="post">
         <input name="_csrf" type="hidden" th:value="${_csrf.token}">
-    <button type="submit" id="submit" name="submit">Submit</button>
+        <button type="submit" name="logout_button">Logout</button>
     </form>
-
 </div>
 
 </body>
