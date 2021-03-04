@@ -56,6 +56,22 @@ We  plan on making a synergy clone where teachers can view their students and gi
 3. Run from Main.java (inside of the "Main" package) OR set up configuration to Main.
 <img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/runtime-main-java.png" height="auto" width="40%"> <img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/runtime-config.png" width="45%" height="auto">
 
+## 2/26  Weekly Project Contributions and Artifacts Log
+### Week 11
+### 1. [Put Student](https://github.com/mhayescs19/p1-mosaic-spring/issues/27) and [Custom Login Page](https://github.com/mhayescs19/p1-mosaic-spring/issues/10)
+Created a custom Spring Security Login in page which overrides default mapping. Worked with Andrew Pegg to successfully use AJAX to push student information data to an AWS database with validation through data-binding a java class. Created by Nakul Nandhakumar<br> <br>
+
+**Contents**
+* PostMapping for [putStudent](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/java/com/example/project/MainController.java#L275) takes in passed [JSON Stringified](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/synergy/teacherView.html#L86) attributes of student from teacherView form
+* [CSRF Token](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/synergy/teacherView.html#L64) allows for asynchronous post method call
+* Created custom [Spring Security Login Page](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/synergy/login.html#L57) and overrided [default login page mapping](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/java/com/example/project/Security/SecurityConfig.java#L39), CSS styled the login form <br> <br>
+
+**Runtime Guidance**
+- Click "Synergy" on main navigation bar
+- Login using Username: "1", Password: "test123" which gives Student access authorization
+- Click "Student View"
+- Select "Student Info" in second navigation bar to view table
+
 ## 2/18  Weekly Project Contributions and Artifacts Log
 ### Week 10
 ### 1. [Student Contact Info Front End](https://github.com/mhayescs19/p1-mosaic-spring/issues/11)
