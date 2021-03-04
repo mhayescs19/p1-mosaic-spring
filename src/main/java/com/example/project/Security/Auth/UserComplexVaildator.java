@@ -8,6 +8,7 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 import software.amazon.awssdk.services.dynamodb.DynamoDbClient;
 import software.amazon.awssdk.services.dynamodb.model.AttributeValue;
+import software.amazon.awssdk.services.dynamodb.model.DynamoDbException;
 import software.amazon.awssdk.services.dynamodb.model.QueryRequest;
 
 import java.util.HashMap;
@@ -33,6 +34,10 @@ public class UserComplexVaildator implements Validator {
         }
         if (!isSecurePassword(user.getPassword())) {
             errors.rejectValue("password", "password must contain at least one digit and one special character");
+        }
+        if (!usernameIsUinque(user.getUsername()))
+        {
+            errors.rejectValue("username","username is already registered in our database");
         }
 
 
@@ -70,10 +75,18 @@ public class UserComplexVaildator implements Validator {
     {
         DynamoDbClient dbClient = DynamoDbClient.create();
         Map<String, AttributeValue> key = new HashMap<>();
-        key.put("IDNumber", AttributeValue.builder().s(username).build());
-        QueryRequest request = QueryRequest.builder().tableName("Students").build();
-        //@todo add query
-        return true;
+        key.put(":valid", AttributeValue.builder().s(username).build());
+        QueryRequest request = QueryRequest.builder().tableName("Students").keyConditionExpression("IDNumber = :valid").expressionAttributeValues(key).select("COUNT").build();
+        try{
+            int count = dbClient.query(request).count();
+            return count <= 0;
+        }
+        catch (DynamoDbException e)
+        {
+            System.err.println(e.getMessage());
+            return false;
+        }
+
     }
 
 }
