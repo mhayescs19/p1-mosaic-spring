@@ -201,6 +201,11 @@ public class MainController {
         return "synergy/studentGradeBook";
     }
 
+    @GetMapping("/synergy/student/grades")
+    public String studentGradesHome() {
+        return "synergy/studentGradesHome";
+    }
+
     @GetMapping("/synergy/student/info")
     public String studentInfo() {
         return "synergy/studentInfo";
