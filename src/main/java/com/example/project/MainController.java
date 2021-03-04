@@ -202,7 +202,20 @@ public class MainController {
     }
 
     @GetMapping("/synergy/student/grades")
-    public String studentGradesHome() {
+    public String studentGradesHome(Model model) {
+
+        // tester classes periods 1-5
+        Class period1 = new Class("AP CMTR SCI A (2)", "Mortensen", "98.0");
+        Class period2 = new Class("AP CHEM (2)", "Ozuna", "98.0");
+        Class period3 = new Class("AP SPANISH (2)", "DeAlba", "98.0");
+        Class period4 = new Class("EXPOS 2", "West", "98.0");
+        Class period5 = new Class("OFFROLL TRI2 P5", "Giame", "98.0");
+
+        model.addAttribute("period1", period1);
+        model.addAttribute("period2", period2);
+        model.addAttribute("period3", period3);
+        model.addAttribute("period4", period4);
+        model.addAttribute("period5", period5);
         return "synergy/studentGradesHome";
     }
 
