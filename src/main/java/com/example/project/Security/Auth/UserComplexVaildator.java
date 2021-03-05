@@ -30,14 +30,14 @@ public class UserComplexVaildator implements Validator {
     public void validate(Object target, Errors errors) {
         NewUser user = (NewUser) target;
         if (!CheckUsernameIsNumber(user.getUsername())) {
-            errors.rejectValue("username", "username must be all numbers");
+            errors.rejectValue("username", "UserForm.Username.Numbers.username");
         }
         if (!isSecurePassword(user.getPassword())) {
-            errors.rejectValue("password", "password must contain at least one digit and one special character");
+            errors.rejectValue("password", "UserForm.Complexity.password");
         }
         if (!usernameIsUnique(user.getUsername()))
         {
-            errors.rejectValue("username","username is already registered in our database");
+            errors.rejectValue("username","UserForm.UserName.Unique.username");
         }
 
 

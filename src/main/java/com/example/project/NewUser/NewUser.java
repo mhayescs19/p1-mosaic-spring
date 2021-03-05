@@ -14,7 +14,7 @@ public class NewUser {
     private String name;
     @NotNull(message = "value must be filled in")
     @NotBlank(message = "must not be blank")
-    @Size(min = 4, max=12, message="username must be ")
+    @Size(min = 4, max=12, message="username must be greater then 4 digits long and less than 12 digits")
     private String username;
     @NotBlank(message = "password may not be empty")
     @NotNull(message = "Password may not be empty")
