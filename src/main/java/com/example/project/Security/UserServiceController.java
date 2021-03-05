@@ -3,6 +3,7 @@ package com.example.project.Security;
 import com.example.project.NewUser.NewUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -24,6 +25,8 @@ public class UserServiceController {
     @Autowired
     @Qualifier("UserValidator")
     private Validator validator;
+    @Autowired
+    private PasswordEncoder encoder;
 
     @GetMapping("/login")
     public String getLoginView()
@@ -54,7 +57,9 @@ public class UserServiceController {
         {
             return "synergy/CreateUser";
         }
-        DynamoDbClient dbClient = DynamoDbClient.create();
+        System.out.println(user);
+        return "synergy/successful";
+
 
 
     }

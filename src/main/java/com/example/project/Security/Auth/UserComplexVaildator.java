@@ -35,7 +35,7 @@ public class UserComplexVaildator implements Validator {
         if (!isSecurePassword(user.getPassword())) {
             errors.rejectValue("password", "password must contain at least one digit and one special character");
         }
-        if (!usernameIsUinque(user.getUsername()))
+        if (!usernameIsUnique(user.getUsername()))
         {
             errors.rejectValue("username","username is already registered in our database");
         }
@@ -71,7 +71,7 @@ public class UserComplexVaildator implements Validator {
         return containsDigit && containsSpecialCharcter;
 
     }
-    private boolean usernameIsUinque(String username)
+    private boolean usernameIsUnique(String username)
     {
         DynamoDbClient dbClient = DynamoDbClient.create();
         Map<String, AttributeValue> key = new HashMap<>();
