@@ -27,7 +27,6 @@ public class UserServiceController {
     private Validator validator;
     @Autowired
     private PasswordEncoder encoder;
-
     @GetMapping("/login")
     public String getLoginView()
     {
