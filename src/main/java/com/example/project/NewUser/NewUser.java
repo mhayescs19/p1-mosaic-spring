@@ -22,7 +22,7 @@ public class NewUser {
     @NotNull(message = "Password may not be empty")
     private String password;
     @Size(min = 13, max = 20,message = "Age must be between 13 and 20")
-    private int Age;
+    private int age;
     @NotBlank(message = "Field must be filled in")
     @NotNull(message = "Field must be filled in")
     private String year;
@@ -37,11 +37,11 @@ public class NewUser {
     }
 
     public int getAge() {
-        return Age;
+        return age;
     }
 
     public void setAge(int age) {
-        Age = age;
+        this.age = age;
     }
 
     public String getRole() {
@@ -80,7 +80,7 @@ public class NewUser {
                 "name='" + name + '\'' +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
-                ", Age=" + Age +
+                ", Age=" + age +
                 ", year='" + year + '\'' +
                 ", Role='" + Role + '\'' +
                 '}';
