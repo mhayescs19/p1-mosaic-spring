@@ -5,35 +5,59 @@
     <title>Login</title>
     <link rel="stylesheet" href="/css/student-info.css">
     <style>
+        h1 {
+            text-align: center;
+            vertical-align: top;
+            font-size: x-large;
+            font-family: 'Red Hat Display', sans-serif;
+            font-weight: 600;
+            margin-bottom: 50px;
+            margin-top: 0;
+        }
+
         input[type=text], select {
-            width: 100%;
-            padding: 12px 20px;
+            width: 150%;
+            padding: 20px 20px;
             margin: 8px 0;
             display: inline-block;
             border: 1px solid #ccc;
             border-radius: 4px;
             box-sizing: border-box;
+            font-family: 'Red Hat Display', sans-serif;
+            font-weight: 400;
         }
 
         input[type=password], select {
-            width: 100%;
-            padding: 12px 20px;
+            width: 150%;
+            padding: 20px 20px;
             margin: 8px 0;
             display: inline-block;
             border: 1px solid #ccc;
             border-radius: 4px;
             box-sizing: border-box;
+            font-family: 'Red Hat Display', sans-serif;
+            font-weight: 400;
+        }
+
+        label{
+            font-family: 'Red Hat Display', sans-serif;
+            font-weight: 400;
         }
 
         button[type=submit] {
-            width: 100%;
+            position: relative;
+            width: 125%;
             background-color: #4CAF50;
             color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
+            padding: 20px 20px;
+            margin-bottom: 0;
+            margin-top: 50px;
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            font-family: 'Red Hat Display', sans-serif;
+            font-weight: 400;
+            left: auto;
         }
 
         button[type=submit]:hover {
@@ -42,12 +66,30 @@
 
         .form {
             position: relative;
-            border-radius: 5px;
+            border-radius: 20px;
             background-color: #f2f2f2;
-            padding: 20px;
-            left: 200px;
-            top: 50px;
+            padding: 125px 250px;
+            left: 275px;
+            top: 25px;
             float: left;
+        }
+
+        .form .alert-error{
+            text-align: center;
+            margin-top: 20px;
+            font-family: 'Red Hat Display', sans-serif;
+            font-weight: 400;
+            font-size: small;
+            color: #ff0200;
+        }
+
+        .form .alert-success{
+            text-align: center;
+            margin-top: 20px;
+            font-family: 'Red Hat Display', sans-serif;
+            font-weight: 400;
+            font-size: small;
+            color: #ff0200;
         }
     </style>
 </head>
@@ -56,15 +98,12 @@
 <div class="form">
     <form name="form" th:action="@{/login}" method="post">
 
-    <div th:if="${param.error}" class="alert alert-error">
-        Invalid Username and Password.
-    </div>
-
-    <div th:if="${param.logout}" class="alert alert-success">
-        You have been logged out.
-    </div>
-
     <table>
+        <tr>
+            <h1>
+                LOG IN
+            </h1>
+        </tr>
         <tr>
             <td><label for="username">Username:</label></td>
             <td><input type="text" id="username" name="username" placeholder="Username..."/></td>
@@ -75,11 +114,18 @@
             <td><input type="password" id="password" name="password" placeholder="Password..."/></td>
         </tr>
         <tr>
-          <td><label for="remember-me">Remember-me?</label><input type="checkbox" id="remember-me" name="remember-me" class="form-control"></td>
+          <td><label for="remember-me">Remember Me: </label><input type="checkbox" id="remember-me" name="remember-me" class="form-control"></td>
         </tr>
     </table>
         <input name="_csrf" type="hidden" th:value="${_csrf.token}">
     <button type="submit" id="submit" name="submit">Submit</button>
+        <div th:if="${param.error}" class="alert-error">
+            Invalid Username and Password.
+        </div>
+
+        <div th:if="${param.logout}" class="alert-success">
+            You have been logged out.
+        </div>
     </form>
 
 </div>
