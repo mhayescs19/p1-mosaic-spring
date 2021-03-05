@@ -1,5 +1,6 @@
 package synergy;
 
+import com.example.project.NewUser.NewUser;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
@@ -83,4 +84,5 @@ public class Synergy {
     public void setIdNumber(String idNumber) {
         IdNumber = idNumber;
     }
+
 }

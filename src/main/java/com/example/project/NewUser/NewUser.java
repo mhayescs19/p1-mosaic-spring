@@ -5,6 +5,10 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+/**
+ * User that represents a new user from the create user page.
+ * This Is a DTO
+ */
 public class NewUser {
     @NotBlank(message = "Name cannot be null")
     @NotNull(message = "Name cannot be null")
@@ -17,9 +21,35 @@ public class NewUser {
     @NotBlank(message = "password may not be empty")
     @NotNull(message = "Password may not be empty")
     private String password;
-    private boolean isTeacher;
+    @Size(min = 13, max = 20,message = "Age must be between 13 and 20")
+    private int Age;
+    @NotBlank(message = "Field must be filled in")
+    @NotNull(message = "Field must be filled in")
+    private String year;
+    private final String Role;
+
+    public String getYear() {
+        return year;
+    }
+
+    public void setYear(String year) {
+        this.year = year;
+    }
+
+    public int getAge() {
+        return Age;
+    }
+
+    public void setAge(int age) {
+        Age = age;
+    }
+
+    public String getRole() {
+        return Role;
+    }
 
     public NewUser() {
+        this.Role = "STUDENT";
     }
     public String getName() {
         return name;
@@ -44,14 +74,15 @@ public class NewUser {
     public void setPassword(String password) {
         this.password = password;
     }
-
-    public boolean isTeacher() {
-        return isTeacher;
+    @Override
+    public String toString() {
+        return "NewUser{" +
+                "name='" + name + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", Age=" + Age +
+                ", year='" + year + '\'' +
+                ", Role='" + Role + '\'' +
+                '}';
     }
-
-    public void setTeacher(boolean teacher) {
-        isTeacher = teacher;
-    }
-
-
 }

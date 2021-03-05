@@ -7,6 +7,32 @@
 <body>
         <form th:action="@{/createUser}" method="post" th:object="${newUser}">
             <input name="_csrf" type="hidden" th:value="${_csrf.token}">
+            <div class="field">
+                <label for="name">Name:</label>
+                <input id="name" type="text" th:field="*{name}">
+                <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</span>
+            </div>
+            <div class="field">
+                <label for="username">Username</label><input id="username" type="text" th:field="*{username}">
+                <span th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Username Error</span>
+            </div>
+            <div class="field">
+                <label for="password">Password</label><input id="password" type="password" th:field="*{password}">
+                <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</span>
+            </div>
+            <div class="field">
+                <label for="year">Year:</label><select id="year" th:field="*{year}">
+                    <option value="Freshman">Freshman</option>
+                    <option value="Sophomore">Sophomore</option>
+                    <option value="Junior">Junior</option>
+                    <option value="Senior">Senior</option>
+            </select>
+                <span th:if="${#fields.hasErrors('year')}" th:errors="*{year}">Year Error</span>
+            </div>
+            <div class="field">
+                <input id="">
+            </div>
+
 
         </form>
 </body>
