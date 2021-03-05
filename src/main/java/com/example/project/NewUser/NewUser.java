@@ -1,9 +1,7 @@
 package com.example.project.NewUser;
 
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 
 /**
  * User that represents a new user from the create user page.
@@ -21,7 +19,9 @@ public class NewUser {
     @NotBlank(message = "password may not be empty")
     @NotNull(message = "Password may not be empty")
     private String password;
-    @Size(min = 13, max = 20,message = "Age must be between 13 and 20")
+    @NotNull
+    @Min(13)
+    @Max(20)
     private int age;
     @NotBlank(message = "Field must be filled in")
     @NotNull(message = "Field must be filled in")
