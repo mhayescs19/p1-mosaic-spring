@@ -27,7 +27,7 @@ public class ScraperAPI {
             throw new InterruptedException("Encountered Error");
         }
 
-        System.out.println(response.body());
+        //System.out.println(response.body());
         return response.body();
     }
 }

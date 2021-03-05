@@ -12,7 +12,7 @@
     $(document).ready(function () {
         $("button").click(function () {
             $.get("/api/delnorte", function (data, status) {
-                console.log(data)
+                //console.log(data)
 
                 let parsedHTML = $.parseHTML(data);
 
