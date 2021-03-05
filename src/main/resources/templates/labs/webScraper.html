@@ -11,12 +11,12 @@
 <script>
     $(document).ready(function () {
         $("button").click(function () {
-            $.get("/api/delnorte", function (data, status) {
-                //console.log(data)
+            $.get("/api/delnorte", function (data, status) { // our
+                //console.log(data) //debug
 
-                let parsedHTML = $.parseHTML(data);
+                let parsedHTML = $.parseHTML(data); //grabs the html data from data
 
-                $("#contacts-results").html($(parsedHTML).find("#content").find("table").html())
+                $("#contacts-results").html($(parsedHTML).find("#content").find("table").html()) // dom injects
 
                 //console.log($(parsedHTML).find("#content").find("table").html())
             })
