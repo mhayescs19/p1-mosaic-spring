@@ -1,11 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+</script>
 
+<script>
+    $(document).ready(function () {
+        $("button").click(function () {
+            $.get("/api/delnorte", function (data, status) {
+                console.log(data)
+
+                let parsedHTML = $.parseHTML(data);
+
+                $("#contacts-results").html($(parsedHTML).find("#content").find("table").html())
+
+                //console.log($(parsedHTML).find("#content").find("table").html())
+            })
+        })
+    })
+
+</script>
+
+<button>Thing!</button>
+
+<div class="results" id="result">
+    <table id="contacts-results">
+
+    </table>
+</div>
+</div>
 </body>
 </html>
