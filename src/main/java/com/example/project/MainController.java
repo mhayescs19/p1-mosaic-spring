@@ -40,7 +40,6 @@ import java.util.Map;
 public class MainController {
 
     Hangman control_java = new Hangman();
-
     @GetMapping("/ap-practice")
     public String apPractice() {
         return "ap-practice/menuAP.html";

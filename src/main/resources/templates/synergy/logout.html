@@ -7,10 +7,10 @@
     <style>
         button[type=submit] {
             position: relative;
-            width: 100%;
+            width: 75%;
             background-color: #4CAF50;
             color: white;
-            padding: 290px 20px;
+            padding: 100px 20px;
             margin-bottom: 0;
             margin-top: 50px;
             border: none;
@@ -18,7 +18,7 @@
             cursor: pointer;
             font-family: 'Red Hat Display', sans-serif;
             font-weight: 400;
-            left: auto;
+            left: 20%;
             font-size: xx-large;
             text-transform: uppercase;
         }
@@ -29,6 +29,8 @@
     </style>
 </head>
 <body>
+
+<div class="sideBarImport" th:replace="fragments/synergySideBar"></div>
 
 <div class="form">
     <form name="logout_form" th:action="@{/logout}" method="post">
