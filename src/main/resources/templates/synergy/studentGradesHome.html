@@ -4,6 +4,25 @@
     <meta charset="UTF-8">
     <title>Student Gradebook</title>
     <link rel="stylesheet" href="/css/student-grades-home.css">
+    <style>
+        a.link {
+            position: relative;
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            left: 250px;
+            top: 25px;
+        }
+
+        a.link:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
 <div class="sideBarImport" th:replace="fragments/synergySideBar"></div>
@@ -41,7 +60,7 @@
                             <h4 th:text="${period2.grade}"></h4>
                         </div>
                     </div>
-                <a/></div>
+                </a></div>
 
                 <div class="wrapper" id="period3"><a href="/synergy/student/grades/period3">
                     <div class="box">
@@ -94,5 +113,6 @@
         </div>
     </div>
 </div>
+<a class="link" href="/logout">LOGOUT</a>
 </body>
 </html>
