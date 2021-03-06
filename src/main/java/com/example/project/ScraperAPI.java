@@ -23,7 +23,7 @@ public class ScraperAPI {
         try {
             response = client.send(request, HttpResponse.BodyHandlers.ofString());
         } catch (InterruptedException e){
-            System.err.println(e);
+            System.err.println(e.getMessage());
             throw new InterruptedException("Encountered Error");
         }
 

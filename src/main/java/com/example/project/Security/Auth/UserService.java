@@ -7,6 +7,10 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+/**
+ * Service design to use UserDao to find user specified from username and provided to the UserServiceController
+ * @author Andrew
+ */
 @Service
 public class UserService implements UserDetailsService {
     private final UserDao userDaoService;

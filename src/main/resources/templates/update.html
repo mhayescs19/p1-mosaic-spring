@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta th:name="${_csrf.parameterName}" th:content="${_csrf.token}"/>
+    <title>Title</title>
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function ()
+    {
+        $("#PutStudent").click(function ()
+        {
+            let token = $("meta[name='_csrf']").attr("content");
+            $.ajaxSetup(
+                {
+                    contentType: 'application/json; charset=utf-8',
+                    headers:{"X-CSRF-TOKEN":token},
+                    //data can be set here as well
+                    data:JSON.stringify([{"Date":"02/12/2021","Grade":"A","Points":12,"Score":13,"Name":"Home Work 2","Notes":"empty"},
+            {"Date":"02/12/2021","Grade":"A","Points":14,"Score":15,"Name":"Home Work 3","Notes":"Put Heading on paper"}]),
+                    dataType:'json'
+
+                });
+
+            $.post("update", function (data) {
+                console.log(data)
+            });
+        });
+    });
+</script>
+<button id="PutStudent">thing to do stuff</button>
+</body>
+</html>

@@ -8,6 +8,7 @@ import com.example.project.mini.games.Hangman;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -175,7 +176,7 @@ public class MainController {
         model.addAttribute("studentgrade", synergy.getGrade());
         return "synergy/teacherView";
     }
-
+    @PreAuthorize("hasAnyRole('ROLE_STUDENT')")
     @GetMapping("/synergy/student/home")
     public String studentHome(Model model) {
 
@@ -197,8 +198,8 @@ public class MainController {
     }
 
     @GetMapping("/synergy/student/gradeBook")
-    public String studentGradeBook(Model model) {
-
+    public String studentGradeBook(Model model,Authentication authentication) {
+        System.out.println(authentication.getName());
         // displays ArrayList via ThymeLeaf for:each in HTML
         ArrayList<Assignment> assignments = new ArrayList<>();
         for (int i = 0; i < 6; i++) {
@@ -208,13 +209,26 @@ public class MainController {
         model.addAttribute("assignments", assignments);
         return "synergy/studentGradeBook";
     }
-
+    @PreAuthorize("hasAnyRole('ROLE_STUDENT')")
     @GetMapping("/synergy/student/grades")
-    public String studentGradesHome(Model model) {
-
-
-
+    public String studentGradesHome(Model model,Authentication authentication) {
+        System.out.println(authentication.getName()); // this is the username that is need from the db use for getting data
+        //from it
+      
         // tester classes periods 1-5
+        DynamoDbClient dbClient = DynamoDbClient.create();
+        Map<String, AttributeValue> key = new HashMap<>();
+        key.put("IDNumber", AttributeValue.builder().s(authentication.getName()).build());
+
+        GetItemRequest request = GetItemRequest.builder().key(key).tableName("Students").projectionExpression("Classes").build();
+        Map<String,Object> returnedItems = new HashMap<>();
+        try{
+
+        }
+        catch (Exception e)
+        {
+
+        }
         Class period1 = new Class("AP CMTR SCI A (2)", "Mortensen", "98.0");
         Class period2 = new Class("AP CHEM (2)", "Ozuna", "98.0");
         Class period3 = new Class("AP SPANISH (2)", "DeAlba", "98.0");
@@ -228,7 +242,7 @@ public class MainController {
         model.addAttribute("period5", period5);
         return "synergy/studentGradesHome";
     }
-
+    @PreAuthorize("hasAnyRole('ROLE_STUDENT')")
     @GetMapping("/synergy/student/grades/period1")
     public String studentGradesP1(Model model) {
         // displays ArrayList via ThymeLeaf for:each in HTML
@@ -241,7 +255,7 @@ public class MainController {
 
         return "synergy/studentGradesPeriod1";
     }
-
+    @PreAuthorize("hasAnyRole('ROLE_STUDENT')")
     @GetMapping("/synergy/student/grades/period2")
     public String studentGradesP2(Model model) {
         // displays ArrayList via ThymeLeaf for:each in HTML
@@ -254,7 +268,7 @@ public class MainController {
 
         return "synergy/studentGradesPeriod2";
     }
-
+    @PreAuthorize("hasAnyRole('ROLE_STUDENT')")
     @GetMapping("/synergy/student/grades/period3")
     public String studentGradesP3(Model model) {
         // displays ArrayList via ThymeLeaf for:each in HTML
@@ -267,7 +281,7 @@ public class MainController {
 
         return "synergy/studentGradesPeriod3";
     }
-
+    @PreAuthorize("hasAnyRole('ROLE_STUDENT')")
     @GetMapping("/synergy/student/grades/period4")
     public String studentGradesP4(Model model) {
         // displays ArrayList via ThymeLeaf for:each in HTML
@@ -280,7 +294,7 @@ public class MainController {
 
         return "synergy/studentGradesPeriod4";
     }
-
+    @PreAuthorize("hasAnyRole('ROLE_STUDENT')")
     @GetMapping("/synergy/student/grades/period5")
     public String studentGradesP5(Model model) {
         // displays ArrayList via ThymeLeaf for:each in HTML
@@ -293,12 +307,12 @@ public class MainController {
 
         return "synergy/studentGradesPeriod5";
     }
-
+    @PreAuthorize("hasAnyRole('ROLE_STUDENT')")
     @GetMapping("/synergy/student/info")
     public String studentInfo() {
         return "synergy/studentInfo";
     }
-
+    @PreAuthorize("hasAnyRole('Role_STUDENT')")
     @GetMapping("/synergy/student/schoolInformation")
     public String schoolInformation() {
         return "synergy/schoolInformation";
@@ -328,13 +342,17 @@ public class MainController {
      * @param idNumber idNumber to look up in database
      * @return html page
      */
+    @PreAuthorize("hasAnyRole('ROLE_TEACHER')")
     @PostMapping("/synergy/student/get")
     public String getStudent(@RequestParam(name = "IdNumber", defaultValue = "") String idNumber, Model model) {
         System.out.println(idNumber);
         DynamoDbClient dbClient = DynamoDbClient.create();
         Map<String, AttributeValue> key = new HashMap<>();
         key.put("IDNumber", AttributeValue.builder().s(idNumber).build());
-        GetItemRequest request = GetItemRequest.builder().tableName("Students").key(key).build();
+        Map<String,String> attributesNames = new HashMap<>();
+        attributesNames.put("#n","Name");
+        attributesNames.put("#y","Year");
+        GetItemRequest request = GetItemRequest.builder().tableName("Students").key(key).projectionExpression("IDNumber,#n,Assignments,Grade,#y,Age").expressionAttributeNames(attributesNames).build();
         Map<String, AttributeValue> returnedItems;
         try {
             returnedItems = dbClient.getItem(request).item();
@@ -361,7 +379,7 @@ public class MainController {
         }
     }
 
-
+    @PreAuthorize("hasAnyRole('ROLE_TEACHER')")
     @PostMapping("/synergy/student/put")
     public String putStudent(@RequestBody Synergy synergy, Model model) {
         System.out.println(synergy.toHashMap().toString());

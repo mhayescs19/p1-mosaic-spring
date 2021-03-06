@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create User</title>
+    <link rel="stylesheet" href="/css/student-info.css">
+    <style>
+        h1 {
+            text-align: center;
+            vertical-align: top;
+            font-size: x-large;
+            font-family: 'Red Hat Display', sans-serif;
+            font-weight: 600;
+            margin-bottom: 50px;
+            margin-top: 0;
+        }
+
+        input[type=text], select {
+            position: relative;
+            width: 175%;
+            padding: 10px 10px;
+            margin: 4px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: 'Red Hat Display', sans-serif;
+            font-weight: 400;
+            float: left;
+            left: -85px;
+        }
+
+        input[type=number], select {
+            position: relative;
+            width: 175%;
+            padding: 10px 10px;
+            margin: 4px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: 'Red Hat Display', sans-serif;
+            font-weight: 400;
+            float: left;
+            left: -85px;
+        }
+
+        input[type=password], select {
+            position: relative;
+            width: 175%;
+            padding: 10px 10px;
+            margin: 4px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: 'Red Hat Display', sans-serif;
+            font-weight: 400;
+            float: left;
+            left: -85px;
+        }
+
+        label{
+            position: relative;
+            font-family: 'Red Hat Display', sans-serif;
+            font-weight: 400;
+            float: left;
+            left: -85px;
+        }
+
+        button[type=submit] {
+            position: relative;
+            width: 175%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px 20px;
+            margin-bottom: 0;
+            margin-top: 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Red Hat Display', sans-serif;
+            font-weight: 400;
+            float:left;
+            left: -85px;
+        }
+
+        button[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        form {
+            position: relative;
+            border-radius: 20px;
+            background-color: #f2f2f2;
+            padding: 50px 150px;
+            left: 450px;
+            top: 50px;
+            float: left;
+        }
+
+        span {
+            position: relative;
+            color: red;
+            text-align: left;
+        }
+
+        a.link {
+            position: relative;
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            left: 500px;
+            top: 25px;
+            font-family: 'Red Hat Display', sans-serif;
+            font-weight: 400;
+        }
+
+        a.link:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+        <form th:action="@{/createUser}" method="post" th:object="${newUser}">
+            <input name="_csrf" type="hidden" th:value="${_csrf.token}">
+            <h1>CREATE USER INFO</h1>
+            <div class="field">
+                <label for="name">Name:</label>
+                <input id="name" type="text" th:field="*{name}">
+                <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</span>
+            </div>
+            <div class="field">
+                <label for="username">Username:</label><input id="username" type="text" th:field="*{username}">
+                <span th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Username Error</span>
+            </div>
+            <div class="field">
+                <label for="password">Password:</label><input id="password" type="password" th:field="*{password}">
+                <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</span>
+            </div>
+            <div class="field">
+                <label for="year">Year:</label><select id="year" th:field="*{year}">
+                    <option value="Freshman">Freshman</option>
+                    <option value="Sophomore">Sophomore</option>
+                    <option value="Junior">Junior</option>
+                    <option value="Senior">Senior</option>
+            </select>
+                <span th:if="${#fields.hasErrors('year')}" th:errors="*{year}">Year Error</span>
+            </div>
+            <div class="field">
+                <label for="age">Age:</label><input id="age" th:field="*{age}" type="number">
+                <span th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Age Error</span>
+            </div>
+            <button type="submit" id="submitter">Submit</button>
+        </form>
+        <a class="link" href="/login">RETURN TO LOG IN PAGE</a>
+</body>
+</html>

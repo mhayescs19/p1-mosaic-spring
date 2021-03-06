@@ -32,7 +32,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
        http
-               .authorizeRequests().antMatchers("/","/index","/home").permitAll()
+               .authorizeRequests().antMatchers("/","/index","/home","/createUser").permitAll()
                .antMatchers("/synergy**", "/synergy/**").authenticated()
                .and()
                .formLogin()

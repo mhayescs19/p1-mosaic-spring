@@ -9,14 +9,15 @@
 </script>
 
 <script>
-    $(document).ready(//function () {
-     //   $("button").click(function () {
-            $.get("/api/delnorte", function (data, status) {
-                //console.log(data)
+    $(document).ready(function () {
+        $("button").click(function () {
+            $.get("/api/delnorte", function (data, status) { // function that will handle the client side parsing
+                //console.log(data) //debug
 
-                let parsedHTML = $.parseHTML(data);
+                let parsedHTML = $.parseHTML(data); //grabs the html data from data
 
-                $("#contacts-results").html($(parsedHTML).find("#content").find("table").html())
+                $("#contacts-results").html($(parsedHTML).find("#content").find("table").html()) // dom injects school table into clients webpage
+                //#=id and "text"=tag of some sort
 
                 console.log($(parsedHTML).find("#content").find("table").html())
             }))
