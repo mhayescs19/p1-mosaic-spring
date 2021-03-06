@@ -12,16 +12,16 @@ public class NewUser {
     @NotNull(message = "Name cannot be null")
     @Size(min = 3, max = 20, message = "name must be bigger than 3 characters and must be less than 20")
     private String name;
-    @NotNull(message = "value must be filled in")
-    @NotBlank(message = "must not be blank")
+    @NotNull(message = "Username must be filled in")
+    @NotBlank(message = "Username must not be blank")
     @Size(min = 4, max=12, message="username must be greater then 4 digits long and less than 12 digits")
     private String username;
     @NotBlank(message = "password may not be empty")
     @NotNull(message = "Password may not be empty")
     private String password;
     @NotNull
-    @Min(13)
-    @Max(20)
+    @Min(value = 13,message = "Age must be greater than 13 or equal to")
+    @Max(value = 20,message = "Age must be less than 20 or equal to")
     private int age;
     @NotBlank(message = "Field must be filled in")
     @NotNull(message = "Field must be filled in")
