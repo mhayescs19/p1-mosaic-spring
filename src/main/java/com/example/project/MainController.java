@@ -212,6 +212,8 @@ public class MainController {
     @GetMapping("/synergy/student/grades")
     public String studentGradesHome(Model model) {
 
+
+
         // tester classes periods 1-5
         Class period1 = new Class("AP CMTR SCI A (2)", "Mortensen", "98.0");
         Class period2 = new Class("AP CHEM (2)", "Ozuna", "98.0");
