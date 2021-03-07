@@ -38,7 +38,6 @@ public class TestMapping {
             ObjectMapper objectMapper = new ObjectMapper();
             List<Object> classes = (List<Object>) convertedOver.get("Classes");
             List<Class> classList = new LinkedList<>();
-            StringBuilder builder = new StringBuilder();
             for (Object obj:classes) {
                 String json = objectMapper.writeValueAsString(obj);
                 classList.add(objectMapper.readValue(json,Class.class));

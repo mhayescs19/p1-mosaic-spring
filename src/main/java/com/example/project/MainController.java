@@ -33,9 +33,7 @@ import synergy.Schedule;
 import synergy.Synergy;
 
 import javax.validation.Valid;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 @Controller
 public class MainController {
@@ -212,22 +210,37 @@ public class MainController {
     @PreAuthorize("hasAnyRole('ROLE_STUDENT')")
     @GetMapping("/synergy/student/grades")
     public String studentGradesHome(Model model,Authentication authentication) {
-        System.out.println(authentication.getName()); // this is the username that is need from the db use for getting data
+        System.out.println(authentication.getName()); // this is the username that is needed from the db use for getting data
         //from it
       
         // tester classes periods 1-5
+        final String period = "period";
         DynamoDbClient dbClient = DynamoDbClient.create();
         Map<String, AttributeValue> key = new HashMap<>();
         key.put("IDNumber", AttributeValue.builder().s(authentication.getName()).build());
 
         GetItemRequest request = GetItemRequest.builder().key(key).tableName("Students").projectionExpression("Classes").build();
-        Map<String,Object> returnedItems = new HashMap<>();
+        Map<String,Object> returnedItems;
         try{
-
+            returnedItems = new itemToHashMap().convertItemToMap(EnhancedAttributeValue.fromMap(dbClient.getItem(request).item()));
+            ObjectMapper mapper = new ObjectMapper();
+            List<Object> objectList  = (List<Object>) returnedItems.get("Classes"); // this really is a stupid idea and should only be used when you know the data that you work
+            // with is the same type.
+            List<Class> classList = new ArrayList<>();
+            for (Object obj:objectList) // conversion
+            {
+                String json = mapper.writeValueAsString(obj);
+                classList.add(mapper.readValue(json,Class.class));
+            }
+           for (int i = 0; i<classList.size(); i++) // made it dynamic just in case maybe people have less than 5 classes/ more
+           {
+               model.addAttribute(period+i,classList.get(i));
+           }
         }
         catch (Exception e)
         {
-
+            System.err.println(e.getMessage());
+            //back up mapping idk
         }
         Class period1 = new Class("AP CMTR SCI A (2)", "Mortensen", "98.0");
         Class period2 = new Class("AP CHEM (2)", "Ozuna", "98.0");
