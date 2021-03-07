@@ -57,7 +57,10 @@ public class UserServiceController {
             return "synergy/CreateUser";
         }
         System.out.println(user);
+        user.setPassword(encoder.encode(user.getPassword()));
+
         return "synergy/successful";
+
 
 
 

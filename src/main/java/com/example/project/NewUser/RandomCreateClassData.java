@@ -1,0 +1,213 @@
+package com.example.project.NewUser;
+
+import com.google.common.collect.Lists;
+import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
+import synergy.Assignment;
+import synergy.Class;
+import com.example.project.NewUser.ListOfClasses;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
+import static com.example.project.NewUser.ListOfClasses.TeacherAndClassList;
+import static com.example.project.NewUser.ListOfClasses.subjects;
+import static com.example.project.NewUser.ListOfClasses.grades;
+
+@Service
+@Repository("CreateClassData")
+public class RandomCreateClassData {
+    public List<String> nameOfAssignemtns;
+    /* Assignment data Outline
+            date
+            Name
+            Score
+            Points
+            Notes
+            Grade
+     */
+    /*
+            Class Data Outline
+            Name
+            Teacher
+            Grade
+            Period
+            Assignments(line 9)
+     */
+
+
+    public RandomCreateClassData()
+    {
+        nameOfAssignemtns = new ArrayList<>();
+        for (int i=1; i<25; i++)
+        {
+            nameOfAssignemtns.add("Hw "+i);
+        }
+        for (int i=1; i<5; i++)
+        {
+            nameOfAssignemtns.add("Quiz "+ i);
+        }
+        for (int i =1; i<3; i++)
+        {
+            nameOfAssignemtns.add("Test " + i);
+        }
+    }
+    /**
+     *
+     * @return the list of classes that new user will have
+     */
+    public List<Class> createClassesData()
+    {
+        ArrayList<Integer> teachsNums = new ArrayList<>();
+        ArrayList<Integer> subjectsNums = new ArrayList<>();
+
+        return null; //place holder
+    }
+    private Class createClassData(ArrayList<Integer> teachNums, ArrayList<Integer> subjectsNums)
+    {
+
+        Random random = new Random();
+        if (teachNums.isEmpty()) {
+            teachNums.add(random.nextInt(TeacherAndClassList.size()));
+        }
+        else
+        {
+            while (true)
+            {
+                Integer temp = random.nextInt(TeacherAndClassList.size());
+                if (!teachNums.contains(temp))
+                {
+                   teachNums.add(temp);
+                   break;
+                }
+            }
+
+        }
+        if (subjectsNums.isEmpty())
+        {
+            subjectsNums.add(random.nextInt(subjects.size()));
+        }
+        else
+        {
+            while (true)
+            {
+                Integer temp = random.nextInt(subjects.size());
+                if (!subjectsNums.contains(temp))
+                {
+                    subjectsNums.add(temp);
+                    break;
+                }
+            }
+        }
+        ArrayList listOfNames = (ArrayList) TeacherAndClassList.get(teachNums.get(teachNums.size()-1));
+        StringBuilder teacher = new StringBuilder();
+        for (Object obj:listOfNames) {
+            teacher.append(obj.toString());
+            teacher.append(" ");
+
+        }
+        String name = subjects.get(subjectsNums.get(subjectsNums.size()-1));
+        String grade= grades.get(random.nextInt(grades.size()));
+        Class temp= new Class(name,teacher.toString(),grade);
+
+    }
+
+    /**
+     * Called In order to create a list of Assignments for each class
+     * @return list of Assignments for each class
+     */
+    private List<Assignment> createListOfAssignments()
+    {
+        ArrayList<Integer> numbersUsed = new ArrayList<>();
+
+        return null;
+    }
+    private void createAssignment(ArrayList<Integer> numbers,List<Assignment> assignmentList)
+    {
+        final String year = "2021";
+        /*
+        dates im thinking 01/10/2021 - 02/15/2021
+         */
+        String date = "0";
+        Random random =new Random();
+        int temp = random.nextInt(2)+1;
+        if (temp==1)
+        {
+            date+=temp+"/";
+            temp = random.nextInt(31)+1;
+            date+= temp+"/"+year;
+
+        }
+        else
+        {
+            date+=temp+"/";
+            temp = random.nextInt(28)+1;
+            date+=temp+"/"+year;
+        }
+        if (numbers.isEmpty())
+        {
+            numbers.add(random.nextInt(nameOfAssignemtns.size()));
+        }
+        else
+        {
+            while (true)
+            {
+                temp = random.nextInt(nameOfAssignemtns.size());
+                if (!numbers.contains(temp))
+                {
+                    numbers.add(temp);
+                    break;
+                }
+            }
+        }
+        Assignment local = new Assignment();
+        local.setDate(date);
+        local.setAssignmentTitle(nameOfAssignemtns.get(numbers.get(numbers.size()-1)));
+        local.setGrade(grades.get(random.nextInt(grades.size())));
+        String localGrade = local.getGrade();
+        double lowerBound;
+        double UpperBound;
+        switch (localGrade) {
+            case "C+" -> {
+                lowerBound = .78;
+                UpperBound = .80;
+            }
+            case "B-" -> {
+                lowerBound = .80;
+                UpperBound = .83;
+            }
+            case "B+" -> {
+                lowerBound = .87;
+                UpperBound = .90;
+            }
+            case "A-" -> {
+                lowerBound = .90;
+                UpperBound = .93;
+            }
+            case "A" -> {
+                lowerBound = .94;
+                UpperBound = .97;
+            }
+            case "A+" -> {
+                lowerBound = .97;
+                UpperBound = 1.0;
+            }
+            default -> {
+                lowerBound = .80;
+                UpperBound = .95;
+            }
+        }
+        int points = random.nextInt(41)+10;
+        double score = points* random.doubles(1,lowerBound,UpperBound).sum(); // points * percent
+        local.setScore(score);
+        local.setPoints(points);
+
+    }
+
+
+
+
+
+}
