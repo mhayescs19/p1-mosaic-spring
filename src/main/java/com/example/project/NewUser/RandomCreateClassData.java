@@ -41,15 +41,15 @@ public class RandomCreateClassData {
     public RandomCreateClassData()
     {
         nameOfAssignemtns = new ArrayList<>();
-        for (int i=1; i<25; i++)
+        for (int i=1; i<26; i++)
         {
             nameOfAssignemtns.add("Hw "+i);
         }
-        for (int i=1; i<5; i++)
+        for (int i=1; i<6; i++)
         {
             nameOfAssignemtns.add("Quiz "+ i);
         }
-        for (int i =1; i<3; i++)
+        for (int i =1; i<4; i++)
         {
             nameOfAssignemtns.add("Test " + i);
         }
@@ -62,10 +62,15 @@ public class RandomCreateClassData {
     {
         ArrayList<Integer> teachsNums = new ArrayList<>();
         ArrayList<Integer> subjectsNums = new ArrayList<>();
+        List<Class> classList = new ArrayList<>(5);
+        for (int i=1; i<=5; i++)
+        {
+            classList.add(createClassData(teachsNums,subjectsNums,i));
+        }
 
-        return null; //place holder
+        return classList; //place holder
     }
-    private Class createClassData(ArrayList<Integer> teachNums, ArrayList<Integer> subjectsNums)
+    private Class createClassData(ArrayList<Integer> teachNums, ArrayList<Integer> subjectsNums,int period)
     {
 
         Random random = new Random();
@@ -103,16 +108,72 @@ public class RandomCreateClassData {
         }
         ArrayList listOfNames = (ArrayList) TeacherAndClassList.get(teachNums.get(teachNums.size()-1));
         StringBuilder teacher = new StringBuilder();
+        int counter =0;
         for (Object obj:listOfNames) {
             teacher.append(obj.toString());
-            teacher.append(" ");
+            if(counter%2==0)
+            {
+                teacher.append(" ");
+            }
+            counter++;
 
         }
         String name = subjects.get(subjectsNums.get(subjectsNums.size()-1));
-        String grade= grades.get(random.nextInt(grades.size()));
+        String grade="empty";
         Class temp= new Class(name,teacher.toString(),grade);
+        temp.setAssignments(createListOfAssignments());
+        List<Assignment> findGrade = temp.getAssignments();
+        Double points = findGrade.stream().mapToDouble(Assignment::getPoints).sum();
+        Double score = findGrade.stream().mapToDouble(Assignment::getScore).sum();
+        temp.setGrade(findGrade(score/points));
+        return temp;
+
 
     }
+    private String findGrade(double value)
+    {
+        if (value <.70)
+        {
+            return "D";
+        }
+        if (value<.73)
+        {
+            return "C-";
+        }
+        if (value<.77)
+        {
+            return "C";
+        }
+        if (value<.80)
+        {
+            return "C+";
+        }
+        if (value<.83)
+        {
+            return "B-";
+        }
+        if (value<.87)
+        {
+            return "B";
+        }
+        if (value<.90)
+        {
+            return "B+";
+        }
+        if (value<.93)
+        {
+            return "A-";
+        }
+        if (value<.97)
+        {
+            return "A";
+        }
+        if (value <=1.0) {
+            return "A+";
+        }
+        return "Can not calculate grade";
+    }
+
 
     /**
      * Called In order to create a list of Assignments for each class
@@ -121,9 +182,17 @@ public class RandomCreateClassData {
     private List<Assignment> createListOfAssignments()
     {
         ArrayList<Integer> numbersUsed = new ArrayList<>();
+        List<Assignment> assignmentArrayList = new ArrayList<>();
+        createAssignment(numbersUsed,assignmentArrayList); //undefine number of returns, returns are between 1-9 inclusive
 
-        return null;
+        return assignmentArrayList;
     }
+
+    /**
+     *
+     * @param numbers numbers not to use
+     * @param assignmentList list of Assignments to be used for each class
+     */
     private void createAssignment(ArrayList<Integer> numbers,List<Assignment> assignmentList)
     {
         final String year = "2021";
@@ -200,9 +269,16 @@ public class RandomCreateClassData {
             }
         }
         int points = random.nextInt(41)+10;
-        double score = points* random.doubles(1,lowerBound,UpperBound).sum(); // points * percent
+        double score = (points* random.doubles(1,lowerBound,UpperBound).sum()); // points * percent
+        score = Math.round(score*Math.pow(10,3))/Math.pow(10,3);
         local.setScore(score);
         local.setPoints(points);
+        local.setNotes("This was procedurally generated, this is not an accurate representation of how grading works.");
+        assignmentList.add(local);
+        if (random.nextBoolean() && numbers.size()<10)
+        {
+            createAssignment(numbers, assignmentList);
+        }
 
     }
 
