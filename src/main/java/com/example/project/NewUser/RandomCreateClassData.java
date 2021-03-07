@@ -276,7 +276,7 @@ public class RandomCreateClassData {
         }
         int points = random.nextInt(41)+10;
         double score = (points* random.doubles(1,lowerBound,UpperBound).sum()); // points * percent
-        score = Math.round(score*Math.pow(10,3))/Math.pow(10,3);
+        score = Math.round(score*Math.pow(10,3))/Math.pow(10,3); //rounding to 3 decimal percent
         local.setScore(score);
         local.setPoints(points);
         local.setNotes("This was procedurally generated, this is not an accurate representation of how grading works.");
