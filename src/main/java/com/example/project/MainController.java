@@ -214,6 +214,7 @@ public class MainController {
     public String studentGradesHome(Model model,Authentication authentication) {
         System.out.println(authentication.getName()); // this is the username that is need from the db use for getting data
         //from it
+      
         // tester classes periods 1-5
         DynamoDbClient dbClient = DynamoDbClient.create();
         Map<String, AttributeValue> key = new HashMap<>();
