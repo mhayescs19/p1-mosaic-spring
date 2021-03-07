@@ -88,7 +88,6 @@ public HashMap<String, AttributeValue> hashMapToValue(HashMap<String,Object> obj
                         finalMap.put(key, AttributeValue.builder().l(listObjectToAttributeValue(linkedList)).build());
                     break;
                 case "java.lang.String": // single cast to Attribute Value
-                    System.out.println(temp);
                     finalMap.put(key, AttributeValue.builder().s(temp.toString()).build());
                     break;
                 case "java.lang.Integer","java.lang.Double":

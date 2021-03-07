@@ -24,7 +24,7 @@ public class ListOfClasses {
       }
    }
    public static List<String> subjects = List.of("MathA","MathB","English1","English2","Bio","Physics","Art","Computer Science");
-   public static List<String> grades = List.of("C+","B-","B+","A-","A","A+");
+   public static List<String> grades = List.of("C+","B-","B","B+","A-","A","A+");
    /**
     *
     * @return a list of lists of strings

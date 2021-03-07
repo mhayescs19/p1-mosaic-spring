@@ -311,7 +311,7 @@ public class MainController {
     public String studentInfo() {
         return "synergy/studentInfo";
     }
-    @PreAuthorize("hasAnyRole('Role_STUDENT')")
+    @PreAuthorize("hasAnyRole('ROLE_STUDENT')")
     @GetMapping("/synergy/student/schoolInformation")
     public String schoolInformation() {
         return "synergy/schoolInformation";

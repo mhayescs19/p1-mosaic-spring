@@ -2,6 +2,8 @@ package com.example.project.NewUser;
 
 
 import javax.validation.constraints.*;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * User that represents a new user from the create user page.
@@ -85,4 +87,16 @@ public class NewUser {
                 ", Role='" + Role + '\'' +
                 '}';
     }
+    public Map<String,Object> toMap()
+    {
+        Map<String,Object> objectMap = new HashMap<>();
+        objectMap.put("Name",getName());
+        objectMap.put("Year",getYear());
+        objectMap.put("Role",getRole());
+        objectMap.put("IDNumber",getUsername());
+        objectMap.put("Password",getPassword());
+        objectMap.put("Age",getAge());
+        return objectMap;
+    }
+
 }

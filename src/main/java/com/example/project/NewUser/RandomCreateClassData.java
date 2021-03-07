@@ -126,6 +126,7 @@ public class RandomCreateClassData {
         Double points = findGrade.stream().mapToDouble(Assignment::getPoints).sum();
         Double score = findGrade.stream().mapToDouble(Assignment::getScore).sum();
         temp.setGrade(findGrade(score/points));
+        temp.setPeriod(period);
         return temp;
 
 
@@ -197,7 +198,7 @@ public class RandomCreateClassData {
     {
         final String year = "2021";
         /*
-        dates im thinking 01/10/2021 - 02/15/2021
+        dates im thinking 01/10/2021 - 02/28/2021
          */
         String date = "0";
         Random random =new Random();
@@ -275,7 +276,7 @@ public class RandomCreateClassData {
         local.setPoints(points);
         local.setNotes("This was procedurally generated, this is not an accurate representation of how grading works.");
         assignmentList.add(local);
-        if (random.nextBoolean() && numbers.size()<10)
+        if (random.nextBoolean() && numbers.size()<10) // limits recursion to max of 10 loops
         {
             createAssignment(numbers, assignmentList);
         }
