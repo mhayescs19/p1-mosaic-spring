@@ -248,6 +248,11 @@ public class RandomCreateClassData {
                 lowerBound = .80;
                 UpperBound = .83;
             }
+            case "B" ->
+                    {
+                        lowerBound=.83;
+                        UpperBound=.87;
+                    }
             case "B+" -> {
                 lowerBound = .87;
                 UpperBound = .90;
