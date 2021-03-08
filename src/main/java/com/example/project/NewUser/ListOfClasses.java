@@ -1,32 +1,34 @@
 package com.example.project.NewUser;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.List;
 import java.util.Objects;
-
+@Service
+@Repository("ClassListData")
 public class ListOfClasses {
    public static List TeacherAndClassList;
-   static {
-      try {
-         TeacherAndClassList = createList();
-      } catch (IOException e) {
-         e.printStackTrace();
-         try {
-            TeacherAndClassList = createList();
-         } catch (IOException ioException) {
-            ioException.printStackTrace();
-            System.exit(-1);
-         }
-      }
-   }
    public static List<String> subjects = List.of("MathA","MathB","English1","English2","Bio","Physics","Art","Computer Science");
    public static List<String> grades = List.of("C+","B-","B","B+","A-","A","A+");
+
+   public ListOfClasses() throws IOException {
+      BufferedReader reader= new BufferedReader(new InputStreamReader(Objects.requireNonNull(this.getClass().getClassLoader().getResourceAsStream("Abstractdata/Results.json"))));
+      String lines;
+      StringBuilder jsonfile = new StringBuilder();
+      while ((lines=reader.readLine())!=null)
+      {
+         jsonfile.append(lines);
+      }
+      TeacherAndClassList = new ObjectMapper().readValue(jsonfile.toString(),List.class);
+   }
+
    /**
-    *
+    * @deprecated
     * @return a list of lists of strings
     * @throws IOException not good lets hope that this does not happen
     */

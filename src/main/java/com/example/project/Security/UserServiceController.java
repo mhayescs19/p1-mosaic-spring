@@ -1,6 +1,7 @@
 package com.example.project.Security;
 
 import Tools.DynamoDb.hashMapToItem;
+import com.example.project.NewUser.ListOfClasses;
 import com.example.project.NewUser.NewUser;
 import com.example.project.NewUser.RandomCreateClassData;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -38,6 +39,9 @@ public class UserServiceController {
     private Validator validator;
     @Autowired
     private PasswordEncoder encoder;
+    @Autowired
+    @Qualifier("ClassListData")
+    ListOfClasses listOfClasses;
     @Autowired
     @Qualifier("CreateClassData")
     RandomCreateClassData classData;
