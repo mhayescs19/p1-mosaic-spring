@@ -62,7 +62,7 @@ We  plan on making a synergy clone where teachers can view their students and gi
 Displays a full student schedule with tester data using the class Class which holds period number, teacher name and class name attributes. Created by Michael Hayes.
 * ThymeLeaf [for:each loop](https://github.com/mhayescs19/p1-mosaic-spring/blob/600c4ac64b912983e602a502cc9e0913d1957e3d/src/main/resources/templates/synergy/studentHome.html#L20-L45) used with [Class class](https://github.com/mhayescs19/p1-mosaic-spring/blob/600c4ac64b912983e602a502cc9e0913d1957e3d/src/main/java/com/example/project/MainController.java#L174-L183).
 * Custom styling of table row, [note min-height/width](https://github.com/mhayescs19/p1-mosaic-spring/blob/600c4ac64b912983e602a502cc9e0913d1957e3d/src/main/resources/static/css/student-home.css#L54-L73), allows for table to uniform in height and width
-<br> <br>
+<br>
 **Runtime Guidance**
 - Navigate to [/synergy/student/home](http://ec2-44-239-226-169.us-west-2.compute.amazonaws.com/synergy/student/home) to view page (Note: page uses tester data so link may be deprecated and/or updated with live database data)
 
@@ -70,9 +70,21 @@ Displays a full student schedule with tester data using the class Class which ho
 Created a landing page hub to view all of a student's classes with grades displayed on corresponding tiles. Each tile displays period number, class and teacher name, and current grade. Created by Michael Hayes.
 * Each tile is composed of multiple nested divs: 1) [wrapper](https://github.com/mhayescs19/p1-mosaic-spring/blob/40ad2c8947f729040da722281389021349c208a2/src/main/resources/templates/synergy/studentGradesHome.html#L16-L29) (container for everything in tile), 2) [box](https://github.com/mhayescs19/p1-mosaic-spring/blob/40ad2c8947f729040da722281389021349c208a2/src/main/resources/templates/synergy/studentGradesHome.html#L18-L20) ([styled](https://github.com/mhayescs19/p1-mosaic-spring/blob/40ad2c8947f729040da722281389021349c208a2/src/main/resources/static/css/student-grades-home.css#L51-L71) to appear as main gray background), 3) [contentClassTitle](https://github.com/mhayescs19/p1-mosaic-spring/blob/40ad2c8947f729040da722281389021349c208a2/src/main/resources/templates/synergy/studentGradesHome.html#L21-L24) ([styled](https://github.com/mhayescs19/p1-mosaic-spring/blob/40ad2c8947f729040da722281389021349c208a2/src/main/resources/static/css/student-grades-home.css#L73-L79) lighter gray and holds class title and name), 4) [contentGrade](https://github.com/mhayescs19/p1-mosaic-spring/blob/40ad2c8947f729040da722281389021349c208a2/src/main/resources/templates/synergy/studentGradesHome.html#L25-L27) ([styled](https://github.com/mhayescs19/p1-mosaic-spring/blob/40ad2c8947f729040da722281389021349c208a2/src/main/resources/static/css/student-grades-home.css#L99-L104) in bottom of main gray background in tile)
 * [Entire tile links](https://github.com/mhayescs19/p1-mosaic-spring/blob/40ad2c8947f729040da722281389021349c208a2/src/main/resources/templates/synergy/studentGradesHome.html#L16) to respective period detail grade view (old /synergy/student/gradeBook except now x5)
-<br><br>
+<br>
+
 **Runtime Guidance**
 - Navigate to [/synergy/student/grades/periodx](http://ec2-44-239-226-169.us-west-2.compute.amazonaws.com/synergy/student/grades/period1) (Note: page uses tester data so link may be deprecated and/or updated with live database data)
+
+### 3. [Teacher Info Web Scraper](https://github.com/mhayescs19/p1-mosaic-spring/issues/32)
+Supports the school information page by pulling the teacher school emails from https://www.powayusd.com/en-US/Schools/HS/DNHS/Contacts/Staff-Directory. To avoid a CORS error, an API proxy was created using an HTTP Request to load the entire page from the DNHS reference to be called via AJAX on the School Information page. Created by Andrew Pegg and Michael Hayes.
+* HTTP Request used to load the entire [raw reference HTML page](https://github.com/mhayescs19/p1-mosaic-spring/blob/38a7344822ca6e745b13aa16bc68297935550d10/src/main/java/com/example/project/ScraperAPI.java#L20-L24) as a String
+* AJAX used inside of JavaScript which [pulls the HTML from our website](https://github.com/mhayescs19/p1-mosaic-spring/blob/38a7344822ca6e745b13aa16bc68297935550d10/src/main/resources/templates/synergy/schoolInformation.html#L34) (which holds the HTML from the DNHS teacher emails page) which is then [parsed](https://github.com/mhayescs19/p1-mosaic-spring/blob/38a7344822ca6e745b13aa16bc68297935550d10/src/main/resources/templates/synergy/schoolInformation.html#L35-L38) to only display the data inside of the table tag on the page.
+* Data is injected into the [contacts-results](https://github.com/mhayescs19/p1-mosaic-spring/blob/38a7344822ca6e745b13aa16bc68297935550d10/src/main/resources/templates/synergy/schoolInformation.html#L49-L51) table on the School Information HTML page.
+* Custom [styling](https://github.com/mhayescs19/p1-mosaic-spring/blob/38a7344822ca6e745b13aa16bc68297935550d10/src/main/resources/static/css/school-information.css#L42-L66) gives the matches the table to the UI of our website. 
+<br>
+**Runtime Guidance**
+- Navigate to [/synergy/student/schoolInformation](http://ec2-44-239-226-169.us-west-2.compute.amazonaws.com/synergy/student/schoolInformation) to view page
+
 ## 2/26  Weekly Project Contributions and Artifacts Log
 ### Week 11
 ### 1. [Put Student](https://github.com/mhayescs19/p1-mosaic-spring/issues/27) and [Custom Login Page](https://github.com/mhayescs19/p1-mosaic-spring/issues/10)
