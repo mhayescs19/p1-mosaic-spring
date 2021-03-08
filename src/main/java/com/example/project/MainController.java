@@ -176,18 +176,39 @@ public class MainController {
     }
     @PreAuthorize("hasAnyRole('ROLE_STUDENT')")
     @GetMapping("/synergy/student/home")
-    public String studentHome(Model model) {
+    public String studentHome(Model model,Authentication authentication) {
 
         //displays ArrayList via ThymeLeaf for:each in HTML
-        ArrayList<Class> schedule = new ArrayList<>();
-        schedule.add(new Class("AP CMTR SCI A (2)", "Mortensen"));
-        schedule.add(new Class("AP CHEM (2)", "Ozuna"));
-        schedule.add(new Class("AP SPANISH (2)", "DeAlba"));
-        schedule.add(new Class("EXPOS 2", "West"));
-        schedule.add(new Class("OFFROLL TRI2 P5", "Giame"));
+        Map<String,AttributeValue> key = new HashMap<>();
+        key.put("IDNumber", AttributeValue.builder().s(authentication.getName()).build());
+        DynamoDbClient dbClient = DynamoDbClient.create();
+        GetItemRequest getItemRequest = GetItemRequest.builder().key(key).tableName("Students").projectionExpression("Classes").build();
+        try{
+            Map<String,Object> returnedItems = new itemToHashMap().convertItemToMap(EnhancedAttributeValue.fromMap(dbClient.getItem(getItemRequest).item()));
+            List<Object> objectList = (List<Object>) returnedItems.get("Classes");
+            ArrayList<Class> schedule = new ArrayList<>();
+            String json;
+            ObjectMapper objectMapper = new ObjectMapper();
+            for (Object obj: objectList)
+            {
+                json = objectMapper.writeValueAsString(obj);
+                schedule.add(objectMapper.readValue(json,Class.class));
 
-        model.addAttribute("schedule", schedule);
-        return "synergy/studentHome";
+            }
+            model.addAttribute("schedule", schedule);
+            return "synergy/studentHome";
+        }
+        catch (Exception e) {
+            ArrayList<Class> schedule = new ArrayList<>();
+            schedule.add(new Class("AP CMTR SCI A (2)", "Mortensen"));
+            schedule.add(new Class("AP CHEM (2)", "Ozuna"));
+            schedule.add(new Class("AP SPANISH (2)", "DeAlba"));
+            schedule.add(new Class("EXPOS 2", "West"));
+            schedule.add(new Class("OFFROLL TRI2 P5", "Giame"));
+
+            model.addAttribute("schedule", schedule);
+            return "synergy/studentHome";
+        }
     }
 
     @GetMapping("/synergy/student/calendar")
