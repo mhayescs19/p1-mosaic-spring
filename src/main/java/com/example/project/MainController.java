@@ -234,7 +234,8 @@ public class MainController {
             }
            for (int i = 0; i<classList.size(); i++) // made it dynamic just in case maybe people have less than 5 classes/ more
            {
-               model.addAttribute(period+i,classList.get(i));
+               String temp = String.valueOf(i+1);
+               model.addAttribute(period+temp,classList.get(i));
            }
            return "synergy/studentGradesHome";
         }
