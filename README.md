@@ -58,7 +58,13 @@ We  plan on making a synergy clone where teachers can view their students and gi
 
 ## 3/5  Weekly Project Contributions and Artifacts Log
 ### Week 12
-### 1. 
+### 1. [Complete Student Home Page](https://github.com/mhayescs19/p1-mosaic-spring/issues/25)
+Displays a full student schedule with tester data using the class Class which holds period number, teacher name and class name attributes. Created by Michael Hayes.
+* ThymeLeaf [for:each loop](https://github.com/mhayescs19/p1-mosaic-spring/blob/600c4ac64b912983e602a502cc9e0913d1957e3d/src/main/resources/templates/synergy/studentHome.html#L20-L45) used with [Class class](https://github.com/mhayescs19/p1-mosaic-spring/blob/600c4ac64b912983e602a502cc9e0913d1957e3d/src/main/java/com/example/project/MainController.java#L174-L183).
+* Custom styling of table row, [note min-height/width](https://github.com/mhayescs19/p1-mosaic-spring/blob/600c4ac64b912983e602a502cc9e0913d1957e3d/src/main/resources/static/css/student-home.css#L54-L73), allows for table to uniform in height and width
+<br> <br>
+**Runtime Guidance**
+- Navigate to [/synergy/student/home](http://ec2-44-239-226-169.us-west-2.compute.amazonaws.com/synergy/student/home) to view page (Note: page uses tester data so link may be deprecated and/or updated with live database data)
 
 ## 2/26  Weekly Project Contributions and Artifacts Log
 ### Week 11
@@ -85,7 +91,7 @@ Added touch ups Student Info custom table with divs and tester static data. The 
 * [Class name](https://github.com/mhayescs19/p1-mosaic-spring/blob/3670fccb503e7bbfdd40ef81b134291d04702583/src/main/resources/templates/synergy/studentGradebook.html#L24-L32) custom [styling](https://github.com/mhayescs19/p1-mosaic-spring/blob/3670fccb503e7bbfdd40ef81b134291d04702583/src/main/resources/static/css/student-gradebook.css#L50-L65)
 <br><br>
 **Runtime Guidance**
-- Navigate to [/synergy/student/gradeBook](http://ec2-44-239-226-169.us-west-2.compute.amazonaws.com/synergy/student/gradeBook) to view page (Note: page uses tester data so link may be deprecated)
+- Navigate to [/synergy/student/gradeBook](http://ec2-44-239-226-169.us-west-2.compute.amazonaws.com/synergy/student/gradeBook) to view page (Note: page uses tester data so link may be deprecated and/or updated with live database data)
 
 ## 2/18  Weekly Project Contributions and Artifacts Log
 ### Week 10
