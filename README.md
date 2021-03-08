@@ -70,6 +70,12 @@ Created a custom Spring Security Login in page which overrides default mapping. 
 * [CSRF Token](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/synergy/teacherView.html#L64) allows for asynchronous post method call
 * Created custom [Spring Security Login Page](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/synergy/login.html#L57) and overrided [default login page mapping](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/java/com/example/project/Security/SecurityConfig.java#L39), CSS styled the login form <br> <br>
 
+**Runtime Guidance**
+- Click "Synergy" on main navigation bar
+- Login using Username: "1", Password: "test123" which gives Student access authorization
+- Click "Student View"
+- Explore through the different pages using the nav bar on the left hand side of the page
+
 ### 2. [Continue Student Info, Grade Detail View and Load Test Data](https://github.com/mhayescs19/p1-mosaic-spring/issues/20)
 Added touch ups Student Info custom table with divs and tester static data. The Student Gradebook was created using the same ThymeLeaf for:each in which rows displayed using the Assignment class to pass the POJO to the front end. Created by Michael Hayes
 <br><br>
@@ -77,12 +83,9 @@ Added touch ups Student Info custom table with divs and tester static data. The 
 * Assignments table fueled by [ArrayList of Assignments](https://github.com/mhayescs19/p1-mosaic-spring/blob/3670fccb503e7bbfdd40ef81b134291d04702583/src/main/java/com/example/project/MainController.java#L192-L199) that are displayed via the [TL for:each loop](https://github.com/mhayescs19/p1-mosaic-spring/blob/3670fccb503e7bbfdd40ef81b134291d04702583/src/main/resources/templates/synergy/studentGradebook.html#L39-L81)
 * [Total grade](https://github.com/mhayescs19/p1-mosaic-spring/blob/3670fccb503e7bbfdd40ef81b134291d04702583/src/main/resources/templates/synergy/studentGradebook.html#L15-L22) custom [styling](https://github.com/mhayescs19/p1-mosaic-spring/blob/3670fccb503e7bbfdd40ef81b134291d04702583/src/main/resources/static/css/student-gradebook.css#L31-L49)
 * [Class name](https://github.com/mhayescs19/p1-mosaic-spring/blob/3670fccb503e7bbfdd40ef81b134291d04702583/src/main/resources/templates/synergy/studentGradebook.html#L24-L32) custom [styling](https://github.com/mhayescs19/p1-mosaic-spring/blob/3670fccb503e7bbfdd40ef81b134291d04702583/src/main/resources/static/css/student-gradebook.css#L50-L65)
-
+<br><br>
 **Runtime Guidance**
-- Click "Synergy" on main navigation bar
-- Login using Username: "1", Password: "test123" which gives Student access authorization
-- Click "Student View"
-- Explore through the different pages using the nav bar on the left hand side of the page
+- Navigate to [/synergy/student/gradeBook](http://ec2-44-239-226-169.us-west-2.compute.amazonaws.com/synergy/student/gradeBook) to view page (Note: page uses tester data so link may be deprecated)
 
 ## 2/18  Weekly Project Contributions and Artifacts Log
 ### Week 10
