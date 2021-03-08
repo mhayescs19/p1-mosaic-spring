@@ -68,7 +68,7 @@ public class RandomCreateClassData {
             classList.add(createClassData(teachsNums,subjectsNums,i));
         }
 
-        return classList; //place holder
+        return classList;
     }
     private Class createClassData(ArrayList<Integer> teachNums, ArrayList<Integer> subjectsNums,int period)
     {

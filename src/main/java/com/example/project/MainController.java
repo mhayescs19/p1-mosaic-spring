@@ -236,6 +236,7 @@ public class MainController {
            {
                model.addAttribute(period+i,classList.get(i));
            }
+           return "synergy/studentGradesHome";
         }
         catch (Exception e)
         {
@@ -257,8 +258,29 @@ public class MainController {
     }
     @PreAuthorize("hasAnyRole('ROLE_STUDENT')")
     @GetMapping("/synergy/student/grades/period1")
-    public String studentGradesP1(Model model) {
+    public String studentGradesP1(Model model,Authentication authentication) {
         // displays ArrayList via ThymeLeaf for:each in HTML
+        final String period = "0"; // zero index
+        Map<String,AttributeValue> key = new HashMap<>();
+        String itemGetter = "Classes["+period+"]"; // "Name" "Grade"
+        key.put("IDNumber", AttributeValue.builder().s(authentication.getName()).build());
+        DynamoDbClient dbClient = DynamoDbClient.create();
+        GetItemRequest getItemRequest = GetItemRequest.builder().tableName("Students").key(key).projectionExpression(itemGetter).build(); // hashmap-classes-list-Assignments-list-hashmaps
+        try{
+            Map<String,Object> returnedData = new itemToHashMap().convertItemToMap(EnhancedAttributeValue.fromMap(dbClient.getItem(getItemRequest).item()));
+            List<Object> periodclass = (List<Object>) returnedData.get("Classes");
+            ObjectMapper mapper = new ObjectMapper();
+            String json = mapper.writeValueAsString(periodclass.get(0));
+            Class temp  = mapper.readValue(json,Class.class);
+            model.addAttribute("Name",temp.getName());
+            model.addAttribute("Grade",temp.getGrade());
+            model.addAttribute("assignments",new ArrayList<>(temp.getAssignments()));
+            return "synergy/studentGradesPeriod1";
+
+        }catch (Exception e)
+        {
+            System.err.println(e.getMessage());
+        }
         ArrayList<Assignment> assignments = new ArrayList<>();
         for (int i = 0; i < 6; i++) {
             assignments.add(new Assignment("2/2" + i + "/21", "HW " + i, ((double)i*15)/10, (((double)i*15)/10) * 2, "test data"));
@@ -270,8 +292,29 @@ public class MainController {
     }
     @PreAuthorize("hasAnyRole('ROLE_STUDENT')")
     @GetMapping("/synergy/student/grades/period2")
-    public String studentGradesP2(Model model) {
+    public String studentGradesP2(Model model, Authentication authentication) {
         // displays ArrayList via ThymeLeaf for:each in HTML
+        final String period = "1"; // zero index
+        Map<String,AttributeValue> key = new HashMap<>();
+        String itemGetter = "Classes["+period+"]"; // "Name" "Grade"
+        key.put("IDNumber", AttributeValue.builder().s(authentication.getName()).build());
+        DynamoDbClient dbClient = DynamoDbClient.create();
+        GetItemRequest getItemRequest = GetItemRequest.builder().tableName("Students").key(key).projectionExpression(itemGetter).build(); // hashmap-classes-list-Assignments-list-hashmaps
+        try{
+            Map<String,Object> returnedData = new itemToHashMap().convertItemToMap(EnhancedAttributeValue.fromMap(dbClient.getItem(getItemRequest).item()));
+            List<Object> periodclass = (List<Object>) returnedData.get("Classes");
+            ObjectMapper mapper = new ObjectMapper();
+            String json = mapper.writeValueAsString(periodclass.get(0));
+            Class temp  = mapper.readValue(json,Class.class);
+            model.addAttribute("Name",temp.getName());
+            model.addAttribute("Grade",temp.getGrade());
+            model.addAttribute("assignments",new ArrayList<>(temp.getAssignments()));
+            return "synergy/studentGradesPeriod2";
+
+        }catch (Exception e)
+        {
+            System.err.println(e.getMessage());
+        }
         ArrayList<Assignment> assignments = new ArrayList<>();
         for (int i = 0; i < 6; i++) {
             assignments.add(new Assignment("2/2" + i + "/21", "HW " + i, ((double)i*15)/10, (((double)i*15)/10) * 2, "test data"));
@@ -283,8 +326,29 @@ public class MainController {
     }
     @PreAuthorize("hasAnyRole('ROLE_STUDENT')")
     @GetMapping("/synergy/student/grades/period3")
-    public String studentGradesP3(Model model) {
+    public String studentGradesP3(Model model,Authentication authentication) {
         // displays ArrayList via ThymeLeaf for:each in HTML
+        final String period = "2"; // zero index
+        Map<String,AttributeValue> key = new HashMap<>();
+        String itemGetter = "Classes["+period+"]"; // "Name" "Grade"
+        key.put("IDNumber", AttributeValue.builder().s(authentication.getName()).build());
+        DynamoDbClient dbClient = DynamoDbClient.create();
+        GetItemRequest getItemRequest = GetItemRequest.builder().tableName("Students").key(key).projectionExpression(itemGetter).build(); // hashmap-classes-list-Assignments-list-hashmaps
+        try{
+            Map<String,Object> returnedData = new itemToHashMap().convertItemToMap(EnhancedAttributeValue.fromMap(dbClient.getItem(getItemRequest).item()));
+            List<Object> periodclass = (List<Object>) returnedData.get("Classes");
+            ObjectMapper mapper = new ObjectMapper();
+            String json = mapper.writeValueAsString(periodclass.get(0));
+            Class temp  = mapper.readValue(json,Class.class);
+            model.addAttribute("Name",temp.getName());
+            model.addAttribute("Grade",temp.getGrade());
+            model.addAttribute("assignments",new ArrayList<>(temp.getAssignments()));
+            return "synergy/studentGradesPeriod3";
+
+        }catch (Exception e)
+        {
+            System.err.println(e.getMessage());
+        }
         ArrayList<Assignment> assignments = new ArrayList<>();
         for (int i = 0; i < 6; i++) {
             assignments.add(new Assignment("2/2" + i + "/21", "HW " + i, ((double)i*15)/10, (((double)i*15)/10) * 2, "test data"));
@@ -295,9 +359,30 @@ public class MainController {
         return "synergy/studentGradesPeriod3";
     }
     @PreAuthorize("hasAnyRole('ROLE_STUDENT')")
-    @GetMapping("/synergy/student/grades/period4")
-    public String studentGradesP4(Model model) {
+    @GetMapping("/synergy/student/grades/period4")// in the feature use path var
+    public String studentGradesP4(Model model,Authentication authentication) {
         // displays ArrayList via ThymeLeaf for:each in HTML
+        final String period = "3"; // zero index
+        Map<String,AttributeValue> key = new HashMap<>();
+        String itemGetter = "Classes["+period+"]"; // "Name" "Grade"
+        key.put("IDNumber", AttributeValue.builder().s(authentication.getName()).build());
+        DynamoDbClient dbClient = DynamoDbClient.create();
+        GetItemRequest getItemRequest = GetItemRequest.builder().tableName("Students").key(key).projectionExpression(itemGetter).build(); // hashmap-classes-list-Assignments-list-hashmaps
+        try{
+                Map<String,Object> returnedData = new itemToHashMap().convertItemToMap(EnhancedAttributeValue.fromMap(dbClient.getItem(getItemRequest).item()));
+                List<Object> periodclass = (List<Object>) returnedData.get("Classes");
+                ObjectMapper mapper = new ObjectMapper();
+            String json = mapper.writeValueAsString(periodclass.get(0));
+            Class temp  = mapper.readValue(json,Class.class);
+            model.addAttribute("Name",temp.getName());
+            model.addAttribute("Grade",temp.getGrade());
+            model.addAttribute("assignments",new ArrayList<>(temp.getAssignments()));
+            return "synergy/studentGradesPeriod4";
+
+        }catch (Exception e)
+        {
+            System.err.println(e.getMessage());
+        }
         ArrayList<Assignment> assignments = new ArrayList<>();
         for (int i = 0; i < 6; i++) {
             assignments.add(new Assignment("2/2" + i + "/21", "HW " + i, ((double)i*15)/10, (((double)i*15)/10) * 2, "test data"));
@@ -309,8 +394,28 @@ public class MainController {
     }
     @PreAuthorize("hasAnyRole('ROLE_STUDENT')")
     @GetMapping("/synergy/student/grades/period5")
-    public String studentGradesP5(Model model) {
+    public String studentGradesP5(Model model,Authentication authentication) {
         // displays ArrayList via ThymeLeaf for:each in HTML
+        final String period = "4"; // zero index
+        Map<String,AttributeValue> key = new HashMap<>();
+        String itemGetter = "Classes["+period+"]"; // "Name" "Grade"
+        key.put("IDNumber", AttributeValue.builder().s(authentication.getName()).build());
+        DynamoDbClient dbClient = DynamoDbClient.create();
+        GetItemRequest getItemRequest = GetItemRequest.builder().tableName("Students").key(key).projectionExpression(itemGetter).build(); // hashmap-classes-list-Assignments-list-hashmaps
+        try{
+            Map<String,Object> returnedData = new itemToHashMap().convertItemToMap(EnhancedAttributeValue.fromMap(dbClient.getItem(getItemRequest).item()));
+            List<Object> periodclass = (List<Object>) returnedData.get("Classes");
+            ObjectMapper mapper = new ObjectMapper();
+            String json = mapper.writeValueAsString(periodclass.get(0));
+            Class temp  = mapper.readValue(json,Class.class);
+            model.addAttribute("Name",temp.getName());
+            model.addAttribute("Grade",temp.getGrade());
+            model.addAttribute("assignments",new ArrayList<>(temp.getAssignments()));
+            return "synergy/studentGradesPeriod5";
+        }catch (Exception e)
+        {
+            System.err.println(e.getMessage());
+        }
         ArrayList<Assignment> assignments = new ArrayList<>();
         for (int i = 0; i < 6; i++) {
             assignments.add(new Assignment("2/2" + i + "/21", "HW " + i, ((double)i*15)/10, (((double)i*15)/10) * 2, "test data"));
