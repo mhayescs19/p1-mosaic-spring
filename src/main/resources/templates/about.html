@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/headfile.html :: head">
+    <title>About</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+    body {
+        font-family: 'Montserrat', sans-serif;
+    }
+    .container {
+        position: relative;
+        top: 25px;
+        background: #eeeeee;
+        border-radius: 10px;
+        min-height: 75px;
+        max-width: 1000px;
+        box-shadow: 10px 10px 50px 10px #888888;
+    }
+
+    .container .content {
+        padding: 20px;
+    }
+
+    h1 {
+        font-weight: 600;
+    }
+
+    p {
+        font-size: 100%;
+    }
+</style>
+<body>
+<div th:replace="fragments/header :: header"></div>
+
+<div class="container">
+    <div class="content">
+        <h1>p1-Mosaic Project - Remake of StudentVUE and ParentVUE</h1>
+        <p>
+            This project was created over the last 6 weeks of trimester 2.
+            Our site hosts both a Student and Teacher interfaces that feature home, grades, individual and school information pages.
+            Our project is powered by an Amazon's EC2 and uses the Dynamo Databasing service from Amazon Web Services.
+            The user is able to view live grades from 5 classes and view individual assignments within.
+            We also have included miscellaneous AP FRQ labs from AP Classroom activities, as well as other introductory labs to which demonstrated our early learnings with Spring, HTML and CSS.
+
+        </p>
+    </div>
+</div>
+</form>
+</body>
+</html>

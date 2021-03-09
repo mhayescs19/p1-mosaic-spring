@@ -40,6 +40,17 @@ import java.util.*;
 public class MainController {
 
     Hangman control_java = new Hangman();
+
+    @GetMapping("/about")
+    public String about() {
+        return "about.html";
+    }
+
+    @GetMapping("/contact")
+    public String contact() {
+        return "contact.html";
+    }
+
     @GetMapping("/ap-practice")
     public String apPractice() {
         return "ap-practice/menuAP.html";
