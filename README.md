@@ -11,17 +11,17 @@ Due to the AWS limit on maximum hours that the website can be run on its servers
 
 ## Runtime Guidance For "Not Synergy"
 1. Click on "Not Synergy" on the bottom left hand side of the home page.
-<img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/Compsci-Home-Page.png" height="auto" width="40%"> <img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/runtime-config.png" width="45%" height="auto"> <br>
+<img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/Compsci-Home-Page.png" height="auto" width="40%"> <img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/Compsci-Home-Page.png" width="45%" height="auto"> <br>
 2. You will be redirected to a login page. On the upper right corner of the page, click the "Sign Up" button to create an account.
-<img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/Compsci-Login-Page.png" height="auto" width="40%"> <img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/runtime-config.png" width="45%" height="auto"> <br>
+<img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/Compsci-Login-Page.png" height="auto" width="40%"> <img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/Compsci-Login-Page.png" width="45%" height="auto"> <br>
 3. Correctly enter your name, username, password, year, and age in the resepctive input fields. Once done, click "Submit".
-<img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/Compsci-CreateUser-Page.png" height="auto" width="40%"> <img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/runtime-config.png" width="45%" height="auto"> <br>
+<img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/Compsci-CreateUser-Page.png" height="auto" width="40%"> <img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/Compsci-CreateUser-Page.png" width="45%" height="auto"> <br>
 4. You will be redirected to a page that tells you that your login was successful. In the search bar, delete "createUser" at the end of the link and replace it with "login" to return to the login page.
-<img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/Compsci-Redirect-Page.png" height="auto" width="40%"> <img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/runtime-config.png" width="45%" height="auto"> <br>
+<img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/Compsci-Redirect-Page.png" height="auto" width="40%"> <img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/Compsci-Redirect-Page.png" width="45%" height="auto"> <br>
 5. Use your newly created username and password to login. If you have forgotten your username or password, you will need to create another account. After you login, you will be directed to a page with two links: "Teacher View" and "Student View". DO NOT CLICK "Teacher View". YOU DO NOT HAVE PERMISSION TO ACCESS THIS PAGE AS ALL NEW ACCOUNTS ARE GIVEN THE ROLE OF STUDENT.
-<img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/Compsci-Link-Page.png" height="auto" width="40%"> <img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/runtime-config.png" width="45%" height="auto"> <br>
+<img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/Compsci-Link-Page.png" height="auto" width="40%"> <img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/Compsci-Link-Page.png" width="45%" height="auto"> <br>
 6. After clicking "Student View", you will be directed to your class schedule on "Student View". On the left hand side, there will be a navigation bar with different links for you to explore. Have fun!
-<img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/Compsci-Link-Page.png" height="auto" width="40%"> <img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/runtime-config.png" width="45%" height="auto"> <br>
+<img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/Compsci-Link-Page.png" height="auto" width="40%"> <img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/Compsci-Link-Page.png" width="45%" height="auto"> <br>
 
 ## ScrumBoard
 <a href="https://github.com/mhayescs19/p1-mosaic-spring/projects/1"><img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/board-entire-button.png" width="30%" height="auto"><a/> 
