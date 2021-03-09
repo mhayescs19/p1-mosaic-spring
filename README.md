@@ -21,7 +21,7 @@ Due to the AWS limit on maximum hours that the website can be run on its servers
 5. Use your newly created username and password to login. If you have forgotten your username or password, you will need to create another account. After you login, you will be directed to a page with two links: "Teacher View" and "Student View". DO NOT CLICK "Teacher View". YOU DO NOT HAVE PERMISSION TO ACCESS THIS PAGE AS ALL NEW ACCOUNTS ARE GIVEN THE ROLE OF STUDENT.
 <img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/Compsci-Link-Page.png" height="auto" width="40%"> <br>
 6. After clicking "Student View", you will be directed to your class schedule on "Student View". On the left hand side, there will be a navigation bar with different links for you to explore. Have fun!
-<img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/Compsci-Link-Page.png" height="auto" width="40%"> <br>
+<img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/Compsci-StudentSchedule-Page.png" height="auto" width="40%"> <br>
 
 ## ScrumBoard
 <a href="https://github.com/mhayescs19/p1-mosaic-spring/projects/1"><img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/board-entire-button.png" width="30%" height="auto"><a/> 
