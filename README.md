@@ -42,7 +42,7 @@ We  plan on making a synergy clone where teachers can view their students and gi
 *GetRequest to DB accesses map and pulls down specific user information based on username used to log in, thymeleaf uses thymeleaf objects to display information on html page. Uses custom formatted tables to display information. See [StudentInfo Ticket]() in logs below for code and more information.* <br> <br>
 **School Information:**
 - Name, Principal, Address, Website <br>
-*WebScraper API that uses http client requests to reference specific div class on Del Norte Faculty Contacts list to access and pull all teachers' names and contacxt info using httpclient requests. See [WebScraper Lab Ticket]() in the logs below for code and more information.* <br> <br>
+*WebScraper API that uses http client requests to reference specific div class on Del Norte Faculty Contacts list to access and pull all teachers' names and contacxt info using httpclient requests. See [WebScraper Lab Ticket](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/README.md#3-teacher-info-web-scraper) in the logs below for code and more information.* <br> <br>
 
 **Teacher View**
 - Log-in system (Teacher username, password)
