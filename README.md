@@ -118,7 +118,7 @@ Added touch ups Student Info custom table with divs and tester static data. The 
 
 ## 2/18  Weekly Project Contributions and Artifacts Log
 ### Week 10
-### 1. [Student Contact Info Front End](https://github.com/mhayescs19/p1-mosaic-spring/issues/11)
+### 1. [Student Contact Info Front End + NavBar](https://github.com/mhayescs19/p1-mosaic-spring/issues/11)
 Adaptation of a nav bar menu was combined with a custom table created using nested divs and CSS styling to create boxes for a table. Created by Michael Hayes <br> <br>
 **Contents**
 * Div class [studentInfo](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/static/css/student-info.css#L23) used to shift the header and table in the main content area to the right in order to fit the vertical nav bar to the left
