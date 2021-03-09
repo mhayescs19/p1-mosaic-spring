@@ -35,7 +35,7 @@ We  plan on making a synergy clone where teachers can view their students and gi
 - Overview of all classes grades
 - Click each class to view the individual grade of the class
 - Table with: Date, Assignment, Score, Score Type, Points, Notes <br>
-- *Algorithm in Java Back end to randomly generate Gradebook data through many if-else statements, iterative, and recursive functions, converts data into DynmoDB map, databinds keys to respective values, and pushes data to DynamoDB database using put request. When displaying data, thymeleaf engine passes java object from html to java class, assigns data and passes object back to html to display in custom formatted div fields. See [Random Algo Ticket]() and [Student Gradebook]() in logs below for code and more information.* <br> <br>
+*Algorithm in Java Back end to randomly generate Gradebook data through many if-else statements, iterative, and recursive functions, converts data into DynmoDB map, databinds keys to respective values, and pushes data to DynamoDB database using put request. When displaying data, thymeleaf engine passes java object from html to java class, assigns data and passes object back to html to display in custom formatted div fields. See [Random Algo Ticket]() and [Student Gradebook]() in logs below for code and more information.* <br> <br>
 **Student Info:**
 - Name, grade, ID number, counselor name, GPA (specifically at a given instance)
 - Static schedule <br>
