@@ -11,7 +11,7 @@ Due to the AWS limit on maximum hours that the website can be run on its servers
 
 ## Runtime Guidance For "Not Synergy"
 1. Click on "Not Synergy" on the bottom left hand side of the home page. <br>
-<img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/Compsci-Home-Page.png" height="auto" width="40%"> <br> <br>
+<img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/Compsci-Home-Page-v2.png" height="auto" width="40%"> <br> <br>
 2. You will be redirected to a login page. On the upper right corner of the page, click the "Sign Up" button to create an account.<br>
 <img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/Compsci-Login-Page.png" height="auto" width="40%"> <br> <br>
 3. Correctly enter your name, username, password, year, and age in the resepctive input fields. Once done, click "Submit". <br>
