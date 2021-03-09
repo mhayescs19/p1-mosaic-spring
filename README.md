@@ -30,7 +30,7 @@ We  plan on making a synergy clone where teachers can view their students and gi
 - Log-in system (StudentID, password) <br>
 *Used Spring Security to create custom Login Page and used both default and complex custom validators to check for unique requirements on all form input fields. Custom authentication that assigns roles with permissions attached based on role to students and teachers. If input field requirements not met, uses both Lomobok Annotations to throw in-built error messages and custom validator to thrown custom messages. See [Spring Security Ticket]() in the logs below for code and more information.* <br>
 - Side bar to access their own personal grades <br>
-*Custom CSS and html code in fragments folder which allows for extracting and inserting this nav bar into div tags in any html file. See [Nav Bar Ticket](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/README.md#1-student-contact-info-front-end--navbar) in the logs below for code and more information.* <br> <br>
+*CSS and html code in fragments folder which allows for extracting and inserting this nav bar into div tags in any html file. See [Nav Bar Ticket](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/README.md#1-student-contact-info-front-end--navbar) in the logs below for code and more information.* <br> <br>
 **Gradebook:**
 - Overview of all classes grades
 - Click each class to view the individual grade of the class
@@ -89,10 +89,19 @@ Supports the school information page by pulling the teacher school emails from h
 **Runtime Guidance**
 - Navigate to [/synergy/student/schoolInformation](http://ec2-44-239-226-169.us-west-2.compute.amazonaws.com/synergy/student/schoolInformation) to view page
 
+### 4. Student Info
+Displays student info from Dynamo Database in a table created purely from divs and CSS. The rows created by this styliing are used all across the Not Synergy pages. Created by Michael Hayes.
+* Spring Security [authentication used to get the ID number](https://github.com/mhayescs19/p1-mosaic-spring/blob/7fc016922ce6a59cffb5721cfc0acdcf61ff0b50/src/main/java/com/example/project/MainController.java#L455-L456) to access correct table in database
+* Rows in table [wrapped together](https://github.com/mhayescs19/p1-mosaic-spring/blob/7fc016922ce6a59cffb5721cfc0acdcf61ff0b50/src/main/java/com/example/project/MainController.java#L458-L461) into request
+* A. Pegg [built methods](https://github.com/mhayescs19/p1-mosaic-spring/blob/7fc016922ce6a59cffb5721cfc0acdcf61ff0b50/src/main/java/com/example/project/MainController.java#L465) convert request to a map which data is [extracted from](https://github.com/mhayescs19/p1-mosaic-spring/blob/7fc016922ce6a59cffb5721cfc0acdcf61ff0b50/src/main/java/com/example/project/MainController.java#L468-L471) and displayed in HTML via [th:text="${}"](https://github.com/mhayescs19/p1-mosaic-spring/blob/79233ba092de834a5e07fc7c37c21d39b22b8ad4/src/main/resources/templates/synergy/studentInfo.html#L39-L67)
+<br><br>
+**Runtime Guidance**
+- Navigate to [/synergy/student/info](http://ec2-44-239-226-169.us-west-2.compute.amazonaws.com/synergy/student/info) to view page
+
 ## 2/26  Weekly Project Contributions and Artifacts Log
 ### Week 11
 ### 1. [Put Student](https://github.com/mhayescs19/p1-mosaic-spring/issues/27) and [Custom Login Page](https://github.com/mhayescs19/p1-mosaic-spring/issues/10)
-Created a custom Spring Security Login in page which overrides default mapping. Worked with Andrew Pegg to successfully use AJAX to push student information data to an AWS database with validation through data-binding a java class. Created by Nakul Nandhakumar<br> <br>
+Created a custom Spring Security Login in page which overrides default mapping. Worked with Andrew Pegg to successfully use AJAX to push student information data to an AWS database with validation through data-binding a java class. Created by Nakul Nandhakumar.<br> <br>
 
 **Contents**
 * PostMapping for [putStudent](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/java/com/example/project/MainController.java#L275) takes in passed [JSON Stringified](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/synergy/teacherView.html#L86) attributes of student from teacherView form
@@ -106,7 +115,7 @@ Created a custom Spring Security Login in page which overrides default mapping. 
 - Explore through the different pages using the nav bar on the left hand side of the page
 
 ### 2. [Continue Student Info, Grade Detail View and Load Test Data](https://github.com/mhayescs19/p1-mosaic-spring/issues/20)
-Added touch ups Student Info custom table with divs and tester static data. The Student Gradebook was created using the same ThymeLeaf for:each in which rows displayed using the Assignment class to pass the POJO to the front end. Created by Michael Hayes
+Added touch ups Student Info custom table with divs and tester static data. The Student Gradebook was created using the same ThymeLeaf for:each in which rows displayed using the Assignment class to pass the POJO to the front end. Created by Michael Hayes.
 <br><br>
 **Contents**
 * Assignments table fueled by [ArrayList of Assignments](https://github.com/mhayescs19/p1-mosaic-spring/blob/3670fccb503e7bbfdd40ef81b134291d04702583/src/main/java/com/example/project/MainController.java#L192-L199) that are displayed via the [TL for:each loop](https://github.com/mhayescs19/p1-mosaic-spring/blob/3670fccb503e7bbfdd40ef81b134291d04702583/src/main/resources/templates/synergy/studentGradebook.html#L39-L81)
@@ -119,7 +128,7 @@ Added touch ups Student Info custom table with divs and tester static data. The 
 ## 2/18  Weekly Project Contributions and Artifacts Log
 ### Week 10
 ### 1. [Student Contact Info Front End + NavBar](https://github.com/mhayescs19/p1-mosaic-spring/issues/11)
-Adaptation of a nav bar menu was combined with a custom table created using nested divs and CSS styling to create boxes for a table. Created by Michael Hayes <br> <br>
+Adaptation of a nav bar menu was combined with a custom table created using nested divs and CSS styling to create boxes for a table. Created by Michael Hayes. <br> <br>
 **Contents**
 * Div class [studentInfo](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/static/css/student-info.css#L23) used to shift the header and table in the main content area to the right in order to fit the vertical nav bar to the left
 * Nested divs used with the repeating div classes [wrapper](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/synergy/studentInfo.html#L20) and box in order to style each box the [same](https://github.com/mhayescs19/p1-mosaic-spring/blob/313d3439f6662f07ffb090a2e5b9e45bd257d1c7/src/main/resources/static/css/student-info.css#L41)
