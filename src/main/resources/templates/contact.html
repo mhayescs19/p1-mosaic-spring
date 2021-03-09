@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/headfile.html :: head">
-    <title>Home</title>
+    <title>Contact</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <style>
@@ -29,20 +29,26 @@
     }
 
     p {
-        font-size: 125%;
+        font-size: 100%;
     }
 </style>
 <body>
-    <div th:replace="fragments/header :: header"></div>
+<div th:replace="fragments/header :: header"></div>
 
-    <div class="container">
-        <div class="content">
-            <h1>p1-Mosaic Tri 2 Final Project</h1>
-            <p>
-                AP Computer Science A 2020-2021 <br> Instructor: John Mortensen
-            </p>
-        </div>
+<div class="container">
+    <div class="content">
+        <h1>About p1-Mosaic</h1>
+        <p>
+            Project contributors
+            <ul>
+                <li><a href="https://github.com/andrewcomputsci2019">Andrew Pegg</a></li>
+                <li><a href="https://github.com/nakulnandhakumar">Nakul Nandhakumar</a></li>
+                <li><a href="https://github.com/saraben21">Sara Beniwal</a></li>
+                <li><a href="https://github.com/mhayescs19">Michael Hayes</a></li>
+            </ul>
+        </p>
     </div>
+</div>
 </form>
 </body>
 </html>
