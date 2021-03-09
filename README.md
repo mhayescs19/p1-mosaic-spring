@@ -9,11 +9,25 @@ Due to the AWS limit on maximum hours that the website can be run on its servers
 | Andrew Pegg | [@andrewcomputsci2019](https://github.com/andrewcomputsci2019) | [Pegg, Nandhakumar](https://docs.google.com/document/d/13jZuundZrvb5XTzzLQkuICyFDAwaFdN6_um2oTZFZNU/edit?usp=sharing)
 | Michael Hayes | [@mhayescs19](https://github.com/mhayescs19) | [Beniwal, Hayes](https://docs.google.com/document/d/1GPklRpwd5uyFdQljSgF4cZS6Uk6-eDf4EA25CQx3Ngc/edit?usp=sharing)
 
+## Runtime Guidance For "Not Synergy"
+1. Click on "Not Synergy" on the bottom left hand side of the home page.
+<img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/Compsci-Home-Page.png" height="auto" width="40%"> <img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/Compsci-Home-Page.png" width="45%" height="auto"> <br>
+2. You will be redirected to a login page. On the upper right corner of the page, click the "Sign Up" button to create an account.
+<img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/Compsci-Login-Page.png" height="auto" width="40%"> <img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/Compsci-Login-Page.png" width="45%" height="auto"> <br>
+3. Correctly enter your name, username, password, year, and age in the resepctive input fields. Once done, click "Submit".
+<img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/Compsci-CreateUser-Page.png" height="auto" width="40%"> <img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/Compsci-CreateUser-Page.png" width="45%" height="auto"> <br>
+4. You will be redirected to a page that tells you that your login was successful. In the search bar, delete "createUser" at the end of the link and replace it with "login" to return to the login page.
+<img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/Compsci-Redirect-Page.png" height="auto" width="40%"> <img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/Compsci-Redirect-Page.png" width="45%" height="auto"> <br>
+5. Use your newly created username and password to login. If you have forgotten your username or password, you will need to create another account. After you login, you will be directed to a page with two links: "Teacher View" and "Student View". DO NOT CLICK "Teacher View". YOU DO NOT HAVE PERMISSION TO ACCESS THIS PAGE AS ALL NEW ACCOUNTS ARE GIVEN THE ROLE OF STUDENT.
+<img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/Compsci-Link-Page.png" height="auto" width="40%"> <img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/Compsci-Link-Page.png" width="45%" height="auto"> <br>
+6. After clicking "Student View", you will be directed to your class schedule on "Student View". On the left hand side, there will be a navigation bar with different links for you to explore. Have fun!
+<img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/Compsci-Link-Page.png" height="auto" width="40%"> <img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/Compsci-Link-Page.png" width="45%" height="auto"> <br>
+
 ## ScrumBoard
 <a href="https://github.com/mhayescs19/p1-mosaic-spring/projects/1"><img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/board-entire-button.png" width="30%" height="auto"><a/> 
 
 ## Project Idea
-We  plan on making a synergy clone where teachers can view their students and give out grades and take roll call. Would also have two differnt views one for students another for teachers. Will be using AWS to host the website and associated databases. <br><br>
+We  plan on making a synergy clone where teachers can view their students and give out grades and take roll call. Would also have two different views one for students another for teachers. Will be using AWS to host the website and associated databases. <br><br>
 
 **Student View**
 - Log-in system (StudentID, password)
@@ -26,9 +40,7 @@ We  plan on making a synergy clone where teachers can view their students and gi
 - Name, grade, ID number, counselor name, GPA (specifically at a given instance)
 - Static schedule <br> <br>
 **School Information:**
-- Name, Principal, Address, Website <br> <br>
-**Calendar:**
-- Students can view upcoming assignments due on their calendar <br> <br>
+- Name, Principal, Address, Website <br> <br> 
 
 **Teacher View**
 - Log-in system (Teacher username, password)
@@ -41,20 +53,12 @@ We  plan on making a synergy clone where teachers can view their students and gi
 **Class Roster:**
 - See students in their class (entire roster) with name, grade, ID, and high school year
 - Table with: Date, Assignment, Score, Score Type, Points, Notes
-- Filter with search function for students and grades <br> <br>
-**Calendar:**
-- Assignments added by teacher shows up on calendar for student in class <br> <br>
+- Filter with search function for students and grades <br> <br> 
 
 ## Project Plan (Rough)
 **Week of 02/19:** Front End/CSS Styling/ Main Student-Teacher View Page Setup <br> 
 **Week of 02/26:** BackEnd Java Code/Javascript and Connect to Database <br> 
 **Week of 03/05:** Debugg/Add Other Features if Time Allows <br>
-  
-## Runtime Guidance For Entire Project
-1. Clone the project repository.
-2. Open the src directory, open the Main directory, open the Java directory, open the com.example.project package and open the Main.java file.
-3. Run from Main.java (inside of the "Main" package) OR set up configuration to Main.
-<img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/runtime-main-java.png" height="auto" width="40%"> <img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/runtime-config.png" width="45%" height="auto">
 
 ## 3/5  Weekly Project Contributions and Artifacts Log
 ### Week 12
