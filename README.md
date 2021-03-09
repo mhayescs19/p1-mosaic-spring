@@ -21,44 +21,43 @@ Due to the AWS limit on maximum hours that the website can be run on its servers
 5. Use your newly created username and password to login. If you have forgotten your username or password, you will need to create another account. After you login, you will be directed to a page with two links: "Teacher View" and "Student View". <br> **DO NOT CLICK "Teacher View". YOU DO NOT HAVE PERMISSION TO ACCESS THIS PAGE AS ALL NEW ACCOUNTS ARE GIVEN THE ROLE OF STUDENT.** <br>
 <img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/Compsci-Link-Page.png" height="auto" width="40%"> <br> <br>
 6. After clicking "Student View", you will be directed to your class schedule on "Student View". On the left hand side, there will be a navigation bar with different links for you to explore. Have fun! <br>
-<img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/Compsci-StudentSchedule-Page.png" height="auto" width="40%"> <br> <br>
+<img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/Compsci-StudentSchedule-Page.png" height="auto" width="40%"> <br> <br> 
 
-## ScrumBoard
-<a href="https://github.com/mhayescs19/p1-mosaic-spring/projects/1"><img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/board-entire-button.png" width="30%" height="auto"><a/> 
-
-## Project Idea
+## Project Outline
 We  plan on making a synergy clone where teachers can view their students and give out grades and take roll call. Would also have two different views one for students another for teachers. Will be using AWS to host the website and associated databases. <br><br>
 
 **Student View**
-- Log-in system (StudentID, password)
-- Side bar to access their own personal grades <br> <br>
+- Log-in system (StudentID, password) <br>
+*Used Spring Security to create custom Login Page and used both default and complex custom validators to check for unique requirements on all form input fields. Custom authentication that assigns roles with permissions attached based on role to students and teachers. If input field requirements not met, uses both Lomobok Annotations to throw in-built error messages and custom validator to thrown custom messages. See [Spring Security Ticket]() in the logs below for code and more information.* <br>
+- Side bar to access their own personal grades <br>
+*Custom CSS and html code in fragments folder which allows for extracting and inserting this nav bar into div tags in any html file. See [Nav Bar Ticket]() in the logs below for code and more information.* <br> <br>
 **Gradebook:**
 - Overview of all classes grades
 - Click each class to view the individual grade of the class
-- Table with: Date, Assignment, Score, Score Type, Points, Notes <br> <br>
+- Table with: Date, Assignment, Score, Score Type, Points, Notes <br>
+- *Algorithm in Java Back end to randomly generate Gradebook data through many if-else statements, iterative, and recursive functions, converts data into DynmoDB map, databinds keys to respective values, and pushes data to DynamoDB database using put request. When displaying data, thymeleaf engine passes java object from html to java class, assigns data and passes object back to html to display in custom formatted div fields. See [Random Algo Ticket]() and [Student Gradebook]() in logs below for code and more information.* <br> <br>
 **Student Info:**
 - Name, grade, ID number, counselor name, GPA (specifically at a given instance)
-- Static schedule <br> <br>
+- Static schedule <br>
+*GetRequest to DB accesses map and pulls down specific user information based on username used to log in, thymeleaf uses thymeleaf objects to display information on html page. Uses custom formatted tables to display information. See [StudentInfo Ticket]() in logs below for code and more information.* <br> <br>
 **School Information:**
-- Name, Principal, Address, Website <br> <br> 
+- Name, Principal, Address, Website <br>
+*WebScraper API that uses http client requests to reference specific div class on Del Norte Faculty Contacts list to access and pull all teachers' names and contacxt info using httpclient requests. See [WebScraper Lab Ticket]() in the logs below for code and more information.* <br> <br>
 
 **Teacher View**
 - Log-in system (Teacher username, password)
-- Teacher modifies assignments and grades <br> <br>
-**Gradebook (Teacher):**
-- Create assignment categories with assignment weights
-- Create assignment name and Input assignment points
-- Backend code/JS to calculate percentage/letter grade and GPA
-- Delete function for mistake and error correction <br> <br>
-**Class Roster:**
-- See students in their class (entire roster) with name, grade, ID, and high school year
-- Table with: Date, Assignment, Score, Score Type, Points, Notes
-- Filter with search function for students and grades <br> <br> 
+- Teacher modifies assignments and grades
+- Filter with search function for students and grades
+- Search for students in their class (entire roster) by ID to diplay name, grade, ID, and high school year <br>
+*Login system uses custom Spring Security service with custom authentication with permission based custom roles that give different levels of access to teacher versus student. Custom form and backend AJAX script that allows asynchronous student info push to DynamoDB. Another AJAX script allows for asynchronous pull from DynamoDBby referencing student ID and uses thymeleaf objects to display formatted information on teacherView page. See [TeacherView Ticket]() for code and more information.* <br> <br>
 
 ## Project Plan (Rough)
 **Week of 02/19:** Front End/CSS Styling/ Main Student-Teacher View Page Setup <br> 
 **Week of 02/26:** BackEnd Java Code/Javascript and Connect to Database <br> 
 **Week of 03/05:** Debugg/Add Other Features if Time Allows <br>
+
+## ScrumBoard
+<a href="https://github.com/mhayescs19/p1-mosaic-spring/projects/1"><img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/board-entire-button.png" width="30%" height="auto"><a/>
 
 ## 3/5  Weekly Project Contributions and Artifacts Log
 ### Week 12
