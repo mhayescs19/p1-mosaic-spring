@@ -27,6 +27,7 @@ import software.amazon.awssdk.services.dynamodb.model.AttributeValue;
 import software.amazon.awssdk.services.dynamodb.model.DynamoDbException;
 import software.amazon.awssdk.services.dynamodb.model.GetItemRequest;
 import software.amazon.awssdk.services.dynamodb.model.ResourceNotFoundException;
+import software.amazon.awssdk.services.dynamodb.transform.GetItemRequestMarshaller;
 import synergy.Assignment;
 import synergy.Class;
 import synergy.Schedule;
@@ -449,8 +450,36 @@ public class MainController {
     }
     @PreAuthorize("hasAnyRole('ROLE_STUDENT')")
     @GetMapping("/synergy/student/info")
-    public String studentInfo() {
-        return "synergy/studentInfo";
+    public String studentInfo(Model model, Authentication authentication) {
+        DynamoDbClient db = DynamoDbClient.create();
+        Map<String, AttributeValue> key = new HashMap<>();
+        key.put("IDNumber", AttributeValue.builder().s(authentication.getName()).build());
+
+        Map<String, String> attributeNames = new HashMap<>();
+        attributeNames.put("#Y", "Year");
+        attributeNames.put("#N", "Name");
+        GetItemRequest request = GetItemRequest.builder().tableName("Students").key(key).projectionExpression("#Y,#N,Age,IDNumber").expressionAttributeNames(attributeNames).build();
+
+        Map<String, Object> returnedValue = new HashMap<>();
+        try {
+            returnedValue = new itemToHashMap().convertItemToMap(EnhancedAttributeValue.fromMap(db.getItem(request).item()));
+
+
+            model.addAttribute("name", returnedValue.get("Name").toString());
+            model.addAttribute("ID", returnedValue.get("IDNumber").toString());
+            model.addAttribute("year", returnedValue.get("Year").toString());
+            model.addAttribute("age", returnedValue.get("Age").toString());
+
+            return "synergy/studentInfo";
+        } catch (Exception e){
+
+            model.addAttribute("name", "Jane Doe");
+            model.addAttribute("ID", "00000");
+            model.addAttribute("year", "Freshman");
+            model.addAttribute("age", "14");
+
+            return "synergy/studenInfo";
+        }
     }
     @PreAuthorize("hasAnyRole('ROLE_STUDENT')")
     @GetMapping("/synergy/student/schoolInformation")
