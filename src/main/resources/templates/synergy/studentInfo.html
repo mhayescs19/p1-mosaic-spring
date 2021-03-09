@@ -37,7 +37,7 @@
                 <div class="box">
                     <div class="content">
                         <h3>Student Name</h3>
-                        <p>John Doe</p>
+                        <p th:text="${name}"></p>
                     </div>
                 </div>
             </div>
@@ -46,16 +46,7 @@
                 <div class="box">
                     <div class="content">
                         <h3>Perm ID</h3>
-                        <p>12345678</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="wrapper">
-                <div class="box">
-                    <div class="content">
-                        <h3>Gender</h3>
-                        <p>Male</p>
+                        <p th:text="${ID}"></p>
                     </div>
                 </div>
             </div>
@@ -64,7 +55,7 @@
                 <div class="box">
                     <div class="content">
                         <h3>Grade</h3>
-                        <p>11</p>
+                        <p th:text="${year}"></p>
                     </div>
                 </div>
             </div>
@@ -72,24 +63,17 @@
             <div class="wrapper">
                 <div class="box">
                     <div class="content">
-                        <h3>Email Address</h3>
-                        <p>johndoe@gmail.com</p>
+                        <h3>Age</h3>
+                        <p th:text="${age}"></p>
                     </div>
                 </div>
             </div>
+
+
 
         </div>
 
         <div class="tableRow2">
-            <div class="wrapper">
-                <div class="box">
-                    <div class="content">
-                        <h3>Nick Name</h3>
-                        <p>Johnny</p>
-                    </div>
-                </div>
-            </div>
-
             <div class="wrapper">
                 <div class="box">
                     <div class="content">
@@ -98,6 +82,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 
