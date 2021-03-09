@@ -11,7 +11,7 @@ Due to the AWS limit on maximum hours that the website can be run on its servers
 
 ## Runtime Guidance For "Not Synergy"
 1. Click on "Not Synergy" on the bottom left hand side of the home page. <br>
-<img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/Compsci-Home-Page.png" height="auto" width="40%"> <br> <br>
+<img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/Compsci-Home-Page-v2.png" height="auto" width="40%"> <br> <br>
 2. You will be redirected to a login page. On the upper right corner of the page, click the "Sign Up" button to create an account.<br>
 <img src="https://github.com/mhayescs19/p1-mosaic-spring/blob/master/assets/Compsci-Login-Page.png" height="auto" width="40%"> <br> <br>
 3. Correctly enter your name, username, password, year, and age in the resepctive input fields. Once done, click "Submit". <br>
@@ -39,7 +39,7 @@ We  plan on making a synergy clone where teachers can view their students and gi
 **Student Info:**
 - Name, grade, ID number, counselor name, GPA (specifically at a given instance)
 - Static schedule <br>
-*GetRequest to DB accesses map and pulls down specific user information based on username used to log in, thymeleaf uses thymeleaf objects to display information on html page. Uses custom formatted tables to display information. See [StudentInfo Ticket](https://github.com/mhayescs19/p1-mosaic-spring/issues/38) in logs below for code and more information.* <br> <br>
+*GetRequest to DB accesses map and pulls down specific user information based on username used to log in, thymeleaf uses thymeleaf objects to display information on html page. Uses custom formatted tables to display information. See [StudentInfo Ticket](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/README.md#4-student-info) in logs below for code and more information.* <br> <br>
 **School Information:**
 - Name, Principal, Address, Website <br>
 *WebScraper API that uses http client requests to reference specific div class on Del Norte Faculty Contacts list to access and pull all teachers' names and contacxt info using httpclient requests. See [WebScraper Lab Ticket](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/README.md#3-teacher-info-web-scraper) in the logs below for code and more information.* <br> <br>
