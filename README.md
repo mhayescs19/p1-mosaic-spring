@@ -114,6 +114,14 @@ Authentication, configuration, validation, and other backend for Login and Logou
 **Runtime Guidance**
 - Navigate to [/synergy/login](http://ec2-44-239-226-169.us-west-2.compute.amazonaws.com/synergy/login) to view page and try incorrect credentials to see correct validation. Log in with correct credentials to see that it works.
 
+### 6. Calendar
+Custom CSS Styling page and nested div blocks to create blocks for Calendar. Created by Sara Beniwal.
+* [Custom CSS Styling](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/static/css/student-calendar.css#L1) page for Calendar that styles multiple nested div blocks with padding, margin, alignement, etc.
+* [HTML Calendar](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/synergy/studentCalendar.html#L36) page with multiple nested div blocks that is styled with CSS and dates and important events hardcoded into the Calendar.<br><br>
+ 
+**Runtime Guidance**
+- Navigate to [/synergy/login](http://ec2-44-239-226-169.us-west-2.compute.amazonaws.com/synergy/login) to view page and try incorrect credentials to see correct validation. Log in with correct credentials to see that it works.
+
 ## 2/26  Weekly Project Contributions and Artifacts Log
 ### Week 11
 ### 1. [Put Student](https://github.com/mhayescs19/p1-mosaic-spring/issues/27) and [Custom Login Page](https://github.com/mhayescs19/p1-mosaic-spring/issues/10)
