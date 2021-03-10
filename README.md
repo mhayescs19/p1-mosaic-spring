@@ -34,8 +34,8 @@ We  plan on making a synergy clone where teachers can view their students and gi
 **Calendar:**
 - Provides students with information about general school events/occasions and their dates
 - Specific to March 2021
-- Static calendar
-*Used CSS and html code to create table and enter information. Potential next steps would be to allow students to create their own calendar events and view different months. See [Calendar Ticket]() for code and more information.
+- Static calendar <br>
+*Used CSS and html code to create table and enter information. Potential next steps would be to allow students to create their own calendar events and view different months. See [Calendar Ticket]() for code and more information.*
 <br> <br>
 **Gradebook:**
 - Overview of all classes grades
