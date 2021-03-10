@@ -100,9 +100,19 @@ Displays student info from Dynamo Database in a table created purely from divs a
 * Spring Security [authentication used to get the ID number](https://github.com/mhayescs19/p1-mosaic-spring/blob/7fc016922ce6a59cffb5721cfc0acdcf61ff0b50/src/main/java/com/example/project/MainController.java#L455-L456) to access correct table in database
 * Rows in table [wrapped together](https://github.com/mhayescs19/p1-mosaic-spring/blob/7fc016922ce6a59cffb5721cfc0acdcf61ff0b50/src/main/java/com/example/project/MainController.java#L458-L461) into request
 * A. Pegg [built methods](https://github.com/mhayescs19/p1-mosaic-spring/blob/7fc016922ce6a59cffb5721cfc0acdcf61ff0b50/src/main/java/com/example/project/MainController.java#L465) convert request to a map which data is [extracted from](https://github.com/mhayescs19/p1-mosaic-spring/blob/7fc016922ce6a59cffb5721cfc0acdcf61ff0b50/src/main/java/com/example/project/MainController.java#L468-L471) and displayed in HTML via [th:text="${}"](https://github.com/mhayescs19/p1-mosaic-spring/blob/79233ba092de834a5e07fc7c37c21d39b22b8ad4/src/main/resources/templates/synergy/studentInfo.html#L39-L67)
-<br><br>
+
+### 5. Spring Security
+Authentication, configuration, validation, and other backend for Login and Logout system. Created by Andrew Pegg.
+* Spring Security [authentication used to get the ID number](https://github.com/mhayescs19/p1-mosaic-spring/blob/7fc016922ce6a59cffb5721cfc0acdcf61ff0b50/src/main/java/com/example/project/MainController.java#L455-L456) to access correct table in database
+* [Configuration](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/java/com/example/project/Security/SecurityConfig.java#L33) for custom mapping, permissions, logout procudure, etc.
+* [Custom Validation](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/java/com/example/project/Security/Auth/DaoService.java#L18) and [Custom Error](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/java/com/example/project/NewUser/NewUser.java#L12) throwing for username, password, etc. fields from html form
+* [DAOService Authentication](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/java/com/example/project/Security/Auth/DaoService.java#L18)
+* [Encoding Passwords](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/java/com/example/project/Security/SecurityConfig.java#L33) by using BCrypt which hashes them into a unique hash which is then stored in DB
+* [Roles and Permissions](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/java/com/example/project/Security/SecurityConfig.java#L33)
+ using enum type data structure<br><br>
+ 
 **Runtime Guidance**
-- Navigate to [/synergy/student/info](http://ec2-44-239-226-169.us-west-2.compute.amazonaws.com/synergy/student/info) to view page
+- Navigate to [/synergy/login](http://ec2-44-239-226-169.us-west-2.compute.amazonaws.com/synergy/login) to view page and try incorrect credentials to see correct validation. Log in with correct credentials to see that it works.
 
 ## 2/26  Weekly Project Contributions and Artifacts Log
 ### Week 11
