@@ -28,7 +28,7 @@ We  plan on making a synergy clone where teachers can view their students and gi
 
 **Student View**
 - Log-in system (StudentID, password) <br>
-*Used Spring Security to create custom Login Page and used both default and complex custom validators to check for unique requirements on all form input fields. Custom authentication that assigns roles with permissions attached based on role to students and teachers. If input field requirements not met, uses both Lomobok Annotations to throw in-built error messages and custom validator to thrown custom messages. See [Spring Security Ticket]() in the logs below for code and more information.* <br>
+*Used Spring Security to create custom Login Page and used both default and complex custom validators to check for unique requirements on all form input fields. Custom authentication that assigns roles with permissions attached based on role to students and teachers. If input field requirements not met, uses both Lomobok Annotations to throw in-built error messages and custom validator to thrown custom messages. See [Spring Security Ticket](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/README.md#5-spring-security) in the logs below for code and more information.* <br>
 - Side bar to access their own personal grades <br>
 *CSS and html code in fragments folder which allows for extracting and inserting this nav bar into div tags in any html file. See [Nav Bar Ticket](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/README.md#1-student-contact-info-front-end--navbar) in the logs below for code and more information.* <br> <br>
 **Calendar:**
