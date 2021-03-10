@@ -35,7 +35,7 @@ We  plan on making a synergy clone where teachers can view their students and gi
 - Provides students with information about general school events/occasions and their dates
 - Specific to March 2021
 - Static calendar <br>
-*Used CSS and html code to create table and enter information. Potential next steps would be to allow students to create their own calendar events and view different months. See [Calendar Ticket]() for code and more information.*
+*Used CSS and html code to create table and enter information. Potential next steps would be to allow students to create their own calendar events and view different months. See [Calendar Ticket](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/README.md#6-calendar) for code and more information.*
 <br> <br>
 **Gradebook:**
 - Overview of all classes grades
@@ -120,7 +120,7 @@ Custom CSS Styling page and nested div blocks to create blocks for Calendar. Cre
 * [HTML Calendar](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/synergy/studentCalendar.html#L36) page with multiple nested div blocks that is styled with CSS and dates and important events hardcoded into the Calendar.<br><br>
  
 **Runtime Guidance**
-- Navigate to [/synergy/login](http://ec2-44-239-226-169.us-west-2.compute.amazonaws.com/synergy/login) to view page and try incorrect credentials to see correct validation. Log in with correct credentials to see that it works.
+- Navigate to [/synergy/student/calendar](http://ec2-44-239-226-169.us-west-2.compute.amazonaws.com/synergy/student/calendar) to view calendar page
 
 ## 2/26  Weekly Project Contributions and Artifacts Log
 ### Week 11
