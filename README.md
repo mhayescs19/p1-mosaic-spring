@@ -72,8 +72,8 @@ Displays a full student schedule with tester data using the class Class which ho
 * ThymeLeaf [for:each loop](https://github.com/mhayescs19/p1-mosaic-spring/blob/600c4ac64b912983e602a502cc9e0913d1957e3d/src/main/resources/templates/synergy/studentHome.html#L20-L45) used with [Class class](https://github.com/mhayescs19/p1-mosaic-spring/blob/600c4ac64b912983e602a502cc9e0913d1957e3d/src/main/java/com/example/project/MainController.java#L174-L183).
 * Custom styling of table row, [note min-height/width](https://github.com/mhayescs19/p1-mosaic-spring/blob/600c4ac64b912983e602a502cc9e0913d1957e3d/src/main/resources/static/css/student-home.css#L54-L73), allows for table to uniform in height and width
 <br><br>
-**Runtime Guidance**
-- Navigate to [/synergy/student/home](http://ec2-44-239-226-169.us-west-2.compute.amazonaws.com/synergy/student/home) to view page (Note: page uses tester data so link may be deprecated and/or updated with live database data)
+**Ticket Guidance**
+- Navigate to [/synergy/student/home](http://ec2-44-239-226-169.us-west-2.compute.amazonaws.com/synergy/student/home) to view page (Note: page uses tester data so link may be deprecated and/or updated with live database data. May have to create an account and log in. For guide on how to do that, see Runtime Guidance at top of README).
 
 ### 2. [Student Grades Home](https://github.com/mhayescs19/p1-mosaic-spring/issues/35)
 Created a landing page hub to view all of a student's classes with grades displayed on corresponding tiles. Each tile displays period number, class and teacher name, and current grade. Created by Michael Hayes.
@@ -81,8 +81,8 @@ Created a landing page hub to view all of a student's classes with grades displa
 * [Entire tile links](https://github.com/mhayescs19/p1-mosaic-spring/blob/40ad2c8947f729040da722281389021349c208a2/src/main/resources/templates/synergy/studentGradesHome.html#L16) to respective period detail grade view (old /synergy/student/gradeBook except now x5)
 <br><br>
 
-**Runtime Guidance**
-- Navigate to [/synergy/student/grades/periodx](http://ec2-44-239-226-169.us-west-2.compute.amazonaws.com/synergy/student/grades/period1) (Note: page uses tester data so link may be deprecated and/or updated with live database data)
+**Ticket Guidance**
+- Navigate to [/synergy/student/grades/periodx](http://ec2-44-239-226-169.us-west-2.compute.amazonaws.com/synergy/student/grades/period1) (Note: page uses tester data so link may be deprecated and/or updated with live database data. May have to create an account and log in. For guide on how to do that, see Runtime Guidance at top of README).
 
 ### 3. [Teacher Info Web Scraper](https://github.com/mhayescs19/p1-mosaic-spring/issues/32)
 Supports the school information page by pulling the teacher school emails from https://www.powayusd.com/en-US/Schools/HS/DNHS/Contacts/Staff-Directory. To avoid a CORS error, an API proxy was created using an HTTP Request to load the entire page from the DNHS reference to be called via AJAX on the School Information page. Created by Andrew Pegg and Michael Hayes.
@@ -92,8 +92,8 @@ Supports the school information page by pulling the teacher school emails from h
 * Custom [styling](https://github.com/mhayescs19/p1-mosaic-spring/blob/38a7344822ca6e745b13aa16bc68297935550d10/src/main/resources/static/css/school-information.css#L42-L66) gives the matches the table to the UI of our website. 
 <br><br>
 
-**Runtime Guidance**
-- Navigate to [/synergy/student/schoolInformation](http://ec2-44-239-226-169.us-west-2.compute.amazonaws.com/synergy/student/schoolInformation) to view page
+**Ticket Guidance**
+- Navigate to [/synergy/student/schoolInformation](http://ec2-44-239-226-169.us-west-2.compute.amazonaws.com/synergy/student/schoolInformation) to view page (may have to create an account and log in. For guide on how to do that, see Runtime Guidance at top of README)
 
 ### 4. Student Info
 Displays student info from Dynamo Database in a table created purely from divs and CSS. The rows created by this styliing are used all across the Not Synergy pages. Created by Michael Hayes.
@@ -111,7 +111,7 @@ Authentication, configuration, validation, and other backend for Login and Logou
 * [Roles and Permissions](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/java/com/example/project/Security/SecurityConfig.java#L33)
  using enum type data structure<br><br>
  
-**Runtime Guidance**
+**Ticket Guidance**
 - Navigate to [/synergy/login](http://ec2-44-239-226-169.us-west-2.compute.amazonaws.com/synergy/login) to view page and try incorrect credentials to see correct validation. Log in with correct credentials to see that it works.
 
 ### 6. Calendar
@@ -119,8 +119,8 @@ Custom CSS Styling page and nested div blocks to create blocks for Calendar. Cre
 * [Custom CSS Styling](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/static/css/student-calendar.css#L1) page for Calendar that styles multiple nested div blocks with padding, margin, alignement, etc.
 * [HTML Calendar](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/synergy/studentCalendar.html#L36) page with multiple nested div blocks that is styled with CSS and dates and important events hardcoded into the Calendar.<br><br>
  
-**Runtime Guidance**
-- Navigate to [/synergy/student/calendar](http://ec2-44-239-226-169.us-west-2.compute.amazonaws.com/synergy/student/calendar) to view calendar page
+**Ticket Guidance**
+- Navigate to [/synergy/student/calendar](http://ec2-44-239-226-169.us-west-2.compute.amazonaws.com/synergy/student/calendar) to view calendar page  (may have to create an account and log in. For guide on how to do that, see Runtime Guidance at top of README)
 
 ## 2/26  Weekly Project Contributions and Artifacts Log
 ### Week 11
@@ -132,7 +132,7 @@ Created a custom Spring Security Login in page which overrides default mapping. 
 * [CSRF Token](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/synergy/teacherView.html#L64) allows for asynchronous post method call
 * Created custom [Spring Security Login Page](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/synergy/login.html#L57) and overrided [default login page mapping](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/java/com/example/project/Security/SecurityConfig.java#L39), CSS styled the login form <br> <br>
 
-**Runtime Guidance**
+**Ticket Guidance**
 - Click "Synergy" on main navigation bar
 - Login using Username: "1", Password: "test123" which gives Student access authorization
 - Click "Student View"
@@ -146,8 +146,8 @@ Added touch ups Student Info custom table with divs and tester static data. The 
 * [Total grade](https://github.com/mhayescs19/p1-mosaic-spring/blob/3670fccb503e7bbfdd40ef81b134291d04702583/src/main/resources/templates/synergy/studentGradebook.html#L15-L22) custom [styling](https://github.com/mhayescs19/p1-mosaic-spring/blob/3670fccb503e7bbfdd40ef81b134291d04702583/src/main/resources/static/css/student-gradebook.css#L31-L49)
 * [Class name](https://github.com/mhayescs19/p1-mosaic-spring/blob/3670fccb503e7bbfdd40ef81b134291d04702583/src/main/resources/templates/synergy/studentGradebook.html#L24-L32) custom [styling](https://github.com/mhayescs19/p1-mosaic-spring/blob/3670fccb503e7bbfdd40ef81b134291d04702583/src/main/resources/static/css/student-gradebook.css#L50-L65)
 <br><br>
-**Runtime Guidance**
-- Navigate to [/synergy/student/gradeBook](http://ec2-44-239-226-169.us-west-2.compute.amazonaws.com/synergy/student/gradeBook) to view page (Note: page uses tester data so link may be deprecated and/or updated with live database data)
+**Ticket Guidance**
+- Navigate to [/synergy/student/gradeBook](http://ec2-44-239-226-169.us-west-2.compute.amazonaws.com/synergy/student/gradeBook) to view page (Note: page uses tester data so link may be deprecated and/or updated with live database data. May have to create an account and log in. For guide on how to do that, see Runtime Guidance at top of README).
 
 ## 2/18  Weekly Project Contributions and Artifacts Log
 ### Week 10
@@ -158,7 +158,7 @@ Adaptation of a nav bar menu was combined with a custom table created using nest
 * Nested divs used with the repeating div classes [wrapper](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/synergy/studentInfo.html#L20) and box in order to style each box the [same](https://github.com/mhayescs19/p1-mosaic-spring/blob/313d3439f6662f07ffb090a2e5b9e45bd257d1c7/src/main/resources/static/css/student-info.css#L41)
 * [float: left](https://github.com/mhayescs19/p1-mosaic-spring/blob/313d3439f6662f07ffb090a2e5b9e45bd257d1c7/src/main/resources/static/css/student-info.css#L43) aligns all of the boxes to the left and prevents a margin appearing in between each box (other styling like display: inline-block caused the whitespace and prevented the boxes from lookin like a table) <br> <br>
 
-**Runtime Guidance**
+**Ticket Guidance**
 - Click "Synergy" on main navigation bar
 - Click "Student View"
 - Select "Student Info" in second navigation bar to view table
@@ -170,7 +170,7 @@ Created form for teachers to enter student information and grade in their class 
 * [Form](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/synergy/teacherView.html#L49) using passed in [Thymleaf Objects](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/synergy/teacherView.html#L53) from Synergy Java Class File for validation, error message printing, and displaying entered form information
 * [CSS Styling for Form](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/synergy/teacherView.html#L7) using [div classes](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/resources/templates/synergy/teacherView.html#L33) and hover for the submit button <br> <br>
 
-**Runtime Guidance**
+**Ticket Guidance**
 - Click on "Synergy" on main navigation bar
 - Click the "Teacher View" link
 - Fill in form spaces and click submit to enter Student Info
