@@ -102,7 +102,7 @@ Displays student info from Dynamo Database in a table created purely from divs a
 * A. Pegg [built methods](https://github.com/mhayescs19/p1-mosaic-spring/blob/7fc016922ce6a59cffb5721cfc0acdcf61ff0b50/src/main/java/com/example/project/MainController.java#L465) convert request to a map which data is [extracted from](https://github.com/mhayescs19/p1-mosaic-spring/blob/7fc016922ce6a59cffb5721cfc0acdcf61ff0b50/src/main/java/com/example/project/MainController.java#L468-L471) and displayed in HTML via [th:text="${}"](https://github.com/mhayescs19/p1-mosaic-spring/blob/79233ba092de834a5e07fc7c37c21d39b22b8ad4/src/main/resources/templates/synergy/studentInfo.html#L39-L67)
 
 ### 5. Spring Security
-Authentication, configuration, validation, and other backend for Login and Logout system. Created by Andrew Pegg.
+Authentication, configuration, validation, and other backend for Login and Logout system. Created by Andrew Pegg and Nakul Nandhakumar.
 * Spring Security [authentication used to get the ID number](https://github.com/mhayescs19/p1-mosaic-spring/blob/7fc016922ce6a59cffb5721cfc0acdcf61ff0b50/src/main/java/com/example/project/MainController.java#L455-L456) to access correct table in database
 * [Configuration](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/java/com/example/project/Security/SecurityConfig.java#L33) for custom mapping, permissions, logout procudure, etc.
 * [Custom Validation](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/java/com/example/project/Security/Auth/DaoService.java#L18) and [Custom Error](https://github.com/mhayescs19/p1-mosaic-spring/blob/master/src/main/java/com/example/project/NewUser/NewUser.java#L12) throwing for username, password, etc. fields from html form
